@@ -77,7 +77,7 @@ jobs:
           echo "❌ CHANGELOG.md file not found"
           exit 1
         fi
-        if ! grep -q "## $VERSION" CHANGELOG.md; then
+        if ! grep -q "# $VERSION" CHANGELOG.md; then
           echo "❌ Version $VERSION not found in CHANGELOG.md"
           exit 1
         fi
