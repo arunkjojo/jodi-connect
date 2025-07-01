@@ -14,140 +14,144 @@ jobs:
       pull-requests: write
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'pnpm'
-    
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
-        run_install: false
-    
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
 
-    - name: Run tests (if any)
-      run: |
-        echo "No tests configured yet"
-        # pnpm test
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
-    - name: Build for production
-      run: pnpm run build
-      env:
-        VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
-        VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
-        VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-        VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
-        VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
-        VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-        VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-    - name: Setup Firebase CLI
-      run: pnpm install -g firebase-tools
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-    - name: Deploy to Firebase Hosting (Production)
-      run: |
-        echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-service-account.json
-        export GOOGLE_APPLICATION_CREDENTIALS="firebase-service-account.json"
+      - name: Run tests (if any)
+        run: |
+          echo "No tests configured yet"
+          # pnpm test
 
-        cat > firebase.json << EOF
-        {
-          "hosting": {
-            "public": "dist",
-            "ignore": [
-              "firebase.json",
-              "**/.*",
-              "**/node_modules/**"
-            ],
-            "rewrites": [
-              {
-                "source": "**",
-                "destination": "/index.html"
-              }
-            ],
-            "headers": [
-              {
-                "source": "**/*.@(js|css)",
-                "headers": [
-                  { "key": "Cache-Control", "value": "max-age=31536000" }
-                ]
-              },
-              {
-                "source": "**/*.@(png|jpg|jpeg|gif|svg|webp)",
-                "headers": [
-                  { "key": "Cache-Control", "value": "max-age=31536000" }
-                ]
-              }
-            ]
+      - name: Build for production
+        run: pnpm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+
+      - name: Setup Firebase CLI
+        run: pnpm install -g firebase-tools
+
+      - name: Deploy to Firebase Hosting (Production)
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-service-account.json
+          export GOOGLE_APPLICATION_CREDENTIALS="firebase-service-account.json"
+
+          cat > firebase.json << EOF
+          {
+            "hosting": {
+              "public": "dist",
+              "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+              ],
+              "rewrites": [
+                {
+                  "source": "**",
+                  "destination": "/index.html"
+                }
+              ],
+              "headers": [
+                {
+                  "source": "**/*.@(js|css)",
+                  "headers": [
+                    { "key": "Cache-Control", "value": "max-age=31536000" }
+                  ]
+                },
+                {
+                  "source": "**/*.@(png|jpg|jpeg|gif|svg|webp)",
+                  "headers": [
+                    { "key": "Cache-Control", "value": "max-age=31536000" }
+                  ]
+                }
+              ]
+            }
           }
-        }
-        EOF
+          EOF
 
-        firebase deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
+          firebase deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
 
-    - name: Get deployment URL
-      id: deploy_url
-      run: |
-        URL="https://${{ secrets.FIREBASE_PROJECT_ID }}.web.app"
-        echo "url=$URL" >> $GITHUB_OUTPUT
-        echo "Production site deployed to: $URL"
+      - name: Get deployment URL
+        id: deploy_url
+        run: |
+          URL="https://${{ secrets.FIREBASE_PROJECT_ID }}.web.app"
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "Production site deployed to: $URL"
 
-    - name: Create GitHub Release
-      id: create_release
-      uses: softprops/action-gh-release@v1  # ✅ Updated release action
-      with:
-        tag_name: v${{ github.run_number }}
-        name: Production Release v${{ github.run_number }}
-        body: |
-          ## 🚀 Production Deployment
-          
-          **Deployed to**: [${{ steps.deploy_url.outputs.url }}](${{ steps.deploy_url.outputs.url }})
-          **Commit**: ${{ github.sha }}
-          **Build Number**: ${{ github.run_number }}
-          **Deployed At**: ${{ github.event.head_commit.timestamp }}
-          
-          ### Changes
-          ${{ github.event.head_commit.message }}
-          
-          ### Deployment Info
-          - Environment: Production
-          - Firebase Project: ${{ secrets.FIREBASE_PROJECT_ID }}
-          - Node.js Version: 18
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1  # ✅ Updated release action
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Production Release v${{ github.run_number }}
+          body: |
+            ## 🚀 Production Deployment
+            
+            **Deployed to**: [${{ steps.deploy_url.outputs.url }}](${{ steps.deploy_url.outputs.url }})
+            **Commit**: ${{ github.sha }}
+            **Build Number**: ${{ github.run_number }}
+            **Deployed At**: ${{ github.event.head_commit.timestamp }}
+            
+            ### Changes
+            ${{ github.event.head_commit.message }}
+            
+            ### Deployment Info
+            - Environment: Production
+            - Firebase Project: ${{ secrets.FIREBASE_PROJECT_ID }}
+            - Node.js Version: 18
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Notify deployment success
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const deployUrl = '${{ steps.deploy_url.outputs.url }}';
-          const releaseUrl = '${{ steps.create_release.outputs.url }}';
-          const commitSha = context.sha.substring(0, 7);
+      - name: Notify deployment success
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployUrl = '${{ steps.deploy_url.outputs.url }}';
+            const releaseUrl = '${{ steps.create_release.outputs.url }}';
+            const commitSha = context.sha.substring(0, 7);
 
-          const comment = `## 🎉 Production Deployment Successful
+            const comment = `## 🎉 Production Deployment Successful
 
-          **Status**: ✅ Live in Production  
-          **Commit**: ${commitSha}  
-          **URL**: [${deployUrl}](${deployUrl})  
-          **Release**: [v${{ github.run_number }}](${releaseUrl})
+            **Status**: ✅ Live in Production  
+            **Commit**: ${commitSha}  
+            **URL**: [${deployUrl}](${deployUrl})  
+            **Release**: [v${{ github.run_number }}](${releaseUrl})
 
-          **Build**: #${{ github.run_number }}  
-          **Time**: ${new Date().toISOString()}`;
+            **Build**: #${{ github.run_number }}  
+            **Time**: ${new Date().toISOString()}`;
 
-          github.rest.repos.createCommitComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            commit_sha: context.sha,
-            body: comment
-          });
+            github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body: comment
+            });
 
-    - name: Cleanup service account file
-      run: rm -f firebase-service-account.json
+      - name: Cleanup service account file
+        run: rm -f firebase-service-account.json
