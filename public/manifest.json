@@ -1,0 +1,61 @@
+{
+  "name": "Jodi Connect - Find Your Perfect Match",
+  "short_name": "JodiConnect",
+  "description": "India's Premier Matrimony Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00bcd4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["social", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Search Profiles",
+      "short_name": "Search",
+      "description": "Find your ideal match",
+      "url": "/search",
+      "icons": [
+        {
+          "src": "/icon-search.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "My Profile",
+      "short_name": "Profile",
+      "description": "View and edit your profile",
+      "url": "/profile/me",
+      "icons": [
+        {
+          "src": "/icon-profile.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

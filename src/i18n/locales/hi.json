@@ -1,0 +1,62 @@
+{
+  "common": {
+    "login": "लॉगिन",
+    "signup": "साइन अप",
+    "language": "भाषा",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "save": "सेव करें",
+    "back": "वापस",
+    "next": "अगला",
+    "submit": "जमा करें"
+  },
+  "auth": {
+    "welcome": "आपकी \"जोड़ी\" की यात्रा यहाँ शुरू होती है!",
+    "phoneNumber": "भारतीय मोबाइल नंबर",
+    "phonePlaceholder": "+91 98765 43210",
+    "referralCode": "रेफरल कोड (वैकल्पिक)",
+    "referralPlaceholder": "रेफरल कोड दर्ज करें",
+    "joinNow": "अभी मुफ्त में जुड़ें!",
+    "verifyPhone": "अपना फोन नंबर सत्यापित करें",
+    "otpSent": "हमने {{phone}} पर 6-अंकीय OTP भेजा है",
+    "enterOtp": "OTP दर्ज करें",
+    "otpPlaceholder": "000000",
+    "verifyOtp": "OTP सत्यापित करें",
+    "changePhone": "फोन नंबर बदलें",
+    "sendingOtp": "OTP भेजा जा रहा है...",
+    "verifying": "सत्यापित कर रहे हैं...",
+    "termsText": "साइन अप करके, आप हमारी",
+    "termsLink": "सेवा की शर्तों",
+    "privacyLink": "गोपनीयता नीति",
+    "and": "और"
+  },
+  "favorites": {
+    "addToFavorites": "पसंदीदा में जोड़ें",
+    "removeFromFavorites": "पसंदीदा से हटाएं",
+    "loginRequired": "पसंदीदा जोड़ने के लिए कृपया लॉगिन करें",
+    "addedToFavorites": "पसंदीदा में जोड़ा गया!",
+    "removedFromFavorites": "पसंदीदा से हटाया गया!",
+    "myFavorites": "मेरे पसंदीदा"
+  },
+  "profile": {
+    "viewProfile": "प्रोफाइल देखें",
+    "editProfile": "प्रोफाइल संपादित करें",
+    "aboutMe": "मेरे बारे में",
+    "interests": "रुचियां और शौक",
+    "details": "विवरण और जीवनशैली",
+    "photos": "फोटो गैलरी"
+  },
+  "navigation": {
+    "home": "होम",
+    "search": "खोजें",
+    "matches": "मैच",
+    "settings": "सेटिंग्स"
+  },
+  "branding": {
+    "appName": "JodiConnect.com",
+    "tagline": "भारत की सर्वश्रेष्ठ नेटवर्किंग मैट्रिमोनी"
+  }
+}

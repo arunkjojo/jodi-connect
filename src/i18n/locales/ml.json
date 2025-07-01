@@ -1,0 +1,62 @@
+{
+  "common": {
+    "login": "ലോഗിൻ",
+    "signup": "സൈൻ അപ്പ്",
+    "language": "ഭാഷ",
+    "loading": "ലോഡിംഗ്...",
+    "error": "പിശക്",
+    "success": "വിജയം",
+    "cancel": "റദ്ദാക്കുക",
+    "confirm": "സ്ഥിരീകരിക്കുക",
+    "save": "സേവ് ചെയ്യുക",
+    "back": "തിരികെ",
+    "next": "അടുത്തത്",
+    "submit": "സമർപ്പിക്കുക"
+  },
+  "auth": {
+    "welcome": "നിങ്ങളുടെ \"ജോഡി\" യാത്ര ഇവിടെ ആരംഭിക്കുന്നു!",
+    "phoneNumber": "ഇന്ത്യൻ മൊബൈൽ നമ്പർ",
+    "phonePlaceholder": "+91 98765 43210",
+    "referralCode": "റഫറൽ കോഡ് (ഓപ്ഷണൽ)",
+    "referralPlaceholder": "റഫറൽ കോഡ് നൽകുക",
+    "joinNow": "ഇപ്പോൾ സൗജന്യമായി ചേരുക!",
+    "verifyPhone": "നിങ്ങളുടെ ഫോൺ നമ്പർ സ്ഥിരീകരിക്കുക",
+    "otpSent": "ഞങ്ങൾ {{phone}} ലേക്ക് 6-അക്ക OTP അയച്ചിട്ടുണ്ട്",
+    "enterOtp": "OTP നൽകുക",
+    "otpPlaceholder": "000000",
+    "verifyOtp": "OTP സ്ഥിരീകരിക്കുക",
+    "changePhone": "ഫോൺ നമ്പർ മാറ്റുക",
+    "sendingOtp": "OTP അയയ്ക്കുന്നു...",
+    "verifying": "സ്ഥിരീകരിക്കുന്നു...",
+    "termsText": "സൈൻ അപ്പ് ചെയ്യുന്നതിലൂടെ, നിങ്ങൾ ഞങ്ങളുടെ",
+    "termsLink": "സേവന നിബന്ധനകൾ",
+    "privacyLink": "സ്വകാര്യതാ നയം",
+    "and": "ഉം"
+  },
+  "favorites": {
+    "addToFavorites": "പ്രിയങ്കരങ്ങളിൽ ചേർക്കുക",
+    "removeFromFavorites": "പ്രിയങ്കരങ്ങളിൽ നിന്ന് നീക്കം ചെയ്യുക",
+    "loginRequired": "പ്രിയങ്കരങ്ങൾ ചേർക്കാൻ ദയവായി ലോഗിൻ ചെയ്യുക",
+    "addedToFavorites": "പ്രിയങ്കരങ്ങളിൽ ചേർത്തു!",
+    "removedFromFavorites": "പ്രിയങ്കരങ്ങളിൽ നിന്ന് നീക്കം ചെയ്തു!",
+    "myFavorites": "എന്റെ പ്രിയങ്കരങ്ങൾ"
+  },
+  "profile": {
+    "viewProfile": "പ്രൊഫൈൽ കാണുക",
+    "editProfile": "പ്രൊഫൈൽ എഡിറ്റ് ചെയ്യുക",
+    "aboutMe": "എന്നെക്കുറിച്ച്",
+    "interests": "താൽപ്പര്യങ്ങളും ഹോബികളും",
+    "details": "വിശദാംശങ്ങളും ജീവിതശൈലിയും",
+    "photos": "ഫോട്ടോ ഗാലറി"
+  },
+  "navigation": {
+    "home": "ഹോം",
+    "search": "തിരയുക",
+    "matches": "മാച്ചുകൾ",
+    "settings": "ക്രമീകരണങ്ങൾ"
+  },
+  "branding": {
+    "appName": "JodiConnect.com",
+    "tagline": "ഇന്ത്യയുടെ മികച്ച നെറ്റ്‌വർക്കിംഗ് മാട്രിമോണി"
+  }
+}

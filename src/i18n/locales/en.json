@@ -1,0 +1,62 @@
+{
+  "common": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit"
+  },
+  "auth": {
+    "welcome": "Your Journey to \"Jodi\" Starts Here!",
+    "phoneNumber": "Indian Mobile Number",
+    "phonePlaceholder": "+91 98765 43210",
+    "referralCode": "Referral Code (Optional)",
+    "referralPlaceholder": "Enter referral code",
+    "joinNow": "Join Now for Free!",
+    "verifyPhone": "Verify Your Phone Number",
+    "otpSent": "We've sent a 6-digit OTP to {{phone}}",
+    "enterOtp": "Enter OTP",
+    "otpPlaceholder": "000000",
+    "verifyOtp": "Verify OTP",
+    "changePhone": "Change Phone Number",
+    "sendingOtp": "Sending OTP...",
+    "verifying": "Verifying...",
+    "termsText": "By signing up, you agree to our",
+    "termsLink": "Terms of Service",
+    "privacyLink": "Privacy Policy",
+    "and": "and"
+  },
+  "favorites": {
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "loginRequired": "Please login to add favorites",
+    "addedToFavorites": "Added to favorites!",
+    "removedFromFavorites": "Removed from favorites!",
+    "myFavorites": "My Favorites"
+  },
+  "profile": {
+    "viewProfile": "View Profile",
+    "editProfile": "Edit Profile",
+    "aboutMe": "About Me",
+    "interests": "Interests & Hobbies",
+    "details": "Details & Lifestyle",
+    "photos": "Photo Gallery"
+  },
+  "navigation": {
+    "home": "Home",
+    "search": "Search",
+    "matches": "Matches",
+    "settings": "Settings"
+  },
+  "branding": {
+    "appName": "JodiConnect.com",
+    "tagline": "India's Best Networking Matrimony"
+  }
+}

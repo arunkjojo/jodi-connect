@@ -1,0 +1,62 @@
+{
+  "common": {
+    "login": "లాగిన్",
+    "signup": "సైన్ అప్",
+    "language": "భాష",
+    "loading": "లోడ్ అవుతోంది...",
+    "error": "లోపం",
+    "success": "విజయం",
+    "cancel": "రద్దు చేయండి",
+    "confirm": "నిర్ధారించండి",
+    "save": "సేవ్ చేయండి",
+    "back": "వెనుకకు",
+    "next": "తదుపరి",
+    "submit": "సమర్పించండి"
+  },
+  "auth": {
+    "welcome": "మీ \"జోడీ\" ప్రయాణం ఇక్కడ ప్రారంభమవుతుంది!",
+    "phoneNumber": "భారతీయ మొబైల్ నంబర్",
+    "phonePlaceholder": "+91 98765 43210",
+    "referralCode": "రెఫరల్ కోడ్ (ఐచ్ఛికం)",
+    "referralPlaceholder": "రెఫరల్ కోడ్ ఎంటర్ చేయండి",
+    "joinNow": "ఇప్పుడే ఉచితంగా చేరండి!",
+    "verifyPhone": "మీ ఫోన్ నంబర్‌ను ధృవీకరించండి",
+    "otpSent": "మేము {{phone}} కు 6-అంకెల OTP పంపించాము",
+    "enterOtp": "OTP ఎంటర్ చేయండి",
+    "otpPlaceholder": "000000",
+    "verifyOtp": "OTP ధృవీకరించండి",
+    "changePhone": "ఫోన్ నంబర్ మార్చండి",
+    "sendingOtp": "OTP పంపుతోంది...",
+    "verifying": "ధృవీకరిస్తోంది...",
+    "termsText": "సైన్ అప్ చేయడం ద్వారా, మీరు మా",
+    "termsLink": "సేవా నిబంధనలు",
+    "privacyLink": "గోప్యతా విధానం",
+    "and": "మరియు"
+  },
+  "favorites": {
+    "addToFavorites": "ఇష్టాంశాలకు జోడించండి",
+    "removeFromFavorites": "ఇష్టాంశాల నుండి తీసివేయండి",
+    "loginRequired": "ఇష్టాంశాలను జోడించడానికి దయచేసి లాగిన్ చేయండి",
+    "addedToFavorites": "ఇష్టాంశాలకు జోడించబడింది!",
+    "removedFromFavorites": "ఇష్టాంశాల నుండి తీసివేయబడింది!",
+    "myFavorites": "నా ఇష్టాంశాలు"
+  },
+  "profile": {
+    "viewProfile": "ప్రొఫైల్ చూడండి",
+    "editProfile": "ప్రొఫైల్ ఎడిట్ చేయండి",
+    "aboutMe": "నా గురించి",
+    "interests": "ఆసక్తులు మరియు అభిరుచులు",
+    "details": "వివరాలు మరియు జీవనశైలి",
+    "photos": "ఫోటో గ్యాలరీ"
+  },
+  "navigation": {
+    "home": "హోమ్",
+    "search": "వెతకండి",
+    "matches": "మ్యాచ్‌లు",
+    "settings": "సెట్టింగ్‌లు"
+  },
+  "branding": {
+    "appName": "JodiConnect.com",
+    "tagline": "భారతదేశపు అత్యుత్తమ నెట్‌వర్కింగ్ మ్యాట్రిమోనీ"
+  }
+}

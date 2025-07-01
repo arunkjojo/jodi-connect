@@ -1,0 +1,122 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: [ develop, main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    permissions:  # ✅ Required for commenting in private repos
+      pull-requests: write
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'pnpm'
+        
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      
+    - name: Validate PR title format
+      run: |
+        PR_TITLE="${{ github.event.pull_request.title }}"
+        echo "PR Title: $PR_TITLE"
+        if [[ ! "$PR_TITLE" =~ ^JC-(DEV|PROD)-[A-Za-z0-9\.]+:\ .+ ]]; then
+          echo "❌ PR title must follow format: JC-{DEV|PROD}-XXX: MESSAGE"
+          exit 1
+        fi
+        echo "✅ PR title format is valid"
+        
+    - name: Extract version from PR title
+      id: extract_version
+      run: |
+        PR_TITLE="${{ github.event.pull_request.title }}"
+        if [[ "$PR_TITLE" =~ ^JC-(DEV|PROD)-([A-Za-z0-9\.]+): ]]; then
+          ENV="${BASH_REMATCH[1]}"
+          VERSION="${BASH_REMATCH[2]}"
+          echo "environment=$ENV" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Environment: $ENV"
+          echo "Version: $VERSION"
+        fi
+        
+    - name: Validate package.json version
+      run: |
+        PACKAGE_VERSION=$(node -p "require('./package.json').version")
+        PR_VERSION="${{ steps.extract_version.outputs.version }}"
+        if [[ "${{ steps.extract_version.outputs.environment }}" == "PROD" ]]; then
+          if [[ "$PACKAGE_VERSION" != "$PR_VERSION" ]]; then
+            echo "❌ For PROD releases, package.json version ($PACKAGE_VERSION) must match PR version ($PR_VERSION)"
+            exit 1
+          fi
+        fi
+        echo "✅ Package version validation passed"
+        
+    - name: Validate CHANGELOG.md
+      run: |
+        VERSION="${{ steps.extract_version.outputs.version }}"
+        if [[ ! -f "CHANGELOG.md" ]]; then
+          echo "❌ CHANGELOG.md file not found"
+          exit 1
+        fi
+        if ! grep -q "## $VERSION" CHANGELOG.md; then
+          echo "❌ Version $VERSION not found in CHANGELOG.md"
+          exit 1
+        fi
+        echo "✅ CHANGELOG.md contains version $VERSION"
+        
+    - name: Run linting
+      run: pnpm run lint
+      
+    - name: Type checking
+      run: npx tsc --noEmit
+      
+    - name: Build project
+      run: pnpm run build
+      env:
+        VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+        VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+        VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+        VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+        VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+        VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+        VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+        
+    - name: Check build size
+      run: |
+        BUILD_SIZE=$(du -sh dist | cut -f1)
+        echo "Build size: $BUILD_SIZE"
+        
+    - name: Comment PR with build info
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { execSync } = require('child_process');
+          const buildSize = execSync('du -sh dist').toString().split('\t')[0];
+
+          const comment = `## 🔍 CI Results
+
+          ✅ **PR Title Format**: Valid  
+          ✅ **Linting**: Passed  
+          ✅ **Type Checking**: Passed  
+          ✅ **Build**: Successful  
+          📦 **Build Size**: ${buildSize}
+
+          **Environment**: ${{ steps.extract_version.outputs.environment }}  
+          **Version**: ${{ steps.extract_version.outputs.version }}
+          `;
+
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });

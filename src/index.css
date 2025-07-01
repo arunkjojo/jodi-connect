@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* ::-webkit-scrollbar {
+    display: none;
+    /* This hides the scrollbar */
+    /* Or you can set width/height to 0 for horizontal scrollbars */
+    /* height: 0; */
+}

@@ -1,0 +1,62 @@
+{
+  "common": {
+    "login": "ಲಾಗಿನ್",
+    "signup": "ಸೈನ್ ಅಪ್",
+    "language": "ಭಾಷೆ",
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "error": "ದೋಷ",
+    "success": "ಯಶಸ್ಸು",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "confirm": "ದೃಢೀಕರಿಸಿ",
+    "save": "ಉಳಿಸಿ",
+    "back": "ಹಿಂದೆ",
+    "next": "ಮುಂದೆ",
+    "submit": "ಸಲ್ಲಿಸಿ"
+  },
+  "auth": {
+    "welcome": "ನಿಮ್ಮ \"ಜೋಡಿ\" ಪ್ರಯಾಣ ಇಲ್ಲಿ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ!",
+    "phoneNumber": "ಭಾರತೀಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "phonePlaceholder": "+91 98765 43210",
+    "referralCode": "ರೆಫರಲ್ ಕೋಡ್ (ಐಚ್ಛಿಕ)",
+    "referralPlaceholder": "ರೆಫರಲ್ ಕೋಡ್ ನಮೂದಿಸಿ",
+    "joinNow": "ಈಗ ಉಚಿತವಾಗಿ ಸೇರಿ!",
+    "verifyPhone": "ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+    "otpSent": "ನಾವು {{phone}} ಗೆ 6-ಅಂಕಿಯ OTP ಕಳುಹಿಸಿದ್ದೇವೆ",
+    "enterOtp": "OTP ನಮೂದಿಸಿ",
+    "otpPlaceholder": "000000",
+    "verifyOtp": "OTP ಪರಿಶೀಲಿಸಿ",
+    "changePhone": "ಫೋನ್ ಸಂಖ್ಯೆ ಬದಲಾಯಿಸಿ",
+    "sendingOtp": "OTP ಕಳುಹಿಸುತ್ತಿದೆ...",
+    "verifying": "ಪರಿಶೀಲಿಸುತ್ತಿದೆ...",
+    "termsText": "ಸೈನ್ ಅಪ್ ಮಾಡುವ ಮೂಲಕ, ನೀವು ನಮ್ಮ",
+    "termsLink": "ಸೇವಾ ನಿಯಮಗಳು",
+    "privacyLink": "ಗೌಪ್ಯತಾ ನೀತಿ",
+    "and": "ಮತ್ತು"
+  },
+  "favorites": {
+    "addToFavorites": "ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಿ",
+    "removeFromFavorites": "ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ",
+    "loginRequired": "ಮೆಚ್ಚಿನವುಗಳನ್ನು ಸೇರಿಸಲು ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಮಾಡಿ",
+    "addedToFavorites": "ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಲಾಗಿದೆ!",
+    "removedFromFavorites": "ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಲಾಗಿದೆ!",
+    "myFavorites": "ನನ್ನ ಮೆಚ್ಚಿನವುಗಳು"
+  },
+  "profile": {
+    "viewProfile": "ಪ್ರೊಫೈಲ್ ವೀಕ್ಷಿಸಿ",
+    "editProfile": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
+    "aboutMe": "ನನ್ನ ಬಗ್ಗೆ",
+    "interests": "ಆಸಕ್ತಿಗಳು ಮತ್ತು ಹವ್ಯಾಸಗಳು",
+    "details": "ವಿವರಗಳು ಮತ್ತು ಜೀವನಶೈಲಿ",
+    "photos": "ಫೋಟೋ ಗ್ಯಾಲರಿ"
+  },
+  "navigation": {
+    "home": "ಮುಖ್ಯಪುಟ",
+    "search": "ಹುಡುಕಿ",
+    "matches": "ಹೊಂದಾಣಿಕೆಗಳು",
+    "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "branding": {
+    "appName": "JodiConnect.com",
+    "tagline": "ಭಾರತದ ಅತ್ಯುತ್ತಮ ನೆಟ್‌ವರ್ಕಿಂಗ್ ಮ್ಯಾಟ್ರಿಮೋನಿ"
+  }
+}
