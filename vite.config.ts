@@ -42,7 +42,6 @@ export default defineConfig({
         ]
       },
       workbox: {
-        registerType: "autoUpdate",
         skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
@@ -60,7 +59,10 @@ export default defineConfig({
             }
           }
         ]
-      }
+      },
+      devOptions: {
+        enabled: true, // for local dev, disable in prod
+      },
     })
   ],
   optimizeDeps: {
