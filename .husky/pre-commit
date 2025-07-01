@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+echo "í´ Running Linter..."
+
+pnpm lint
+
+if [ $? -ne 0 ]; then
+  echo "âŒ Lint errors detected. Commit aborted."
+  exit 1
+fi
+
+echo "âœ… Lint passed. Proceeding with commit."
+
