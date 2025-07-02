@@ -24,7 +24,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   variant = 'grid',
   className = ''
 }) => {
-  const { t } = useTranslation();
+  useTranslation();
 
   if (variant === 'list') {
     return (
