@@ -1,11 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search as SearchIcon, ArrowLeft, RotateCcw } from 'lucide-react';
+import { Search as SearchIcon, RotateCcw } from 'lucide-react';
 import Header from '../components/Header';
+
+interface Filters {
+  quickSearch: string;
+  ageRange: [number, number];
+  locationRadius: number;
+  specificCity: string;
+  religion: string;
+  caste: string;
+  motherTongue: string;
+  maritalStatus: string;
+  dietaryPreferences: string[];
+  smokingHabits: string[];
+  drinkingHabits: string[];
+  relationshipGoals: string[];
+  interests: string[];
+}
 
 const Search: React.FC = () => {
   const navigate = useNavigate();
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<Filters>({
     quickSearch: '',
     ageRange: [21, 42],
     locationRadius: 50,
@@ -51,11 +67,13 @@ const Search: React.FC = () => {
     interests: ['Reading', 'Travel', 'Movies', 'Music', 'Foodie', 'Sports', 'Art', 'Cooking', 'Yoga', 'Meditation', 'Tech & Gadgets', 'Outdoors']
   };
 
-  const toggleTag = (category: string, tag: string) => {
+  type TagCategory = 'dietaryPreferences' | 'smokingHabits' | 'drinkingHabits' | 'relationshipGoals' | 'interests';
+  
+  const toggleTag = (category: TagCategory, tag: string) => {
     setFilters(prev => ({
       ...prev,
       [category]: prev[category].includes(tag)
-        ? prev[category].filter(t => t !== tag)
+        ? prev[category].filter((t: string) => t !== tag)
         : [...prev[category], tag]
     }));
   };

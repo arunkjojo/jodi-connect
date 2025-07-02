@@ -9,7 +9,7 @@ const ProfileCreation: React.FC = () => {
   const navigate = useNavigate();
   const { createProfile } = useProfile();
   const [currentStep, setCurrentStep] = useState(1);
-  const [profileData, setProfileData] = useState<any>({});
+  const [profileData, setProfileData] = useState<Record<string, unknown>>({});
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const steps = [
@@ -31,7 +31,7 @@ const ProfileCreation: React.FC = () => {
     }
   };
 
-  const handleStepSubmit = (data: any) => {
+  const handleStepSubmit = (data: Record<string, unknown>) => {
     setProfileData({ ...profileData, ...data });
     if (currentStep === 4) {
       handleCompleteProfile();
@@ -106,7 +106,9 @@ const ProfileCreation: React.FC = () => {
                   className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
-                {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
+                {typeof errors.fullName?.message === 'string' && (
+                  <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
+                )}
               </div>
 
               <div>
@@ -119,7 +121,9 @@ const ProfileCreation: React.FC = () => {
                   />
                   <Calendar className="absolute right-3 top-3 text-gray-400" size={20} />
                 </div>
-                {errors.dateOfBirth && <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth.message}</p>}
+                {typeof errors.dateOfBirth?.message === 'string' && (
+                  <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth.message}</p>
+                )}
               </div>
 
               <div>
@@ -137,7 +141,9 @@ const ProfileCreation: React.FC = () => {
                     </label>
                   ))}
                 </div>
-                {errors.gender && <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>}
+                {typeof errors.gender?.message === 'string' && (
+                  <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>
+                )}
               </div>
 
               <div>
@@ -156,7 +162,7 @@ const ProfileCreation: React.FC = () => {
                   </select>
                   <ChevronDown className="absolute right-3 top-3 text-gray-400" size={20} />
                 </div>
-                {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
+                {typeof errors.state?.message === "string" && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
               </div>
 
               <div>
@@ -174,7 +180,7 @@ const ProfileCreation: React.FC = () => {
                   </select>
                   <ChevronDown className="absolute right-3 top-3 text-gray-400" size={20} />
                 </div>
-                {errors.district && <p className="text-red-500 text-sm mt-1">{errors.district.message}</p>}
+                {typeof errors.district?.message === "string" && <p className="text-red-500 text-sm mt-1">{errors.district.message}</p>}
               </div>
 
               <div>
@@ -184,7 +190,7 @@ const ProfileCreation: React.FC = () => {
                   className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   placeholder="e.g., Bengaluru, South Delhi"
                 />
-                {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
+                {typeof errors.city?.message === "string" && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
               </div>
 
               <div>
@@ -263,7 +269,7 @@ const ProfileCreation: React.FC = () => {
                   </select>
                   <ChevronDown className="absolute right-3 top-3 text-gray-400" size={20} />
                 </div>
-                {errors.religion && <p className="text-red-500 text-sm mt-1">{errors.religion.message}</p>}
+                {typeof errors.religion?.message === "string" && <p className="text-red-500 text-sm mt-1">{errors.religion.message}</p>}
               </div>
 
               <div>
@@ -297,7 +303,7 @@ const ProfileCreation: React.FC = () => {
                   </select>
                   <ChevronDown className="absolute right-3 top-3 text-gray-400" size={20} />
                 </div>
-                {errors.maritalStatus && <p className="text-red-500 text-sm mt-1">{errors.maritalStatus.message}</p>}
+                {typeof errors.maritalStatus?.message === "string" && <p className="text-red-500 text-sm mt-1">{errors.maritalStatus.message}</p>}
               </div>
 
               <div>

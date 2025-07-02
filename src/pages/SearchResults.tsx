@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useProfile } from '../contexts/ProfileContext';
+import { useProfile, UserProfile } from '../contexts/ProfileContext';
 import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import ProfileCard from '../components/ProfileCard';
@@ -8,83 +8,235 @@ import ProfileCard from '../components/ProfileCard';
 const SearchResults: React.FC = () => {
   const location = useLocation();
   const { searchProfiles } = useProfile();
-  const { t } = useTranslation();
-  const [profiles, setProfiles] = useState([]);
+  useTranslation();
+  const [profiles, setProfiles] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
-  const filters = location.state?.filters || {};
-
-  useEffect(() => {
-    loadSearchResults();
-  }, []);
-
-  const loadSearchResults = async () => {
-    try {
-      const results = await searchProfiles(filters);
-      setProfiles(results);
-    } catch (error) {
-      console.error('Error loading search results:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const filters = React.useMemo(() => location.state?.filters || {}, [location.state]);
 
   // Mock data for demonstration with enhanced profiles
-  const mockProfiles = [
-    { 
-      id: '1', 
-      name: 'Priya Sharma', 
-      age: 27, 
-      location: 'Mumbai', 
+  const mockProfiles: UserProfile[] = React.useMemo(() => [
+    {
+      id: '1',
+      fullName: 'Priya Sharma',
+      dateOfBirth: '1997-01-01',
+      gender: 'Female',
+      location: 'Mumbai',
+      state: 'Maharashtra',
       isOnline: true,
       occupation: 'Software Engineer',
-      photo: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=400'
+      email: 'priya.sharma@example.com',
+      phone: '9876543210',
+      bio: 'Passionate about technology and art.',
+      interests: ['Coding', 'Art', 'Travel'],
+      religion: 'Hindu',
+      caste: 'Brahmin',
+      motherTongue: 'Hindi',
+      education: 'B.Tech',
+      height: 165,
+      maritalStatus: 'Single',
+      income: '10-15 LPA',
+      familyDetails: 'Nuclear family',
+      hobies: ['Painting', 'Reading'],
+      photos: ['https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
-    { 
-      id: '2', 
-      name: 'Rahul Verma', 
-      age: 30, 
-      location: 'Delhi', 
+    {
+      id: '2',
+      fullName: 'Rahul Verma',
+      dateOfBirth: '1994-02-15',
+      gender: 'Male',
+      location: 'Delhi',
+      state: 'Delhi',
       isOnline: false,
       occupation: 'Marketing Manager',
-      photo: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400'
+      email: 'rahul.verma@example.com',
+      phone: '9876543211',
+      bio: 'Love connecting with people.',
+      interests: ['Marketing', 'Music', 'Travel'],
+      religion: 'Hindu',
+      caste: 'Kshatriya',
+      motherTongue: 'Hindi',
+      education: 'MBA',
+      height: 175,
+      maritalStatus: 'Single',
+      income: '15-20 LPA',
+      familyDetails: 'Joint family',
+      hobies: ['Music', 'Football'],
+      photos: ['https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
-    { 
-      id: '3', 
-      name: 'Sneha Kaur', 
-      age: 25, 
-      location: 'Bengaluru', 
+    {
+      id: '3',
+      fullName: 'Sneha Kaur',
+      gender: 'Female',
+      location: 'Bengaluru',
+      state: 'Karnataka',
       isOnline: true,
       occupation: 'UI/UX Designer',
-      photo: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400'
+      email: 'sneha.kaur@example.com',
+      phone: '9876543212',
+      bio: 'Design is my passion.',
+      interests: ['Design', 'Photography'],
+      religion: 'Sikh',
+      caste: 'Kaur',
+      motherTongue: 'Punjabi',
+      education: 'B.Des',
+      height: 160,
+      maritalStatus: 'Single',
+      income: '8-12 LPA',
+      familyDetails: 'Nuclear family',
+      hobies: ['Photography', 'Travel'],
+      photos: ['https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      dateOfBirth: '',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
-    { 
-      id: '4', 
-      name: 'Arjun Reddy', 
-      age: 32, 
-      location: 'Hyderabad', 
+    {
+      id: '4',
+      fullName: 'Arjun Reddy',
+      location: 'Hyderabad',
+      state: 'Telangana',
       isOnline: false,
       occupation: 'Data Scientist',
-      photo: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400'
+      email: 'arjun.reddy@example.com',
+      phone: '9876543213',
+      bio: 'Data is the new oil.',
+      interests: ['Data Science', 'Cricket'],
+      religion: 'Hindu',
+      caste: 'Reddy',
+      motherTongue: 'Telugu',
+      education: 'M.Tech',
+      height: 180,
+      maritalStatus: 'Single',
+      income: '20-25 LPA',
+      familyDetails: 'Joint family',
+      hobies: ['Cricket', 'Chess'],
+      photos: ['https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      dateOfBirth: '',
+      gender: '',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
-    { 
-      id: '5', 
-      name: 'Meera Patel', 
-      age: 29, 
-      location: 'Pune', 
+    {
+      id: '5',
+      fullName: 'Meera Patel',
+      dateOfBirth: '1995-05-05',
+      state: 'Maharashtra',
       isOnline: true,
       occupation: 'Doctor',
-      photo: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400'
+      phone: '9876543214',
+      bio: 'Caring for people is my calling.',
+      interests: ['Medicine', 'Yoga'],
+      religion: 'Hindu',
+      caste: 'Patel',
+      motherTongue: 'Gujarati',
+      education: 'MBBS',
+      height: 158,
+      maritalStatus: 'Single',
+      income: '12-18 LPA',
+      familyDetails: 'Nuclear family',
+      hobies: ['Yoga', 'Reading'],
+      photos: ['https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      gender: '',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
-    { 
-      id: '6', 
-      name: 'Sameer Shah', 
-      age: 31, 
-      location: 'Chennai', 
+    {
+      id: '6',
+      fullName: 'Sameer Shah',
+      dateOfBirth: '1993-06-12',
+      gender: 'Male',
       isOnline: false,
       occupation: 'Business Analyst',
-      photo: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400'
+      bio: 'Business is in my blood.',
+      interests: ['Business', 'Travel'],
+      religion: 'Jain',
+      caste: 'Shah',
+      motherTongue: 'Gujarati',
+      education: 'MBA',
+      height: 170,
+      maritalStatus: 'Single',
+      income: '18-22 LPA',
+      familyDetails: 'Joint family',
+      hobies: ['Travel', 'Music'],
+      photos: ['https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400'],
+      profileCreatedBy: 'Self',
+      state: '',
+      district: '',
+      city: '',
+      aboutMe: '',
+      detailedIntroduction: '',
+      idVerified: false,
+      diet: '',
+      smoking: '',
+      drinking: '',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
-  ];
+  ], []);
+
+  useEffect(() => {
+
+    const loadSearchResults = async () => {
+      try {
+        const results = await searchProfiles(filters);
+        setProfiles(results);
+      } catch (error) {
+        console.error('Error loading search results:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadSearchResults();
+    setProfiles(mockProfiles); // Set mock data for demonstration
+  }, [filters, mockProfiles, searchProfiles]);
 
   if (loading) {
     return (
@@ -111,24 +263,50 @@ const SearchResults: React.FC = () => {
 
         {/* Grid view for larger screens, list view for mobile */}
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {mockProfiles.map((profile) => (
-            <ProfileCard
-              key={profile.id}
-              profile={profile}
-              variant="grid"
-            />
-          ))}
+          {profiles.map((profile) => {
+            const age = profile.dateOfBirth
+              ? Math.floor((Date.now() - new Date(profile.dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365.25))
+              : 0;
+            return (
+              <ProfileCard
+                key={profile.id}
+                profile={{
+                  id: profile.id,
+                  name: profile.fullName || '',
+                  age,
+                  location: profile.location || '',
+                  isOnline: profile.isOnline,
+                  photo: profile.photos && profile.photos.length > 0 ? profile.photos[0] : undefined,
+                  occupation: profile.occupation
+                }}
+                variant="grid"
+              />
+            );
+          })}
         </div>
 
         {/* List view for mobile */}
         <div className="sm:hidden space-y-3">
-          {mockProfiles.map((profile) => (
-            <ProfileCard
-              key={profile.id}
-              profile={profile}
-              variant="list"
-            />
-          ))}
+          {profiles.map((profile) => {
+            const age = profile.dateOfBirth
+              ? Math.floor((Date.now() - new Date(profile.dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365.25))
+              : 0;
+            return (
+              <ProfileCard
+                key={profile.id}
+                profile={{
+                  id: profile.id,
+                  name: profile.fullName || '',
+                  age,
+                  location: profile.location || '',
+                  isOnline: profile.isOnline,
+                  photo: profile.photos && profile.photos.length > 0 ? profile.photos[0] : undefined,
+                  occupation: profile.occupation
+                }}
+                variant="list"
+              />
+            );
+          })}
         </div>
         
         {mockProfiles.length === 0 && (

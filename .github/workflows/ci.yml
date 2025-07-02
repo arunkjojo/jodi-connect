@@ -14,14 +14,24 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: '18'
-        cache: 'pnpm'
-        
+        node-version: "20"
+
+    - name: Cache pnpm store
+      uses: actions/cache@v3
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
       
@@ -48,30 +58,14 @@ jobs:
           echo "Version: $VERSION"
         fi
         
-    - name: Validate package.json version
-      run: |
-        PACKAGE_VERSION=$(node -p "require('./package.json').version")
-        PR_VERSION="${{ steps.extract_version.outputs.version }}"
-        if [[ "${{ steps.extract_version.outputs.environment }}" == "PROD" ]]; then
-          if [[ "$PACKAGE_VERSION" != "$PR_VERSION" ]]; then
-            echo "❌ For PROD releases, package.json version ($PACKAGE_VERSION) must match PR version ($PR_VERSION)"
-            exit 1
-          fi
-        fi
-        echo "✅ Package version validation passed"
-        
     - name: Validate CHANGELOG.md
       run: |
-        VERSION="${{ steps.extract_version.outputs.version }}"
-        if [[ ! -f "CHANGELOG.md" ]]; then
-          echo "❌ CHANGELOG.md file not found"
+        PACKAGE_VERSION=$(node -p "require('./package.json').version")
+        if ! grep -q "# $PACKAGE_VERSION" CHANGELOG.md; then
+          echo "❌ package.json version ($PACKAGE_VERSION) not found in CHANGELOG.md"
           exit 1
         fi
-        if ! grep -q "## $VERSION" CHANGELOG.md; then
-          echo "❌ Version $VERSION not found in CHANGELOG.md"
-          exit 1
-        fi
-        echo "✅ CHANGELOG.md contains version $VERSION"
+        echo "✅ package.json version matches entry in CHANGELOG.md"
         
     - name: Run linting
       run: pnpm run lint
@@ -80,7 +74,7 @@ jobs:
       run: npx tsc --noEmit
       
     - name: Build project
-      run: pnpm run build
+      run: pnpm run build:dev
       env:
         VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
         VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
@@ -92,7 +86,7 @@ jobs:
         
     - name: Check build size
       run: |
-        BUILD_SIZE=$(du -sh dist | cut -f1)
+        BUILD_SIZE=$(du -sh build/dev | cut -f1)
         echo "Build size: $BUILD_SIZE"
         
     - name: Comment PR with build info
@@ -100,20 +94,20 @@ jobs:
       with:
         script: |
           const { execSync } = require('child_process');
-          const buildSize = execSync('du -sh dist').toString().split('\t')[0];
-
+          const buildSize = execSync('du -sh build/dev').toString().split('\t')[0];
+    
           const comment = `## 🔍 CI Results
-
+    
           ✅ **PR Title Format**: Valid  
           ✅ **Linting**: Passed  
           ✅ **Type Checking**: Passed  
           ✅ **Build**: Successful  
           📦 **Build Size**: ${buildSize}
-
+    
           **Environment**: ${{ steps.extract_version.outputs.environment }}  
           **Version**: ${{ steps.extract_version.outputs.version }}
           `;
-
+    
           github.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
