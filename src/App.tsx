@@ -1,9 +1,8 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { AuthProvider } from './contexts/AuthContext';
-import { ProfileProvider } from './contexts/ProfileContext';
-import { FavoritesProvider } from './contexts/FavoritesContext';
+import { AuthProvider } from './contexts/AuthContextProvider';
+import { ProfileProvider } from './contexts/ProfileContextProvider';
+import { FavoritesProvider } from './contexts/FavoritesContextProvider';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Login from './pages/Login';
