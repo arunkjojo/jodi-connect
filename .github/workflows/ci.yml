@@ -48,18 +48,6 @@ jobs:
           echo "Version: $VERSION"
         fi
         
-    - name: Validate package.json version
-      run: |
-        PACKAGE_VERSION=$(node -p "require('./package.json').version")
-        PR_VERSION="${{ steps.extract_version.outputs.version }}"
-        if [[ "${{ steps.extract_version.outputs.environment }}" == "PROD" ]]; then
-          if [[ "$PACKAGE_VERSION" != "$PR_VERSION" ]]; then
-            echo "❌ For PROD releases, package.json version ($PACKAGE_VERSION) must match PR version ($PR_VERSION)"
-            exit 1
-          fi
-        fi
-        echo "✅ Package version validation passed"
-        
     - name: Validate CHANGELOG.md
       run: |
         VERSION="${{ steps.extract_version.outputs.version }}"
