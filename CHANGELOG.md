@@ -1,3 +1,9 @@
+# 0.0.4
+
+## Fix
+
+- Fix the ci cd files
+
 # 0.0.3
 
 ## Fix
