@@ -99,7 +99,7 @@ jobs:
             echo "✅ $var is set"
           fi
         done
-        
+
       env:
         VITE_ENV: "development"
         VITE_USE_FIREBASE_EMULATOR: "true"
@@ -121,9 +121,7 @@ jobs:
         ENVIRONMENT: ${{ steps.extract_version.outputs.environment }}
         VERSION: ${{ steps.extract_version.outputs.version }}
       with:
-        script: |
-          const { context } = github;
-    
+        script: | 
           const comment = `## 🔍 CI Results
     
           ✅ **PR Title Format**: Valid  
