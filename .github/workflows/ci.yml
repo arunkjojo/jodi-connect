@@ -119,7 +119,6 @@ jobs:
       uses: actions/github-script@v7
       env:
         ENVIRONMENT: ${{ steps.extract_version.outputs.environment }}
-        VERSION: ${{ steps.extract_version.outputs.version }}
       with:
         script: | 
           const comment = `## 🔍 CI Results
@@ -128,9 +127,7 @@ jobs:
           ✅ **Linting**: Passed  
           ✅ **Type Checking**: Passed  
           ✅ **Environment Variable**: Valid  
-          
-          🌎 **Environment**: ${process.env.ENVIRONMENT}  
-          🏷️ **Version**: ${process.env.VERSION}
+          🏷️ **Version**: ${process.env.ENVIRONMENT}
           `;
     
           github.rest.issues.createComment({

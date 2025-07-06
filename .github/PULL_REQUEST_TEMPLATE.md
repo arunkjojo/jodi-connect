@@ -10,19 +10,13 @@
 - [ ] ⚡ Performance improvements
 - [ ] 🔧 Configuration changes
 
-### Description
-<!-- Provide a brief description of the changes -->
-
 ### Related Issues
-<!-- Link to any related issues -->
 Fixes #(issue number)
 
 ### Changes Made
-<!-- List the main changes made in this PR -->
 - 
 
 ### Testing
-<!-- Describe the testing you've done -->
 - [ ] Tested on desktop
 - [ ] Tested on mobile
 - [ ] Tested across different browsers
@@ -32,7 +26,7 @@ Fixes #(issue number)
 ### Checklist
 - [ ] My code follows the project's style guidelines
 - [ ] I have performed a self-review of my code
-- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have commented on my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] I have added tests that prove my fix is effective or that my feature works
@@ -43,11 +37,3 @@ Fixes #(issue number)
 - [ ] I have updated the version in package.json
 - [ ] I have added an entry to CHANGELOG.md
 - [ ] The version in CHANGELOG.md matches the PR title version
-
-### PR Title Format
-Please ensure your PR title follows the format: `JC-XXX: MESSAGE`
-
-Examples:
-- `JC-PROD: Deployment`
-- `JC-001: Add user authentication feature`
-- `JC-1.2.0: Release version 1.2.0 with new search filters`
