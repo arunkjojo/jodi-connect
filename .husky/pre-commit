@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "��� Running Linter..."
+echo "🛠️ Running Linter..."
 
 pnpm lint
 
