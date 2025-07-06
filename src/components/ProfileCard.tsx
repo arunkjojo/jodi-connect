@@ -4,17 +4,10 @@ import { motion } from 'framer-motion';
 import { MapPin, Clock } from 'lucide-react';
 import FavoriteButton from './FavoriteButton';
 import { useTranslation } from 'react-i18next';
+import type { ProfileCardData } from '../types';
 
 interface ProfileCardProps {
-  profile: {
-    id: string;
-    name: string;
-    age: number;
-    location: string;
-    isOnline?: boolean;
-    photo?: string;
-    occupation?: string;
-  };
+  profile: ProfileCardData;
   variant?: 'grid' | 'list';
   className?: string;
 }
@@ -54,7 +47,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
                 </div>
               )}
             </div>
-            
+
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-gray-900 text-base sm:text-lg truncate">
                 {profile.name}, {profile.age}
@@ -67,7 +60,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
                 <p className="text-gray-500 text-sm mt-1 truncate">{profile.occupation}</p>
               )}
             </div>
-            
+
             <div className="flex flex-col items-end space-y-2">
               <FavoriteButton profileId={profile.id} size="sm" />
               {profile.isOnline && (
@@ -92,7 +85,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         <div className="absolute top-3 right-3 z-10">
           <FavoriteButton profileId={profile.id} size="sm" />
         </div>
-        
+
         <div className="flex flex-col h-full">
           <div className="aspect-square bg-white/20 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
             {profile.photo ? (
@@ -109,7 +102,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
               </div>
             )}
           </div>
-          
+
           <div className="flex-1">
             <h3 className="font-semibold text-base sm:text-lg mb-1">
               {profile.name}, {profile.age}
@@ -122,7 +115,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
               <p className="text-xs opacity-75 truncate">{profile.occupation}</p>
             )}
           </div>
-          
+
           {profile.isOnline && (
             <div className="flex items-center justify-center mt-2 bg-green-500 rounded-full px-2 py-1">
               <div className="w-2 h-2 bg-white rounded-full mr-1"></div>

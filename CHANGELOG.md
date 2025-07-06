@@ -1,3 +1,9 @@
+# 0.0.6
+
+## Update
+
+- Update the ui and deployment
+
 # 0.0.5
 
 ## Fix

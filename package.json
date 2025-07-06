@@ -1,21 +1,22 @@
 {
   "name": "jodi-connect",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx --max-warnings=0",
     "preview": "vite preview",
     "prepare": "husky install",
-    "build:dev": "vite build --mode staging --outDir build/dev",
+    "build": "vite build --mode development --outDir build/dev",
+    "build:staging": "vite build --mode release --outDir build/release",
     "build:prod": "vite build --mode production --outDir build/prod",
     "emulator": "pnpm dlx firebase-tools emulators:start"
   },
   "dependencies": {
     "firebase": "^10.8.0",
     "framer-motion": "^11.0.8",
+    "fs": "0.0.1-security",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "lucide-react": "^0.344.0",

@@ -2,7 +2,7 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: [ develop, main ]
+    branches: [ develop, release, main ]
 
 jobs:
   validate:
@@ -39,8 +39,8 @@ jobs:
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
         echo "PR Title: $PR_TITLE"
-        if [[ ! "$PR_TITLE" =~ ^JC-(DEV|PROD)-[A-Za-z0-9\.]+:\ .+ ]]; then
-          echo "❌ PR title must follow format: JC-{DEV|PROD}-XXX: MESSAGE"
+        if [[ ! "$PR_TITLE" =~ ^JC-[A-Z0-9\.]+:\ .+ ]]; then
+          echo "❌ PR title must follow format: JC-001: MESSAGE"
           exit 1
         fi
         echo "✅ PR title format is valid"
@@ -49,7 +49,7 @@ jobs:
       id: extract_version
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
-        if [[ "$PR_TITLE" =~ ^JC-(DEV|PROD)-([A-Za-z0-9\.]+): ]]; then
+        if [[ "$PR_TITLE" =~ ^JC-([A-Z0-9\.]+): ]]; then
           ENV="${BASH_REMATCH[1]}"
           VERSION="${BASH_REMATCH[2]}"
           echo "environment=$ENV" >> $GITHUB_OUTPUT
@@ -73,9 +73,38 @@ jobs:
     - name: Type checking
       run: npx tsc --noEmit
       
-    - name: Build project
-      run: pnpm run build:dev
+    - name: 🛠️ Check the variables exist
+      run: |
+        required_vars=(
+          VITE_ENV
+          VITE_USE_FIREBASE_EMULATOR
+          VITE_SITE_URL_STAGING
+          VITE_SITE_URL_PRODUCTION
+          VITE_FIREBASE_API_KEY
+          VITE_FIREBASE_AUTH_DOMAIN
+          VITE_FIREBASE_PROJECT_ID
+          VITE_FIREBASE_STORAGE_BUCKET
+          VITE_FIREBASE_MESSAGING_SENDER_ID
+          VITE_FIREBASE_APP_ID
+          VITE_FIREBASE_MEASUREMENT_ID
+          VITE_FIREBASE_SERVICE_ACCOUNT
+          VITE_FIREBASE_TOKEN
+        )
+
+        for var in "${required_vars[@]}"; do
+          if [ -z "${!var}" ]; then
+            echo "❌ ERROR: Environment variable $var is not set"
+            exit 1
+          else
+            echo "✅ $var is set"
+          fi
+        done
+
       env:
+        VITE_ENV: "development"
+        VITE_USE_FIREBASE_EMULATOR: "true"
+        VITE_SITE_URL_STAGING: ${{ secrets.VITE_STAGING_URL }}
+        VITE_SITE_URL_PRODUCTION: ${{ secrets.VITE_PRODUCTION_URL }}
         VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
         VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
         VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
@@ -83,29 +112,25 @@ jobs:
         VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
         VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
         VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
-        
-    - name: Check build size
-      run: |
-        BUILD_SIZE=$(du -sh build/dev | cut -f1)
-        echo "Build size: $BUILD_SIZE"
-        
-    - name: Comment PR with build info
+        VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
+        VITE_FIREBASE_TOKEN: ${{ secrets.VITE_FIREBASE_TOKEN }}
+
+    - name: 📝 Reporting
       uses: actions/github-script@v7
+      env:
+        ENVIRONMENT: ${{ steps.extract_version.outputs.environment }}
+        VERSION: ${{ steps.extract_version.outputs.version }}
       with:
-        script: |
-          const { execSync } = require('child_process');
-          const buildSize = execSync('du -sh build/dev').toString().split('\t')[0];
-    
+        script: | 
           const comment = `## 🔍 CI Results
     
           ✅ **PR Title Format**: Valid  
           ✅ **Linting**: Passed  
           ✅ **Type Checking**: Passed  
-          ✅ **Build**: Successful  
-          📦 **Build Size**: ${buildSize}
-    
-          **Environment**: ${{ steps.extract_version.outputs.environment }}  
-          **Version**: ${{ steps.extract_version.outputs.version }}
+          ✅ **Environment Variable**: Valid  
+          
+          🌎 **Environment**: ${process.env.ENVIRONMENT}  
+          🏷️ **Version**: ${process.env.VERSION}
           `;
     
           github.rest.issues.createComment({

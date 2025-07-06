@@ -1,15 +1,16 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { auth } from '../firebase/config';
-import { 
-  signInWithPhoneNumber, 
-  RecaptchaVerifier, 
+import { auth } from '../services/firebase/config';
+import {
+  signInWithPhoneNumber,
+  RecaptchaVerifier,
   ConfirmationResult,
   User,
   onAuthStateChanged,
   signOut
 } from 'firebase/auth';
 import toast from 'react-hot-toast';
-import { AuthContext, AuthContextType } from './AuthContext';
+import { AuthContext } from './AuthContext';
+import { AuthContextType } from '../types';
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -39,7 +40,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           }
         });
         setRecaptchaVerifier(verifier);
-        
+
         const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, verifier);
         return confirmationResult;
       } else {
