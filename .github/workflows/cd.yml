@@ -41,31 +41,8 @@ jobs:
       - name: 🧹 Run Linter
         run: pnpm run lint
 
-      - name: 🛠️ Check the variables exist
-        run: |
-          required_vars=(
-            VITE_ENV
-            VITE_USE_FIREBASE_EMULATOR
-            VITE_SITE_URL
-            VITE_FIREBASE_API_KEY
-            VITE_FIREBASE_AUTH_DOMAIN
-            VITE_FIREBASE_PROJECT_ID
-            VITE_FIREBASE_STORAGE_BUCKET
-            VITE_FIREBASE_MESSAGING_SENDER_ID
-            VITE_FIREBASE_APP_ID
-            VITE_FIREBASE_MEASUREMENT_ID
-            VITE_FIREBASE_SERVICE_ACCOUNT
-            VITE_FIREBASE_TOKEN
-          )
-
-          for var in "${required_vars[@]}"; do
-            if [ -z "${!var}" ]; then
-              echo "❌ ERROR: Environment variable $var is not set"
-              exit 1
-            else
-              echo "✅ $var is set"
-            fi
-          done
+      - name: 🛠️ Build for Production
+        run: pnpm run build
         env:
           VITE_ENV: "development"
           VITE_USE_FIREBASE_EMULATOR: "true"
@@ -79,3 +56,26 @@ jobs:
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
           VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
           VITE_FIREBASE_TOKEN: ${{ secrets.VITE_FIREBASE_TOKEN }}
+      - name: Check build size
+        run: |
+          BUILD_SIZE=$(du -sh build/dev | cut -f1)
+          echo "Build size: $BUILD_SIZE"
+          
+      - name: Comment Build info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const buildSize = execSync('du -sh build/dev').toString().split('\t')[0];
+      
+            const comment = `## 🔍 Build Results
+      
+            ✅ **Build**: Successful  
+            📦 **Build Size**: ${buildSize}`;
+      
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
