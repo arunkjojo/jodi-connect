@@ -1,3 +1,9 @@
+# 0.0.9
+
+## Fix
+
+- Ignore the env credentials file from git commit
+
 # 0.0.8
 
 ## Fix
