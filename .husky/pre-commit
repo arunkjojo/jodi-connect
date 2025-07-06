@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "í´ Running Linter..."
+echo "ğŸ› ï¸  Running Linter..."
 
 pnpm lint
 
@@ -9,5 +9,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "âœ… Lint passed. Proceeding with commit."
+echo "âœ… Lint passed."
 
+echo "Add the changes..."
+
+git add .
+
+echo "âœ… Git added. Proceeding with commit"

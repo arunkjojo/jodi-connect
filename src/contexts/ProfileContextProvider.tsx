@@ -1,9 +1,9 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
-import { db } from '../firebase/config';
+import { db } from '../services/firebase/config';
 import { doc, getDoc, setDoc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
-import { UserProfile, ProfileContextType, ProfileContext } from './ProfileContext';
-
+import { ProfileContext } from './ProfileContext';
+import { ProfileContextType, UserProfile } from '../types';
 
 interface ProfileProviderProps {
   children: ReactNode;
@@ -16,11 +16,11 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
 
   const loadUserProfile = React.useCallback(async () => {
     if (!user) return;
-    
+
     try {
       const docRef = doc(db, 'profiles', user.uid);
       const docSnap = await getDoc(docRef);
-      
+
       if (docSnap.exists()) {
         setProfile({ id: docSnap.id, ...docSnap.data() } as UserProfile);
       }
@@ -42,7 +42,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
 
   const createProfile = async (profileData: Partial<UserProfile>): Promise<boolean> => {
     if (!user) return false;
-    
+
     try {
       const newProfile = {
         ...profileData,
@@ -50,7 +50,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
         createdAt: new Date(),
         updatedAt: new Date()
       };
-      
+
       await setDoc(doc(db, 'profiles', user.uid), newProfile);
       setProfile(newProfile as UserProfile);
       return true;
@@ -62,13 +62,13 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
 
   const updateProfile = async (profileData: Partial<UserProfile>): Promise<boolean> => {
     if (!user) return false;
-    
+
     try {
       const updatedData = {
         ...profileData,
         updatedAt: new Date()
       };
-      
+
       await updateDoc(doc(db, 'profiles', user.uid), updatedData);
       setProfile(prev => prev ? { ...prev, ...updatedData } : null);
       return true;
@@ -82,7 +82,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
     try {
       const docRef = doc(db, 'profiles', userId);
       const docSnap = await getDoc(docRef);
-      
+
       if (docSnap.exists()) {
         return { id: docSnap.id, ...docSnap.data() } as UserProfile;
       }
@@ -97,7 +97,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
     try {
       const profilesRef = collection(db, 'profiles');
       let q = query(profilesRef);
-      
+
       // Add filters based on search criteria
       if (filters.gender) {
         q = query(q, where('gender', '==', filters.gender));
@@ -108,14 +108,14 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
       if (filters.state) {
         q = query(q, where('state', '==', filters.state));
       }
-      
+
       const querySnapshot = await getDocs(q);
       const profiles: UserProfile[] = [];
-      
+
       querySnapshot.forEach((doc) => {
         profiles.push({ id: doc.id, ...doc.data() } as UserProfile);
       });
-      
+
       return profiles;
     } catch (error) {
       console.error('Error searching profiles:', error);

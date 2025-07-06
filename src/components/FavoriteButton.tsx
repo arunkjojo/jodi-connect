@@ -63,18 +63,16 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
         whileTap={{ scale: 0.98 }}
         onClick={handleClick}
         disabled={loading}
-        className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all disabled:opacity-50 ${
-          isCurrentlyFavorite
+        className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all disabled:opacity-50 ${isCurrentlyFavorite
             ? 'bg-red-50 text-red-600 hover:bg-red-100'
             : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-        } ${className}`}
+          } ${className}`}
         aria-label={isCurrentlyFavorite ? t('favorites.removeFromFavorites') : t('favorites.addToFavorites')}
       >
         <Heart
           size={iconSizes[size]}
-          className={`transition-colors ${
-            isCurrentlyFavorite ? 'fill-current text-red-500' : ''
-          }`}
+          className={`transition-colors ${isCurrentlyFavorite ? 'fill-current text-red-500' : ''
+            }`}
         />
         <span className="text-sm">
           {isCurrentlyFavorite ? t('favorites.removeFromFavorites') : t('favorites.addToFavorites')}
@@ -89,18 +87,16 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
       whileTap={{ scale: 0.9 }}
       onClick={handleClick}
       disabled={loading}
-      className={`${sizeClasses[size]} rounded-full flex items-center justify-center transition-all disabled:opacity-50 ${
-        isCurrentlyFavorite
+      className={`${sizeClasses[size]} rounded-full flex items-center justify-center transition-all disabled:opacity-50 ${isCurrentlyFavorite
           ? 'bg-red-50 text-red-500 hover:bg-red-100'
           : 'bg-white/80 text-gray-600 hover:bg-white hover:text-red-500'
-      } ${className}`}
+        } ${className}`}
       aria-label={isCurrentlyFavorite ? t('favorites.removeFromFavorites') : t('favorites.addToFavorites')}
     >
       <Heart
         size={iconSizes[size]}
-        className={`transition-all ${
-          isCurrentlyFavorite ? 'fill-current' : ''
-        }`}
+        className={`transition-all ${isCurrentlyFavorite ? 'fill-current' : ''
+          }`}
       />
     </motion.button>
   );
