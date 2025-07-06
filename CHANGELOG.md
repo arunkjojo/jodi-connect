@@ -1,3 +1,9 @@
+# 0.0.5
+
+## Fix
+
+- Fix the ci cd files and deployment
+
 # 0.0.4
 
 ## Fix
