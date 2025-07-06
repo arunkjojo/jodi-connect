@@ -1,3 +1,9 @@
+# 0.0.8
+
+## Fix
+
+- Fixed the github actions
+
 # 0.0.7
 
 ## Update
