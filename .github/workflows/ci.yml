@@ -99,19 +99,7 @@ jobs:
             echo "✅ $var is set"
           fi
         done
-
-        const comment = `## 🔍 CI Results
-        ✅ **PR Title Format**: Valid  
-        ✅ **Linting**: Passed  
-        ✅ **Type Checking**: Passed  
-        ✅ **Environment Variable**: Valid`;
-  
-        github.rest.issues.createComment({
-          issue_number: context.issue.number,
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          body: comment
-        });
+        
       env:
         VITE_ENV: "development"
         VITE_USE_FIREBASE_EMULATOR: "true"
@@ -126,3 +114,30 @@ jobs:
         VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
         VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
         VITE_FIREBASE_TOKEN: ${{ secrets.VITE_FIREBASE_TOKEN }}
+
+    - name: 📝 Reporting
+      uses: actions/github-script@v7
+      env:
+        ENVIRONMENT: ${{ steps.extract_version.outputs.environment }}
+        VERSION: ${{ steps.extract_version.outputs.version }}
+      with:
+        script: |
+          const { context } = github;
+    
+          const comment = `## 🔍 CI Results
+    
+          ✅ **PR Title Format**: Valid  
+          ✅ **Linting**: Passed  
+          ✅ **Type Checking**: Passed  
+          ✅ **Environment Variable**: Valid  
+          
+          🌎 **Environment**: ${process.env.ENVIRONMENT}  
+          🏷️ **Version**: ${process.env.VERSION}
+          `;
+    
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
