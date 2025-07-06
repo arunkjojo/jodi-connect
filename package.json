@@ -1,7 +1,7 @@
 {
   "name": "jodi-connect",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "build": "vite build --mode development --outDir build/dev",
-    "build:staging": "vite build --mode release --outDir build/release",
+    "build:staging": "vite build --mode staging --outDir build/release",
     "build:prod": "vite build --mode production --outDir build/prod",
     "emulator": "pnpm dlx firebase-tools emulators:start"
   },

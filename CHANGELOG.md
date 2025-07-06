@@ -1,3 +1,9 @@
+# 0.0.7
+
+## Update
+
+- Update the firebase message sw file and configurations
+
 # 0.0.6
 
 ## Update
