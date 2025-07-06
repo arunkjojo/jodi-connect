@@ -20,8 +20,6 @@ Fixes #(issue number)
 ### Changes Made
 <!-- List the main changes made in this PR -->
 - 
-- 
-- 
 
 ### Testing
 <!-- Describe the testing you've done -->
@@ -30,9 +28,6 @@ Fixes #(issue number)
 - [ ] Tested across different browsers
 - [ ] All existing tests pass
 - [ ] Added new tests for new functionality
-
-### Screenshots (if applicable)
-<!-- Add screenshots to help explain your changes -->
 
 ### Checklist
 - [ ] My code follows the project's style guidelines
@@ -44,14 +39,15 @@ Fixes #(issue number)
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged and published
 
-### PR Title Format
-Please ensure your PR title follows the format: `JC-{DEV|PROD}-XXX: MESSAGE`
-
-Examples:
-- `JC-DEV-001: Add user authentication feature`
-- `JC-PROD-1.2.0: Release version 1.2.0 with new search filters`
-
 ### Version Information
-- [ ] I have updated the version in package.json (for PROD releases)
+- [ ] I have updated the version in package.json
 - [ ] I have added an entry to CHANGELOG.md
 - [ ] The version in CHANGELOG.md matches the PR title version
+
+### PR Title Format
+Please ensure your PR title follows the format: `JC-XXX: MESSAGE`
+
+Examples:
+- `JC-PROD: Deployment`
+- `JC-001: Add user authentication feature`
+- `JC-1.2.0: Release version 1.2.0 with new search filters`

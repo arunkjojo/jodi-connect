@@ -2,7 +2,7 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: [ develop, main ]
+    branches: [ develop, release, main ]
 
 jobs:
   validate:
@@ -49,7 +49,7 @@ jobs:
       id: extract_version
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
-        if [[ "$PR_TITLE" =~ ^JC-(DEV|PROD)-([A-Za-z0-9\.]+): ]]; then
+        if [[ "$PR_TITLE" =~ ^JC-([A-Z0-9\.]+): ]]; then
           ENV="${BASH_REMATCH[1]}"
           VERSION="${BASH_REMATCH[2]}"
           echo "environment=$ENV" >> $GITHUB_OUTPUT

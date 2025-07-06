@@ -14,6 +14,7 @@ import Profile from './pages/Profile';
 import Testimonials from './pages/Testimonials';
 import HowItWorks from './pages/HowItWorks';
 import ProtectedRoute from './components/ProtectedRoute';
+import StickyFooter from './components/layout/StickyFooter';
 import './i18n';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <FavoritesProvider>
           <Router>
             <div className="min-h-screen bg-gray-50">
-              <Toaster 
+              <Toaster
                 position="top-center"
                 toastOptions={{
                   duration: 3000,
@@ -66,6 +67,7 @@ function App() {
                   } />
                 </Route>
               </Routes>
+              <StickyFooter />
             </div>
           </Router>
         </FavoritesProvider>

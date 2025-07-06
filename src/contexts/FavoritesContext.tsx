@@ -1,12 +1,5 @@
 import { createContext, useContext } from 'react';
-
-export interface FavoritesContextType {
-  favorites: string[];
-  loading: boolean;
-  addToFavorites: (profileId: string) => Promise<void>;
-  removeFromFavorites: (profileId: string) => Promise<void>;
-  isFavorite: (profileId: string) => boolean;
-}
+import type { FavoritesContextType } from '../types';
 
 export const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
 

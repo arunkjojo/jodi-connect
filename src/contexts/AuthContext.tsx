@@ -1,18 +1,5 @@
 import { createContext, useContext } from 'react';
-import { 
-  RecaptchaVerifier, 
-  ConfirmationResult,
-  User,
-} from 'firebase/auth';
-
-export interface AuthContextType {
-  user: User | null;
-  loading: boolean;
-  signInWithPhone: (phoneNumber: string) => Promise<ConfirmationResult | null>;
-  verifyOTP: (confirmationResult: ConfirmationResult, otp: string) => Promise<boolean>;
-  logout: () => Promise<void>;
-  recaptchaVerifier: RecaptchaVerifier | null;
-}
+import type { AuthContextType } from '../types';
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 

@@ -1,0 +1,86 @@
+name: ✨ Deploy to Firebase (Staging)
+
+on:
+  push:
+    branches: [release]
+
+jobs:
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🧰 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: 💾 Cache pnpm Store
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: 📦 Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🧹 Run Linter
+        run: pnpm run lint
+
+      - name: 🛠️ Build for Staging
+        run: pnpm run build:staging
+        env:
+          VITE_ENV: "staging"
+          VITE_USE_FIREBASE_EMULATOR: "false"
+          VITE_SITE_URL: ${{ secrets.VITE_STAGING_URL }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+          VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
+          VITE_FIREBASE_TOKEN: ${{ secrets.VITE_FIREBASE_TOKEN }}
+
+      - name: 🔧 Install Firebase CLI
+        run: pnpm install -g firebase-tools
+
+      - name: 🔐 Authenticate Firebase
+        run: |
+          echo '${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}' > firebase-service-account.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=firebase-service-account.json" >> $GITHUB_ENV
+
+      - name: 🚀 Deploy to Firebase Hosting (Staging)
+        run: |
+          firebase deploy --only hosting:test-jodi-connect \
+            --project ${{ secrets.VITE_FIREBASE_PROJECT_ID }} \
+            --token ${{ secrets.VITE_FIREBASE_TOKEN }}
+
+      - name: 🏷️ Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Staging Release v${{ github.run_number }}
+          body: |
+            ## 🚀 Staging Deployment
+            🔗 [View Deployment](${{ secrets.VITE_SITE_URL }})
+            🔢 Commit: ${{ github.sha }}
+            🕒 Deployed At: ${{ github.event.head_commit.timestamp }}
+            ### Changes
+            ${{ github.event.head_commit.message }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🧹 Cleanup
+        run: rm -f firebase-service-account.json
