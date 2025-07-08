@@ -51,18 +51,16 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
           VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
-          VITE_FIREBASE_TOKEN: ${{ secrets.VITE_FIREBASE_TOKEN }}
-          
-      - name: Check build size
+
+      - name: 📊 Check Build Size
         run: |
           BUILD_SIZE=$(du -sh build/prod | cut -f1)
-          echo "✅ **Build**: Successful" 
-          echo "📦 **Build Size**: $BUILD_SIZE"
+          echo "✅ Build successful. Size: $BUILD_SIZE"
 
       - name: 🔧 Install Firebase CLI
         run: pnpm install -g firebase-tools
 
-      - name: 🔐 Authenticate Firebase
+      - name: 🔐 Authenticate with Service Account
         run: |
           echo '${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}' > firebase-service-account.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=firebase-service-account.json" >> $GITHUB_ENV
@@ -70,8 +68,7 @@ jobs:
       - name: 🚀 Deploy to Firebase Hosting (Production)
         run: |
           firebase deploy --only hosting:jodi-connect \
-            --project ${{ secrets.VITE_FIREBASE_PROJECT_ID }} \
-            --token ${{ secrets.VITE_FIREBASE_TOKEN }}
+            --project ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
 
       - name: 🏷️ Create GitHub Release
         uses: softprops/action-gh-release@v1
@@ -80,7 +77,7 @@ jobs:
           name: Production Release v${{ github.run_number }}
           body: |
             ## 🚀 Production Deployment
-            🔗 [View Deployment](${{ secrets.VITE_SITE_URL }})
+            🔗 [View Deployment](${{ secrets.VITE_PRODUCTION_URL }})
             🔢 Commit: ${{ github.sha }}
             🕒 Deployed At: ${{ github.event.head_commit.timestamp }}
             ### Changes
