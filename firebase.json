@@ -1,7 +1,6 @@
 {
     "hosting": [
         {
-            "site": "test-jodi-connect",
             "target": "test-jodi-connect",
             "public": "build/release",
             "ignore": [
@@ -37,7 +36,6 @@
             ]
         },
         {
-            "site": "jodi-connect",
             "target": "jodi-connect",
             "public": "build/prod",
             "ignore": [

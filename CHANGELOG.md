@@ -1,3 +1,9 @@
+# 0.0.10
+
+## Fix
+
+- Hosting configs should only include either "site" or "target", not both.
+
 # 0.0.9
 
 ## Fix
