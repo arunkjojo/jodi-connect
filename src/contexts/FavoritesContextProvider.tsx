@@ -1,10 +1,11 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
-import { db } from '../firebase/config';
+import { db } from '../services/firebase/config';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
-import { FavoritesContext, FavoritesContextType } from './FavoritesContext';
+import { FavoritesContext } from './FavoritesContext';
+import { FavoritesContextType } from '../types';
 
 interface FavoritesProviderProps {
   children: ReactNode;
@@ -18,12 +19,12 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
 
   const loadFavorites = React.useCallback(async () => {
     if (!user) return;
-    
+
     setLoading(true);
     try {
       const docRef = doc(db, 'favorites', user.uid);
       const docSnap = await getDoc(docRef);
-      
+
       if (docSnap.exists()) {
         setFavorites(docSnap.data().profileIds || []);
       }
@@ -51,7 +52,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
     try {
       const docRef = doc(db, 'favorites', user.uid);
       const docSnap = await getDoc(docRef);
-      
+
       if (docSnap.exists()) {
         await updateDoc(docRef, {
           profileIds: arrayUnion(profileId),
@@ -64,7 +65,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
           updatedAt: new Date()
         });
       }
-      
+
       setFavorites(prev => [...prev, profileId]);
       toast.success(t('favorites.addedToFavorites'));
     } catch (error) {
@@ -82,7 +83,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
         profileIds: arrayRemove(profileId),
         updatedAt: new Date()
       });
-      
+
       setFavorites(prev => prev.filter(id => id !== profileId));
       toast.success(t('favorites.removedFromFavorites'));
     } catch (error) {

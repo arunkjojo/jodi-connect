@@ -25,7 +25,7 @@ i18n
     resources,
     fallbackLng: 'en',
     debug: false,
-    
+
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage']

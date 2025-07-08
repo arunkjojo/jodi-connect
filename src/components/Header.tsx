@@ -10,12 +10,12 @@ interface HeaderProps {
   gradient?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-  title, 
-  subtitle, 
-  showBack = false, 
+const Header: React.FC<HeaderProps> = ({
+  title,
+  subtitle,
+  showBack = false,
   showMenu = false,
-  gradient = false 
+  gradient = false
 }) => {
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
             <ArrowLeft size={20} />
           </button>
         )}
-        
+
         <div className="flex-1 text-center">
           {title && (
             <h1 className="text-lg font-semibold">{title}</h1>
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({
             <p className="text-sm opacity-90">{subtitle}</p>
           )}
         </div>
-        
+
         {showMenu && (
           <button className="p-2 rounded-full hover:bg-black/10 transition-colors">
             <MoreVertical size={20} />

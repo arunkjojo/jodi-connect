@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "jodi-connect"
+  },
+  "targets": {
+    "your-firebase-project-id": {
+      "hosting": {
+        "test-jodi-connect": [
+          "test-jodi-connect"
+        ],
+        "jodi-connect": [
+          "jodi-connect"
+        ]
+      }
+    }
   }
 }

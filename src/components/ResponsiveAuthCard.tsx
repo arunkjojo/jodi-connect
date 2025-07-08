@@ -59,7 +59,7 @@ const ResponsiveAuthCard: React.FC<ResponsiveAuthCardProps> = ({
               )}
             </div>
           )}
-          
+
           <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
             {children}
           </div>

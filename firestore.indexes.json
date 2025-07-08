@@ -1,0 +1,65 @@
+{
+    "indexes": [
+        {
+            "collectionGroup": "profiles",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "gender",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "state",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "profiles",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "religion",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "maritalStatus",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "updatedAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "notifications",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "userId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "planHistory",
+            "queryScope": "COLLECTION_GROUP",
+            "fields": [
+                {
+                    "fieldPath": "startDate",
+                    "order": "DESCENDING"
+                }
+            ]
+        }
+    ],
+    "fieldOverrides": []
+}
