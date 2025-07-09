@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write       # Required for GitHub release
+  id-token: write       # Optional for OIDC auth (if needed later)
+
 jobs:
   deploy-prod:
     name: Deploy to Production
