@@ -29,21 +29,23 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setStoreUser(user);
-      
-      // Update application status based on registration progress
-      if (user) {
-        if (isCompleted) {
-          setApplicationStatus('completed');
-        } else if (currentStep > 1) {
-          setApplicationStatus('pending');
-        } else {
-          setApplicationStatus('incomplete');
-        }
-      }
-      
       setLoading(false);
     });
 
+    return unsubscribe;
+  }, [setStoreUser]);
+
+  useEffect(() => {
+    // Update application status based on registration progress
+    if (user) {
+      if (isCompleted) {
+        setApplicationStatus('completed');
+      } else if (currentStep > 1) {
+        setApplicationStatus('pending');
+      } else {
+        setApplicationStatus('incomplete');
+      }
+    }
   }, [isCompleted, currentStep, setStoreUser, setApplicationStatus]);
 
   const signInWithPhone = async (phoneNumber: string): Promise<ConfirmationResult | null> => {
