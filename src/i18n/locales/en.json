@@ -11,7 +11,9 @@
     "save": "Save",
     "back": "Back",
     "next": "Next",
-    "submit": "Submit"
+    "submit": "Submit",
+    "testimonials": "Testimonials",
+    "howItWork": "How It Works"
   },
   "auth": {
     "welcome": "Your Journey to \"Jodi\" Starts Here!",

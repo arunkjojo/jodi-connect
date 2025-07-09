@@ -107,6 +107,7 @@ export interface AuthContextType {
 export interface ProfileContextType {
     profile: UserProfile | null;
     loading: boolean;
+  isOffline?: boolean;
     createProfile: (profileData: Partial<UserProfile>) => Promise<boolean>;
     updateProfile: (profileData: Partial<UserProfile>) => Promise<boolean>;
     getProfile: (userId: string) => Promise<UserProfile | null>;

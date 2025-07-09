@@ -250,10 +250,10 @@ const SearchResults: React.FC = () => {
   }
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 w-full">
       <Header title="Search Results" showBack={true} gradient={true} />
       
-      <div className="p-3 sm:p-4">
+      <div className="p-3 sm:p-4 md:p-6 lg:p-8">
         {/* Results count */}
         <div className="mb-4">
           <p className="text-sm text-gray-600">
@@ -262,7 +262,7 @@ const SearchResults: React.FC = () => {
         </div>
 
         {/* Grid view for larger screens, list view for mobile */}
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 sm:gap-6">
           {profiles.map((profile) => {
             const age = profile.dateOfBirth
               ? Math.floor((Date.now() - new Date(profile.dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365.25))

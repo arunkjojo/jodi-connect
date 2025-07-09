@@ -8,6 +8,7 @@ interface UploadMetadata {
         uploadTime: string;
         fileType: string;
         originalName: string;
+        documentType?: string;
     };
 }
 

@@ -8,3 +8,18 @@
     /* Or you can set width/height to 0 for horizontal scrollbars */
     /* height: 0; */
 }
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */ 
+}
+
+.firebase-emulator-warning {
+    visibility: hidden;
+    display: none;
+}
