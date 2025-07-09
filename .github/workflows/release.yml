@@ -4,6 +4,10 @@ on:
   push:
     branches: [release]
 
+permissions:  # ✅ REQUIRED for GitHub Release step
+  contents: write
+  id-token: write
+
 jobs:
   deploy-staging:
     name: Deploy to Staging
@@ -53,9 +57,7 @@ jobs:
           VITE_FIREBASE_SERVICE_ACCOUNT: ${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}
 
       - name: 📊 Check Build Size
-        run: |
-          BUILD_SIZE=$(du -sh build/release | cut -f1)
-          echo "✅ Build successful. Size: $BUILD_SIZE"
+        run: du -sh build/release
 
       - name: 🔧 Install Firebase CLI
         run: pnpm install -g firebase-tools
