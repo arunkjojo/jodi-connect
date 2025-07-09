@@ -44,7 +44,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(false);
     });
 
-    return unsubscribe;
   }, [isCompleted, currentStep, setStoreUser, setApplicationStatus]);
 
   const signInWithPhone = async (phoneNumber: string): Promise<ConfirmationResult | null> => {
