@@ -135,7 +135,7 @@ export const HOW_IT_WORKS_STEPS = [
 export const NAVIGATION_ITEMS = [
     { path: '/dashboard', icon: 'Home', label: 'Home' },
     { path: '/search', icon: 'Search', label: 'Search' },
-    { path: '/matches', icon: 'Heart', label: 'Matches' },
+    { path: '/favorites', icon: 'Heart', label: 'Favorites' },
     { path: '/settings', icon: 'Settings', label: 'Settings' }
 ];
 
