@@ -15,6 +15,7 @@ import SearchResults from './pages/SearchResults';
 import Profile from './pages/Profile';
 import Testimonials from './pages/Testimonials';
 import HowItWorks from './pages/HowItWorks';
+import Favorites from './pages/Favorites';
 import EnhancedProfileCreation from './pages/EnhancedProfileCreation';
 import Settings from './pages/Settings';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -69,6 +70,11 @@ function App() {
                     <Route path="profile/:id" element={
                       <ProtectedRoute>
                         <Profile />
+                      </ProtectedRoute>
+                    } />
+                    <Route path="favorites" element={
+                      <ProtectedRoute>
+                        <Favorites />
                       </ProtectedRoute>
                     } />
                     <Route path="settings" element={
