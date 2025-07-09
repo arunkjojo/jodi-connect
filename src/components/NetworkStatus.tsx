@@ -4,7 +4,7 @@ import { WifiOff, Wifi } from 'lucide-react';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
 
 const NetworkStatus: React.FC = () => {
-  const { isOnline, networkInfo, isSlowConnection } = useNetworkStatus();
+  const { isOnline, isSlowConnection } = useNetworkStatus();
 
   return (
     <AnimatePresence>

@@ -3,7 +3,6 @@ import { Heart, Search } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useFavorites } from '../contexts/FavoritesContext';
 import { useProfile } from '../contexts/ProfileContext';
-import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import ProfileCard from '../components/ProfileCard';
 import LoadingState from '../components/LoadingState';
@@ -13,7 +12,6 @@ const Favorites: React.FC = () => {
   const { user } = useAuth();
   const { favorites, loading: favoritesLoading } = useFavorites();
   const { getProfile } = useProfile();
-  const { t } = useTranslation();
   const [favoriteProfiles, setFavoriteProfiles] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
 

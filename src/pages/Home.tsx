@@ -5,6 +5,7 @@ import { ConfirmationResult } from 'firebase/auth';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import LanguageSelector from '../components/LanguageSelector';
+import NavigationBar from '../components/NavigationBar';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -71,19 +72,7 @@ const Home: React.FC = () => {
       </header>
 
       {/* Navigation Tabs */}
-      <div className="bg-white px-3 py-2 sm:px-4 shadow-sm">
-        <div className="flex space-x-2 sm:space-x-4 overflow-x-auto">
-          <Link to="/login" className="bg-cyan-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
-            {t('common.login')}/{t('common.signup')}
-          </Link>
-          <Link to="/testimonials" className="text-gray-600 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-100 whitespace-nowrap">
-            Testimonials
-          </Link>
-          <Link to="/how-it-works" className="text-gray-600 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-100 whitespace-nowrap">
-            How It Works
-          </Link>
-        </div>
-      </div>
+      <NavigationBar t={t} />
 
       {/* Main Content */}
       <div className="px-3 py-6 sm:px-4 sm:py-8">

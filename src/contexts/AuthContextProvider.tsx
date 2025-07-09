@@ -1,5 +1,4 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { auth } from '../services/firebase/config';
 import {
   signInWithPhoneNumber,
@@ -46,7 +45,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setApplicationStatus('incomplete');
       }
     }
-  }, [isCompleted, currentStep, setStoreUser, setApplicationStatus]);
+  }, [user, isCompleted, currentStep, setStoreUser, setApplicationStatus]);
 
   const signInWithPhone = async (phoneNumber: string): Promise<ConfirmationResult | null> => {
     try {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Search, Handshake } from 'lucide-react';
 import LanguageSelector from './../components/LanguageSelector';
 import { useTranslation } from 'react-i18next';
+import NavigationBar from '../components/NavigationBar';
 
 const HowItWorks: React.FC = () => {
   const steps = [
@@ -49,23 +49,12 @@ const HowItWorks: React.FC = () => {
       </header>
 
       {/* Navigation Tabs */}
-      <div className="bg-white px-3 py-2 sm:px-4 shadow-sm">
-        <div className="flex space-x-2 sm:space-x-4 overflow-x-auto">
-          <Link to="/login" className="text-gray-600 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-100 whitespace-nowrap">
-            {t('common.login')}/{t('common.signup')}
-          </Link>
-          <Link to="/testimonials" className="text-gray-600 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-100 whitespace-nowrap">
-            Testimonials
-          </Link>
-          <Link to="/how-it-works" className="bg-cyan-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
-            How It Works
-          </Link>
-        </div>
-      </div>
+      
+      <NavigationBar t={t} />
 
       <div className="px-4 pt-8 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
+        <div className="max-w-full mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {steps.map((step) => (
             <div key={step.number} className="bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-yellow-200">
               <div className="flex items-center mb-4">

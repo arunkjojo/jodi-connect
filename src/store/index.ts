@@ -21,7 +21,7 @@ interface RegistrationState {
 
 export const useRegistrationStore = create<RegistrationState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       currentStep: 1,
       totalSteps: 4,
       formData: {},

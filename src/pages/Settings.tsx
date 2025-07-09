@@ -8,7 +8,6 @@ import {
   HelpCircle, 
   LogOut, 
   ChevronRight,
-  Settings as SettingsIcon,
   Heart,
   CreditCard,
   Share2
@@ -16,7 +15,6 @@ import {
 import { useAuth } from '../contexts/AuthContext';
 import { useAppStore, useAuthStore } from '../store';
 import Header from '../components/Header';
-import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../components/LanguageSelector';
 
 const Settings: React.FC = () => {
@@ -24,7 +22,6 @@ const Settings: React.FC = () => {
   const { logout } = useAuth();
   const { language } = useAppStore();
   const { user } = useAuthStore();
-  const { t } = useTranslation();
 
   const handleLogout = async () => {
     try {

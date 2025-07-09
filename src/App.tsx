@@ -8,7 +8,6 @@ import { FavoritesProvider } from './contexts/FavoritesContextProvider';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import ProfileCreation from './pages/ProfileCreation';
 import Dashboard from './pages/Dashboard';
 import Search from './pages/Search';
 import SearchResults from './pages/SearchResults';

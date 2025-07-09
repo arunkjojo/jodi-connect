@@ -7,8 +7,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
-    permissions:  # ✅ Required for commenting in private repos
+
+    permissions:
       pull-requests: write
       contents: read
 
@@ -32,9 +32,17 @@ jobs:
     - name: Install pnpm
       run: npm install -g pnpm
 
+    - name: Check if pnpm-lock.yaml exists
+      run: |
+        if [ ! -f pnpm-lock.yaml ]; then
+          echo "❌ pnpm-lock.yaml is missing or invalid."
+          exit 1
+        fi
+        echo "✅ pnpm-lock.yaml exists."
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
-      
+
     - name: Validate PR title format
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
@@ -44,20 +52,17 @@ jobs:
           exit 1
         fi
         echo "✅ PR title format is valid"
-        
+
     - name: Extract version from PR title
       id: extract_version
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
         if [[ "$PR_TITLE" =~ ^JC-([A-Z0-9\.]+): ]]; then
           ENV="${BASH_REMATCH[1]}"
-          VERSION="${BASH_REMATCH[2]}"
           echo "environment=$ENV" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Environment: $ENV"
-          echo "Version: $VERSION"
         fi
-        
+
     - name: Validate CHANGELOG.md
       run: |
         PACKAGE_VERSION=$(node -p "require('./package.json').version")
@@ -66,13 +71,13 @@ jobs:
           exit 1
         fi
         echo "✅ package.json version matches entry in CHANGELOG.md"
-        
+
     - name: Run linting
       run: pnpm run lint
-      
+
     - name: Type checking
       run: npx tsc --noEmit
-      
+
     - name: 🛠️ Check the variables exist
       run: |
         required_vars=(
@@ -99,7 +104,6 @@ jobs:
             echo "✅ $var is set"
           fi
         done
-
       env:
         VITE_ENV: "development"
         VITE_USE_FIREBASE_EMULATOR: "true"
@@ -122,14 +126,14 @@ jobs:
       with:
         script: | 
           const comment = `## 🔍 CI Results
-    
+
           ✅ **PR Title Format**: Valid  
           ✅ **Linting**: Passed  
           ✅ **Type Checking**: Passed  
-          ✅ **Environment Variable**: Valid  
+          ✅ **Environment Variables**: Present  
           🏷️ **Version**: ${process.env.ENVIRONMENT}
           `;
-    
+
           github.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,

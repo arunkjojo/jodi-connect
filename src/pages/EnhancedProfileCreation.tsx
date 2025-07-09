@@ -27,7 +27,7 @@ const EnhancedProfileCreation: React.FC = () => {
     saveProgress 
   } = useRegistrationStore();
   const { loading, setLoading, setError } = useAppStore();
-  const { isMobile, isTablet } = useResponsive();
+  const { isMobile } = useResponsive();
   useUrlParams(); // Auto-populate referral code from URL
 
   const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({

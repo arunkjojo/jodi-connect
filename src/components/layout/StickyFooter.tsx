@@ -13,7 +13,7 @@ const StickyFooter: React.FC = () => {
     if (user) return null;
 
     // Don't show on login/signup pages
-    const hideOnPages = ['/login', '/profile-creation', '/dashboard', '/search', '/search-results', '/profile'];
+    const hideOnPages = ['/', '/login', '/profile-creation', '/dashboard', '/search', '/search-results', '/profile'];
     if (hideOnPages.includes(location.pathname)) return null;
 
     return (
