@@ -213,7 +213,7 @@ const Settings: React.FC = () => {
         {/* App Info */}
         <div className="text-center py-4">
           <p className="text-xs text-gray-500">
-            JodiConnect v{import.meta.env.VITE_APP_VERSION || '1.0.0'}
+            JodiConnect v{import.meta.env.VITE_APP_VERSION || '0.0.11'}
           </p>
           <p className="text-xs text-gray-400 mt-1">
             Made with ❤️ in India
