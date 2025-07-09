@@ -39,10 +39,10 @@ const Testimonials: React.FC = () => {
       </header> */}
       <header className="bg-gradient-to-r from-cyan-400 to-pink-400 text-white px-3 py-3 sm:px-4 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-between space-x-2">
+          <div className="flex items-center space-x-2">
             <h1 className="text-sm sm:text-lg font-bold">{t('branding.appName')}</h1>
-            <LanguageSelector variant="header" />
           </div>
+          <LanguageSelector variant="header" />
         </div>
         <p className="text-xs sm:text-sm mt-1 opacity-90">{t('branding.tagline')}</p>
       </header>
