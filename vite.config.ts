@@ -9,9 +9,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    server: {
-      port: 3001
-    },
     plugins: [
       react(),
       VitePWA({

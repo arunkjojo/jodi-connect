@@ -35,12 +35,12 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 w-full">
       <Header showBack={true} showMenu={true} />
       
-      <div className="px-3 py-4 sm:px-4 sm:py-6 space-y-4 sm:space-y-6">
+      <div className="px-3 py-4 sm:px-4 sm:py-6 md:px-6 lg:px-8 space-y-4 sm:space-y-6 max-w-4xl mx-auto">
         {/* Profile Header */}
-        <div className="bg-gradient-to-r from-cyan-400 to-pink-400 text-white p-4 sm:p-6 rounded-xl">
+        <div className="bg-gradient-to-r from-cyan-400 to-pink-400 text-white p-4 sm:p-6 md:p-8 rounded-xl">
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
               <img 
@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex space-x-3 mt-4">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 mt-4">
             <FavoriteButton 
               profileId={id || '1'} 
               variant="button" 
@@ -74,7 +74,7 @@ const Profile: React.FC = () => {
         </div>
 
         {/* About Me */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
+        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
           <h2 className="font-semibold text-gray-900 mb-3 flex items-center text-sm sm:text-base">
             <span className="text-lg mr-2">📝</span>
             {t('profile.aboutMe')}
@@ -83,7 +83,7 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Interests & Hobbies */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
+        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
           <h2 className="font-semibold text-gray-900 mb-3 flex items-center text-sm sm:text-base">
             <span className="text-lg mr-2">🎯</span>
             {t('profile.interests')}
@@ -101,7 +101,7 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Details & Lifestyle */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
+        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
           <h2 className="font-semibold text-gray-900 mb-3 flex items-center text-sm sm:text-base">
             <span className="text-lg mr-2">📋</span>
             {t('profile.details')}
@@ -119,12 +119,12 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Photo Gallery */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
+        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
           <h2 className="font-semibold text-gray-900 mb-3 flex items-center text-sm sm:text-base">
             <span className="text-lg mr-2">📸</span>
             {t('profile.photos')}
           </h2>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {profile.photos.map((photo, index) => (
               <div key={index} className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
                 <img 
@@ -138,8 +138,8 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Report/Share Section */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
-          <div className="flex justify-between items-center">
+        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
             <button className="flex items-center space-x-2 text-red-500 hover:text-red-600">
               <Flag size={16} />
               <span className="text-xs sm:text-sm">Report or Block User</span>

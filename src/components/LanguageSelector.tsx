@@ -26,13 +26,15 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   if (variant === 'header') {
     return (
       <div className="relative">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-semibold hover:bg-white/30 transition-colors ${className}`}
-          aria-label="Select Language"
-        >
-          {currentLanguage.icon}
-        </button>
+        <div className="relative">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-semibold hover:bg-white/30 transition-colors ${className}`}
+            aria-label="Select Language"
+          >
+            {currentLanguage.icon}
+          </button>
+        </div>
 
         <AnimatePresence>
           {isOpen && (

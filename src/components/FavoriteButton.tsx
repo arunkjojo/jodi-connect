@@ -47,12 +47,18 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
       return;
     }
 
-    if (loading) return;
+    if (loading) {
+      return;
+    }
 
-    if (isCurrentlyFavorite) {
-      await removeFromFavorites(profileId);
-    } else {
-      await addToFavorites(profileId);
+    try {
+      if (isCurrentlyFavorite) {
+        await removeFromFavorites(profileId);
+      } else {
+        await addToFavorites(profileId);
+      }
+    } catch (error) {
+      console.error('Error handling favorite:', error);
     }
   };
 
