@@ -42,8 +42,8 @@ const HowItWorks: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <h1 className="text-sm sm:text-lg font-bold">{t('branding.appName')}</h1>
-            <LanguageSelector variant="header" />
           </div>
+          <LanguageSelector variant="header" />
         </div>
         <p className="text-xs sm:text-sm mt-1 opacity-90">{t('branding.tagline')}</p>
       </header>
