@@ -140,7 +140,7 @@ const Home: React.FC = () => {
                 <button
                   onClick={handleSendOTP}
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all disabled:opacity-50 text-sm sm:text-base"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all disabled:opacity-50 text-sm sm:text-base mb-16"
                 >
                   {loading ? t('auth.sendingOtp') : t('auth.joinNow')}
                 </button>

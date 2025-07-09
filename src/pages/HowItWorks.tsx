@@ -64,58 +64,51 @@ const HowItWorks: React.FC = () => {
       </div>
 
       <div className="px-4 py-8">
-        <div className="max-w-sm mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
           {steps.map((step) => (
-            <div key={step.number} className="bg-white p-6 rounded-xl shadow-lg border border-yellow-200">
+            <div key={step.number} className="bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-yellow-200">
               <div className="flex items-center mb-4">
-                <div className="bg-gradient-to-r from-cyan-500 to-pink-500 text-white p-3 rounded-full mr-4">
+                <div className="bg-gradient-to-r from-cyan-500 to-pink-500 text-white p-2 sm:p-3 rounded-full mr-2 sm:mr-4">
                   {step.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-lg text-gray-900">
+                  <h3 className="font-bold text-sm sm:text-lg text-gray-900">
                     {step.number}. {step.title}
                   </h3>
                 </div>
               </div>
               
-              <p className="text-gray-700 mb-4">{step.description}</p>
+              <p className="text-gray-700 mb-4 text-xs sm:text-sm">{step.description}</p>
               
               <div className="space-y-2">
                 {step.plans && (
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Plans:</span>
-                    <span className="font-semibold text-gray-900">{step.plans}</span>
+                    <span className="text-xs sm:text-sm text-gray-600">Plans:</span>
+                    <span className="font-semibold text-gray-900 text-xs sm:text-sm">{step.plans}</span>
                   </div>
                 )}
                 {step.chargesNow && (
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Charges Now:</span>
-                    <span className="font-semibold text-green-600">{step.chargesNow}</span>
+                    <span className="text-xs sm:text-sm text-gray-600">Charges Now:</span>
+                    <span className="font-semibold text-green-600 text-xs sm:text-sm">{step.chargesNow}</span>
                   </div>
                 )}
                 {step.confirmedMatch && (
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Upon Confirmed Match:</span>
-                    <span className="font-semibold text-gray-900">{step.confirmedMatch}</span>
+                    <span className="text-xs sm:text-sm text-gray-600">Upon Confirmed Match:</span>
+                    <span className="font-semibold text-gray-900 text-xs sm:text-sm">{step.confirmedMatch}</span>
                   </div>
                 )}
               </div>
             </div>
           ))}
+          </div>
 
-          <div className="bg-gradient-to-r from-cyan-100 to-pink-100 p-6 rounded-xl">
+          <div className="bg-gradient-to-r from-cyan-100 to-pink-100 p-4 sm:p-6 rounded-xl mt-6">
             <p className="text-center text-gray-700 text-sm">
               Choose the path that best suits your journey to finding your life partner.
             </p>
-          </div>
-
-          <div className="text-center py-8">
-            <Link
-              to="/"
-              className="inline-block bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all"
-            >
-              Join Now for Free!
-            </Link>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export const LANGUAGES = [
 export const GRID_BREAKPOINTS = {
     mobile: 'grid-cols-1',
     tablet: 'sm:grid-cols-2',
-    desktop: 'lg:grid-cols-3'
+    desktop: 'md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6'
 };
 
 export const TESTIMONIALS = [
@@ -55,6 +55,48 @@ export const TESTIMONIALS = [
         author: "Sameer S.",
         source: "Trustpilot Review",
         color: "from-red-400 to-pink-400"
+    },
+    {
+        id: 7,
+        quote: "Great user experience and interface!",
+        author: "Kavya R.",
+        source: "Play Store Review",
+        color: "from-purple-400 to-pink-400"
+    },
+    {
+        id: 8,
+        quote: "Highly recommended for serious relationships!",
+        author: "Vikram T.",
+        source: "App Store Review",
+        color: "from-teal-400 to-cyan-400"
+    },
+    {
+        id: 9,
+        quote: "Found genuine connections here!",
+        author: "Deepika M.",
+        source: "Google Review",
+        color: "from-orange-400 to-red-400"
+    },
+    {
+        id: 10,
+        quote: "Best matrimony app in India!",
+        author: "Rajesh K.",
+        source: "Trustpilot Review",
+        color: "from-blue-400 to-indigo-400"
+    },
+    {
+        id: 11,
+        quote: "Smooth and hassle-free experience!",
+        author: "Pooja S.",
+        source: "Facebook Review",
+        color: "from-green-400 to-blue-400"
+    },
+    {
+        id: 12,
+        quote: "Perfect platform for finding life partner!",
+        author: "Arun V.",
+        source: "WhatsApp Review",
+        color: "from-pink-400 to-red-400"
     }
 ];
 

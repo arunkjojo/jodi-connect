@@ -63,30 +63,23 @@ const Testimonials: React.FC = () => {
       </div>
 
       <div className="px-4 py-8">
-        <div className="max-w-sm mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className={`bg-gradient-to-r ${testimonial.color} text-white p-6 rounded-xl shadow-lg`}>
+            <div key={testimonial.id} className={`bg-gradient-to-r ${testimonial.color} text-white p-4 sm:p-6 rounded-xl shadow-lg`}>
               <Quote className="mb-4 opacity-80" size={32} />
-              <blockquote className="text-lg font-semibold mb-4">
+              <blockquote className="text-sm sm:text-lg font-semibold mb-4">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="text-center font-medium">{testimonial.source}</p>
-                <p className="text-center text-sm opacity-90">{testimonial.author}</p>
+              <div className="bg-white/20 p-2 sm:p-4 rounded-lg">
+                <p className="text-center font-medium text-xs sm:text-sm">{testimonial.source}</p>
+                <p className="text-center text-xs opacity-90">{testimonial.author}</p>
               </div>
               <p className="text-xs text-center mt-2 opacity-75">
                 Source: {testimonial.source.includes('Instagram') ? 'Instagram' : 'WhatsApp'}, {testimonial.author}
               </p>
             </div>
           ))}
-
-          <div className="text-center py-8">
-            <Link
-              to="/"
-              className="inline-block bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all"
-            >
-              Join Now for Free!
-            </Link>
           </div>
         </div>
       </div>
