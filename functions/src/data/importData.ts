@@ -16,7 +16,6 @@ interface LocationData {
       name: string;
       localName: string;
       available: boolean;
-      stateId: number;
     }>;
   }>;
 }
