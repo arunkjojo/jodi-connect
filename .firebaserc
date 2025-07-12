@@ -3,13 +3,13 @@
     "default": "jodi-connect"
   },
   "targets": {
-    "your-firebase-project-id": {
+    "jodi-connect": {
       "hosting": {
-        "test-jodi-connect": [
-          "test-jodi-connect"
-        ],
         "jodi-connect": [
           "jodi-connect"
+        ],
+        "test-jodi-connect": [
+          "test-jodi-connect"
         ]
       }
     }

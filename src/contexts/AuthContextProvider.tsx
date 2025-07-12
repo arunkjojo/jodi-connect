@@ -11,6 +11,7 @@ import {
 import toast from 'react-hot-toast';
 import { AuthContext } from './AuthContext';
 import { AuthContextType } from '../types';
+import { useRegistrationStore, useAuthStore } from '../store';
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -20,15 +21,31 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [recaptchaVerifier, setRecaptchaVerifier] = useState<RecaptchaVerifier | null>(null);
+  const { isCompleted, currentStep } = useRegistrationStore();
+  const { setUser: setStoreUser, setApplicationStatus } = useAuthStore();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setStoreUser(user);
       setLoading(false);
     });
 
     return unsubscribe;
-  }, []);
+  }, [setStoreUser]);
+
+  useEffect(() => {
+    // Update application status based on registration progress
+    if (user) {
+      if (isCompleted) {
+        setApplicationStatus('completed');
+      } else if (currentStep > 1) {
+        setApplicationStatus('pending');
+      } else {
+        setApplicationStatus('incomplete');
+      }
+    }
+  }, [user, isCompleted, currentStep, setStoreUser, setApplicationStatus]);
 
   const signInWithPhone = async (phoneNumber: string): Promise<ConfirmationResult | null> => {
     try {

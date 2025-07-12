@@ -79,7 +79,7 @@ const Search: React.FC = () => {
   };
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 w-full">
       <Header 
         title="Search & Filter" 
         subtitle="Find Your Ideal Match!" 
@@ -87,7 +87,8 @@ const Search: React.FC = () => {
         gradient={true}
       />
 
-      <div className="p-4 space-y-6">
+      <div className="p-4 sm:p-6 md:p-8 space-y-6">
+        <div className="max-w-4xl mx-auto">
         {/* Quick Search */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Quick Search</label>
@@ -106,10 +107,11 @@ const Search: React.FC = () => {
         {/* Basic Filters */}
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-            Basic Filters 🏠
+            <span className="text-lg mr-2">🏠</span>
+            Basic Filters
           </h3>
           
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Age Range */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Age Range</label>
@@ -162,10 +164,11 @@ const Search: React.FC = () => {
         {/* Community & Values */}
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-            Community & Values 🕉️
+            <span className="text-lg mr-2">🕉️</span>
+            Community & Values
           </h3>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Religion</label>
               <select
@@ -229,7 +232,8 @@ const Search: React.FC = () => {
         {/* Lifestyle & Preferences */}
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-            Lifestyle & Preferences 🍃
+            <span className="text-lg mr-2">🍃</span>
+            Lifestyle & Preferences
           </h3>
           
           <div className="space-y-4">
@@ -318,7 +322,8 @@ const Search: React.FC = () => {
         {/* Interests */}
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-            Interests 🎯
+            <span className="text-lg mr-2">🎯</span>
+            Interests
           </h3>
           
           <div className="flex flex-wrap gap-2">
@@ -339,20 +344,21 @@ const Search: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex space-x-4 pt-4">
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
           <button
             onClick={handleResetFilters}
-            className="flex-1 bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors flex items-center justify-center"
+            className="flex-1 bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors flex items-center justify-center text-sm sm:text-base"
           >
             <RotateCcw className="mr-2" size={18} />
             Reset All
           </button>
           <button
             onClick={handleApplyFilters}
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all"
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all text-sm sm:text-base"
           >
             Apply Filters
           </button>
+        </div>
         </div>
       </div>
     </div>
