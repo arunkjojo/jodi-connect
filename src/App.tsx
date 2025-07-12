@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -18,10 +19,16 @@ import Favorites from './pages/Favorites';
 import EnhancedProfileCreation from './pages/EnhancedProfileCreation';
 import Settings from './pages/Settings';
 import ProtectedRoute from './components/ProtectedRoute';
+import { insertDummyData } from './utils/insertDummyData';
 import StickyFooter from './components/layout/StickyFooter';
 import './i18n';
 
 function App() {
+  useEffect(() => {
+    if (window.location.hostname === 'localhost') {
+      insertDummyData().catch(console.error);
+    }
+  }, []);
   return (
     <ErrorBoundary>
       <AuthProvider>

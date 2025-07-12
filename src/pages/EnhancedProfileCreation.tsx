@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProfile } from '../contexts/ProfileContext';
 import { useRegistrationStore, useAppStore } from '../store';
@@ -13,6 +13,20 @@ import TouchGestures from '../components/TouchGestures';
 import LoadingState from '../components/LoadingState';
 import ResponsiveContainer from '../components/ResponsiveContainer';
 import LanguageSelector from '../components/LanguageSelector';
+
+import { db } from '../services/firebase/config';
+import { collection, getDocs } from 'firebase/firestore';
+
+type District = {
+  name: string;
+  localName?: string;
+};
+
+type State = {
+  id: number;
+  name: string;
+  localName: string;
+};
 
 const EnhancedProfileCreation: React.FC = () => {
   const navigate = useNavigate();
@@ -40,6 +54,53 @@ const EnhancedProfileCreation: React.FC = () => {
     { number: 3, title: 'Details', icon: '🌸' },
     { number: 4, title: 'Verify', icon: '✅' }
   ];
+
+  const selectedState = watch('state');
+
+  const [state, setState] = useState<State[]>([]);
+  const [districts, setDistricts] = useState<District[]>([]);
+
+  useEffect(() => {
+    const fetchStates = async () => {
+      const snapshot = await getDocs(collection(db, 'states'));
+      const data = snapshot.docs.map(doc => {
+        const d = doc.data();
+        return {
+          id: d.id,
+          name: d.name,
+          localName: d.localName,
+        } as State;
+      });
+      setState(data);
+    };
+    fetchStates();
+  }, []);
+
+  useEffect(() => {
+    const fetchDistricts = async () => {
+      if (!selectedState) return;
+
+      try {
+        const stateObj = state.find(loc => loc.name === selectedState);
+        if (!stateObj) return;
+
+        const querySnapshot = await getDocs(collection(db, 'districts'));
+        const districtList = querySnapshot.docs
+          .map((doc) => doc.data())
+          .filter((dist) => dist.stateId === stateObj.id)
+          .map((dist) => ({
+            name: dist.name,
+            localName: dist.localName,
+          } as District));
+
+        setDistricts(districtList);
+      } catch (err) {
+        console.error('Error fetching districts:', err);
+      }
+    };
+
+    fetchDistricts();
+  }, [selectedState, state]);
 
   // Auto-save form data
   useEffect(() => {
@@ -218,11 +279,11 @@ const EnhancedProfileCreation: React.FC = () => {
                           className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none text-sm sm:text-base"
                         >
                           <option value="">Select State</option>
-                          <option value="Karnataka">Karnataka</option>
-                          <option value="Maharashtra">Maharashtra</option>
-                          <option value="Tamil Nadu">Tamil Nadu</option>
-                          <option value="Delhi">Delhi</option>
-                          <option value="Gujarat">Gujarat</option>
+                          {state.map((stat) => (
+                            <option key={stat.id} value={stat.id}>
+                              {stat.name} - {stat.localName}
+                            </option>
+                          ))}
                         </select>
                         <ChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" size={20} />
                       </div>
@@ -239,10 +300,11 @@ const EnhancedProfileCreation: React.FC = () => {
                           className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none text-sm sm:text-base"
                         >
                           <option value="">Select District</option>
-                          <option value="Bengaluru">Bengaluru</option>
-                          <option value="Mumbai">Mumbai</option>
-                          <option value="Chennai">Chennai</option>
-                          <option value="New Delhi">New Delhi</option>
+                          {districts.map((dist) => (
+                            <option key={dist.name} value={dist.name}>
+                              {dist.name} - {dist.localName}
+                            </option>
+                          ))}
                         </select>
                         <ChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" size={20} />
                       </div>

@@ -41,16 +41,17 @@ const storage = getStorage(app);
 const functions = getFunctions(app);
 
 const useEmulator =
-    (import.meta.env.MODE === 'development' || import.meta.env.MODE === 'staging') &&
+    import.meta.env.MODE === 'development' &&
     import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true';
 
 // Use emulators if in development mode
 if (useEmulator) {
     console.log('🔧 Connecting to Firebase emulators...');
     connectAuthEmulator(auth, 'http://localhost:9099');
-    connectFirestoreEmulator(db, 'localhost', 8080);
+    connectFirestoreEmulator(db, 'localhost', 8081);
     connectStorageEmulator(storage, 'localhost', 9199);
     connectFunctionsEmulator(functions, 'localhost', 5001);
+    auth.settings.appVerificationDisabledForTesting = true;
 }
 
 // Initialize Analytics only in production
