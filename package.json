@@ -1,7 +1,7 @@
 {
   "name": "jodi-connect",
   "private": true,
-  "version": "0.0.13",
+  "version": "0.0.15",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
     "build": "vite build --mode development --outDir build/dev",
     "build:staging": "vite build --mode staging --outDir build/release",
     "build:prod": "vite build --mode production --outDir build/prod",
-    "emulator": "pnpm dlx firebase-tools emulators:start"
+    "emulator": "firebase emulators:start"
   },
   "dependencies": {
     "@types/node": "^24.0.12",

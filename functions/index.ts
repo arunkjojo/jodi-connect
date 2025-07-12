@@ -13,9 +13,9 @@ import * as logger from "firebase-functions/logger";
 import { initializeApp } from "firebase-admin/app";
 
 // Import cloud functions
-import { phoneLogin } from "./auth/phoneLogin";
-import { checkUserStatus } from "./user/checkUserStatus";
-import { sendNotification } from "./notifications/sendNotification";
+import { phoneLogin } from "./src/auth/phoneLogin";
+import { checkUserStatus } from "./src/user/checkUserStatus";
+import { sendNotification } from "./src/notifications/sendNotification";
 
 // Initialize Firebase Admin
 initializeApp();

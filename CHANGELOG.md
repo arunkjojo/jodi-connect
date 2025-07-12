@@ -1,3 +1,15 @@
+# 0.0.15
+
+## Fix
+
+- Fixed the build
+
+# 0.0.14
+
+## Update
+
+- Update the application
+
 # 0.0.13
 
 ## Fix

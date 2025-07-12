@@ -1,3 +1,4 @@
+// src/user/checkUserStatus.ts
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 import { getFirestore } from "firebase-admin/firestore";
 import * as logger from "firebase-functions/logger";
@@ -6,60 +7,59 @@ interface UserStatusData {
     userId: string;
 }
 
-export const checkUserStatus = onCall(async (request: { data: UserStatusData; }) => {
+export const checkUserStatus = onCall(async (request) => {
+    const { userId } = request.data as UserStatusData;
+
+    if (!userId) {
+        throw new HttpsError("invalid-argument", "User ID is required.");
+    }
+
+    const db = getFirestore();
+
     try {
-        const { userId } = request.data as UserStatusData;
-
-        if (!userId) {
-            throw new HttpsError("invalid-argument", "User ID is required");
-        }
-
-        const db = getFirestore();
-
-        // Check profile completion
+        // Fetch profile info
         const profileDoc = await db.collection("profiles").doc(userId).get();
-        const profileData = profileDoc.data();
+        const profile = profileDoc.data();
 
         const profileComplete = !!(
-            profileData?.fullName &&
-            profileData?.dateOfBirth &&
-            profileData?.gender &&
-            profileData?.state &&
-            profileData?.district
+            profile?.fullName &&
+            profile?.dateOfBirth &&
+            profile?.gender &&
+            profile?.state &&
+            profile?.district
         );
 
-        // Get current plan
+        // Fetch current plan
         const userDoc = await db.collection("users").doc(userId).get();
-        const userData = userDoc.data();
+        const user = userDoc.data();
 
-        const currentPlan = userData?.currentPlan || {
+        const currentPlan = user?.currentPlan || {
             type: "free",
             features: ["basic_search", "limited_profiles"],
         };
 
-        // Get plan history
-        const planHistorySnapshot = await db
+        // Fetch plan history
+        const planHistorySnap = await db
             .collection("users")
             .doc(userId)
             .collection("planHistory")
             .orderBy("startDate", "desc")
             .get();
 
-        const planHistory = planHistorySnapshot.docs.map((doc: { id: any; data: () => any; }) => ({
+        const planHistory = planHistorySnap.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
         }));
 
-        logger.info(`User status checked: ${userId}, Profile complete: ${profileComplete}`);
+        logger.info(`User status fetched. UID=${userId}, ProfileComplete=${profileComplete}`);
 
         return {
             profileComplete,
             currentPlan,
             planHistory,
         };
-
     } catch (error) {
-        logger.error("Check user status error:", error);
-        throw new HttpsError("internal", "Failed to check user status");
+        logger.error("Error while checking user status", error);
+        throw new HttpsError("internal", "Failed to fetch user status.");
     }
 });
