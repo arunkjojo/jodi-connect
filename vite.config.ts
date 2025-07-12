@@ -78,11 +78,14 @@ export default defineConfig(({ mode }) => {
               outputFile = 'build/release/firebase-messaging-sw.js';
               break;
             case 'development':
-              outputFile = 'build/dev/firebase-messaging-sw.js';
-              break;
             default:
               outputFile = 'build/dev/firebase-messaging-sw.js';
               break;
+          }
+
+          const outputDir = path.dirname(outputFile);
+          if (!fs.existsSync(outputDir)) {
+            fs.mkdirSync(outputDir, { recursive: true }); // ✅ THIS LINE IS CRUCIAL
           }
 
           const templatePath = path.resolve('public/firebase-messaging-sw.js');
