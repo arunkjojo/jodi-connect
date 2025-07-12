@@ -1,2 +1,2 @@
 // Export all data import functions
-export { importLocationData, clearLocationData } from "./importData";
+export { importLocationData, clearLocationData, getLocationStats } from "./importData";

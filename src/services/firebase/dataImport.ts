@@ -14,12 +14,17 @@ export const clearLocationData = async () => {
   return result.data;
 };
 
+export const getLocationStats = async () => {
+  const statsFunction = httpsCallable(functions, 'getLocationStats');
+  const result = await statsFunction();
+  return result.data;
+};
+
 // Helper function to check if location data exists
 export const checkLocationDataExists = async () => {
   try {
-    // You can implement a separate function to check if data exists
-    // or use the existing functions to get a count
-    return true;
+    const stats = await getLocationStats();
+    return stats.stats.totalStates > 0 && stats.stats.totalDistricts > 0;
   } catch (error) {
     console.error('Error checking location data:', error);
     return false;

@@ -16,7 +16,7 @@ import { initializeApp } from "firebase-admin/app";
 import { phoneLogin } from "./src/auth/phoneLogin";
 import { checkUserStatus } from "./src/user/checkUserStatus";
 import { sendNotification } from "./src/notifications/sendNotification";
-import { importLocationData, clearLocationData } from "./src/data";
+import { importLocationData, clearLocationData, getLocationStats } from "./src/data";
 
 // Initialize Firebase Admin
 initializeApp();
@@ -39,4 +39,4 @@ export const helloWorld = onRequest((request, response) => {
 });
 
 // Export cloud functions
-export { phoneLogin, checkUserStatus, sendNotification, importLocationData, clearLocationData };
+export { phoneLogin, checkUserStatus, sendNotification, importLocationData, clearLocationData, getLocationStats };
