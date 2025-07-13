@@ -1,3 +1,9 @@
+import {
+    RecaptchaVerifier,
+    ConfirmationResult,
+    User as FirebaseUser
+} from 'firebase/auth';
+
 export interface Language {
     code: string;
     name: string;
@@ -138,4 +144,76 @@ export interface SystemInfo {
     hardwareConcurrency?: number;
     cookieEnabled: boolean;
     onlineStatus: boolean;
-  }
+}
+
+export type UserStatus = 'pending' | 'basic' | 'moreDetails' | 'user-photo' | 'user-verification' | 'partial' | 'complete';
+
+export interface User {
+  id: string;
+  mobileNumber: string;
+  token: string;
+  status: UserStatus;
+  referralCode: string;
+  usedReferralCode?: string;
+  fullName?: string;
+  dateOfBirth?: string;
+  gender?: string;
+  districtId?: string;
+  city?: string;
+  aboutMe?: string;
+  religion?: string;
+  maritalStatus?: string;
+  occupation?: string;
+  education?: string;
+  detailedIntroduction?: string;
+  photoUrl?: string;
+  verificationDocumentUrl?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ProfileFormData {
+  // Basic Details
+  fullName?: string;
+  dateOfBirth?: string;
+  gender?: string;
+  districtId?: string;
+  city?: string;
+  aboutMe?: string;
+  
+  // Additional Details
+  religion?: string;
+  maritalStatus?: string;
+  occupation?: string;
+  education?: string;
+  detailedIntroduction?: string;
+  
+  // Files
+  profilePhoto?: File;
+  verificationDocument?: File;
+  
+  // Referral
+  usedReferralCode?: string;
+}
+
+export interface UserStatusResponse {
+  status: UserStatus;
+  user: User;
+  canAccessFeatures: {
+    viewProfiles: boolean;
+    favoriteUsers: boolean;
+    messaging: boolean;
+    fullDashboard: boolean;
+  };
+}
+
+export interface EnhancedAuthContextType {
+  firebaseUser: FirebaseUser | null;
+  user: User | null;
+  loading: boolean;
+  signInWithPhone: (phoneNumber: string) => Promise<ConfirmationResult | null>;
+  verifyOTP: (confirmationResult: ConfirmationResult, otp: string) => Promise<boolean>;
+  logout: () => Promise<void>;
+  refreshUser: () => Promise<void>;
+  recaptchaVerifier: RecaptchaVerifier | null;
+}

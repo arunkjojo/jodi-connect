@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Heart } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import NavigationBar from './NavigationBar';
 
 interface ResponsiveAuthCardProps {
   children: React.ReactNode;
@@ -29,13 +30,17 @@ const ResponsiveAuthCard: React.FC<ResponsiveAuthCardProps> = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <h1 className="text-sm sm:text-lg font-bold">{t('branding.appName')}</h1>
-              <LanguageSelector variant="header" />
             </div>
-            <Heart className="text-white" size={20} />
+            <div className="flex items-center space-x-2">
+              <LanguageSelector variant="header" />
+              <Heart className="text-white" size={20} />
+            </div>
           </div>
           <p className="text-xs sm:text-sm mt-1 opacity-90">{t('branding.tagline')}</p>
         </header>
       )}
+
+      <NavigationBar t={t} />
 
       {/* Main Content */}
       <div className="px-3 py-6 sm:px-4 sm:py-8">

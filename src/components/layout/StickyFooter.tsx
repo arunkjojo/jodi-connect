@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useAuth } from '../../contexts/AuthContext';
+import { useEnhancedAuth } from '../../contexts/EnhancedAuthContext';
 import { useTranslation } from 'react-i18next';
 
 const StickyFooter: React.FC = () => {
-    const { user } = useAuth();
+    const { user } = useEnhancedAuth();
     const { t } = useTranslation();
     const location = useLocation();
 

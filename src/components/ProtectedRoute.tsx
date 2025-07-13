@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useEnhancedAuth } from '../contexts/EnhancedAuthContext';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const { user, loading } = useAuth();
+  const { firebaseUser, loading } = useEnhancedAuth();
 
   if (loading) {
     return (
@@ -17,7 +17,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     );
   }
 
-  return user ? <>{children}</> : <Navigate to="/login" />;
+  return firebaseUser ? <>{children}</> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;
