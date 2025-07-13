@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { AuthContextType } from '../types';
+import type { EnhancedAuthContextType } from '../types';
 
 const EnhancedAuthContext = createContext<EnhancedAuthContextType | undefined>(undefined);
 
