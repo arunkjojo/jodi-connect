@@ -9,29 +9,8 @@ import {
 } from 'firebase/auth';
 import { auth } from '../services/firebase/config';
 import { UserService } from '../services/firebase/userService';
-import { User, UserStatus } from '../types/user';
+import { User, UserStatus } from '../types';
 import toast from 'react-hot-toast';
-
-interface EnhancedAuthContextType {
-  firebaseUser: FirebaseUser | null;
-  user: User | null;
-  loading: boolean;
-  signInWithPhone: (phoneNumber: string) => Promise<ConfirmationResult | null>;
-  verifyOTP: (confirmationResult: ConfirmationResult, otp: string) => Promise<boolean>;
-  logout: () => Promise<void>;
-  refreshUser: () => Promise<void>;
-  recaptchaVerifier: RecaptchaVerifier | null;
-}
-
-const EnhancedAuthContext = createContext<EnhancedAuthContextType | undefined>(undefined);
-
-export const useEnhancedAuth = () => {
-  const context = useContext(EnhancedAuthContext);
-  if (!context) {
-    throw new Error('useEnhancedAuth must be used within an EnhancedAuthProvider');
-  }
-  return context;
-};
 
 interface EnhancedAuthProviderProps {
   children: ReactNode;
