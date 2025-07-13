@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { useAuth } from './AuthContext';
+import { useEnhancedAuth } from './EnhancedAuthContext';
 import { db } from '../services/firebase/config';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, enableNetwork, disableNetwork } from 'firebase/firestore';
 import toast from 'react-hot-toast';
@@ -12,7 +12,7 @@ interface FavoritesProviderProps {
 }
 
 export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }) => {
-  const { user } = useAuth();
+  const { user } = useEnhancedAuth();
   const { t } = useTranslation();
   const [favorites, setFavorites] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
