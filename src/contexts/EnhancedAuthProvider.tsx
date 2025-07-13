@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { 
   signInWithPhoneNumber,
   RecaptchaVerifier,
@@ -9,7 +9,7 @@ import {
 } from 'firebase/auth';
 import { auth } from '../services/firebase/config';
 import { UserService } from '../services/firebase/userService';
-import { User, UserStatus } from '../types';
+import { EnhancedAuthContextType, User, UserStatus } from '../types';
 import toast from 'react-hot-toast';
 
 interface EnhancedAuthProviderProps {
