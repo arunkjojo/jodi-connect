@@ -91,3 +91,41 @@ jobs:
 
       - name: 🧹 Cleanup
         run: rm -f firebase-service-account.json
+
+  deploy-prod-functions:
+    name: Deploy Firebase Functions - Production
+    runs-on: ubuntu-latest
+    needs: deploy-prod  # Wait for hosting deploy to complete
+
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🔧 Install Firebase CLI
+        run: pnpm install -g firebase-tools
+
+      - name: 🔐 Authenticate Firebase
+        run: |
+          echo '${{ secrets.VITE_FIREBASE_SERVICE_ACCOUNT }}' > firebase-service-account.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=firebase-service-account.json" >> $GITHUB_ENV
+
+      - name: 📦 Install Function Dependencies
+        working-directory: functions
+        run: pnpm install
+
+      - name: 🏗️ Build Functions (if using TypeScript)
+        working-directory: functions
+        run: pnpm run build  # Or remove if using plain JS
+
+      - name: 🚀 Deploy Firebase Functions
+        run: |
+          firebase deploy --only functions \
+            --project ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+
+      - name: 🧹 Cleanup
+        run: rm -f firebase-service-account.json
