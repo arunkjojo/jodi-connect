@@ -1,3 +1,9 @@
+# 0.0.16
+
+## Update
+
+- Update the functions and deployment
+
 # 0.0.15
 
 ## Fix

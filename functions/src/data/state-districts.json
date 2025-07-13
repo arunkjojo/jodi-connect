@@ -1,0 +1,3723 @@
+{
+  "andhra_pradesh": {
+    "name": "Andhra Pradesh",
+    "localName": "ఆంధ్ర ప్రదేశ్",
+    "available": false,
+    "districts": {
+      "anakapalli": {
+        "name": "Anakapalli",
+        "localName": "అనకాపల్లి",
+        "available": false
+      },
+      "anantapur": {
+        "name": "Anantapur",
+        "localName": "అనంతపురం",
+        "available": false
+      },
+      "annamayya": {
+        "name": "Annamayya",
+        "localName": "అన్నమయ్య",
+        "available": false
+      },
+      "bapatla": {
+        "name": "Bapatla",
+        "localName": "బాపట్ల",
+        "available": false
+      },
+      "chittoor": {
+        "name": "Chittoor",
+        "localName": "చిత్తూరు",
+        "available": false
+      },
+      "ambedkar_konaseema": {
+        "name": "Dr. B.R. Ambedkar Konaseema",
+        "localName": "డా. బి.ఆర్. అంబేద్కర్ కోనసీమ",
+        "available": false
+      },
+      "eluru": {
+        "name": "Eluru",
+        "localName": "ఏలూరు",
+        "available": false
+      },
+      "guntur": {
+        "name": "Guntur",
+        "localName": "గుంటూరు",
+        "available": false
+      },
+      "kakinada": {
+        "name": "Kakinada",
+        "localName": "కాకినాడ",
+        "available": false
+      },
+      "krishna": {
+        "name": "Krishna",
+        "localName": "కృష్ణా",
+        "available": false
+      },
+      "kurnool": {
+        "name": "Kurnool",
+        "localName": "కర్నూలు",
+        "available": false
+      },
+      "nandyal": {
+        "name": "Nandyal",
+        "localName": "నంద్యాల",
+        "available": false
+      },
+      "nellore": {
+        "name": "Nellore",
+        "localName": "నెల్లూరు",
+        "available": false
+      },
+      "ntr": {
+        "name": "NTR",
+        "localName": "ఎన్టీఆర్",
+        "available": false
+      },
+      "palnadu": {
+        "name": "Palnadu",
+        "localName": "పల్నాడు",
+        "available": false
+      },
+      "parvathipuram_manyam": {
+        "name": "Parvathipuram Manyam",
+        "localName": "పార్వతీపురం మన్యం",
+        "available": false
+      },
+      "prakasam": {
+        "name": "Prakasam",
+        "localName": "ప్రకాశం",
+        "available": false
+      },
+      "pottisriramulu_nellore": {
+        "name": "Pottisriramulu Nellore",
+        "localName": "పొట్టి శ్రీరాములు నెల్లూరు",
+        "available": false
+      },
+      "srikakulam": {
+        "name": "Srikakulam",
+        "localName": "శ్రీకాకుళం",
+        "available": false
+      },
+      "sri_satya_sai": {
+        "name": "Sri Satya Sai",
+        "localName": "శ్రీ సత్య సాయి",
+        "available": false
+      },
+      "tirupati": {
+        "name": "Tirupati",
+        "localName": "తిరుపతి",
+        "available": false
+      },
+      "visakhapatnam": {
+        "name": "Visakhapatnam",
+        "localName": "విశాఖపట్నం",
+        "available": false
+      },
+      "vizianagaram": {
+        "name": "Vizianagaram",
+        "localName": "విజయనగరం",
+        "available": false
+      },
+      "west_godavari": {
+        "name": "West Godavari",
+        "localName": "పశ్చిమ గోదావరి",
+        "available": false
+      },
+      "ysr": {
+        "name": "YSR",
+        "localName": "వైఎస్ఆర్",
+        "available": false
+      }
+    }
+  },
+  "arunachal_pradesh": {
+    "name": "Arunachal Pradesh",
+    "localName": "अरुणाचल प्रदेश",
+    "available": false,
+    "districts": {
+      "anjaw": {
+        "name": "Anjaw",
+        "localName": "अंजाव",
+        "available": false
+      },
+      "changlang": {
+        "name": "Changlang",
+        "localName": "चांगलांग",
+        "available": false
+      },
+      "dibang_valley": {
+        "name": "Dibang Valley",
+        "localName": "दिबांग घाटी",
+        "available": false
+      },
+      "east_kameng": {
+        "name": "East Kameng",
+        "localName": "पूर्वी कामेंग",
+        "available": false
+      },
+      "east_siang": {
+        "name": "East Siang",
+        "localName": "पूर्वी सियांग",
+        "available": false
+      },
+      "kra_daadi": {
+        "name": "Kra Daadi",
+        "localName": "क्रा दादी",
+        "available": false
+      },
+      "kurung_kumey": {
+        "name": "Kurung Kumey",
+        "localName": "कुरुंग कुमे",
+        "available": false
+      },
+      "lohit": {
+        "name": "Lohit",
+        "localName": "लोहित",
+        "available": false
+      },
+      "longding": {
+        "name": "Longding",
+        "localName": "लॉन्गडिंग",
+        "available": false
+      },
+      "lower_dibang_valley": {
+        "name": "Lower Dibang Valley",
+        "localName": "लोअर दिबांग घाटी",
+        "available": false
+      },
+      "lower_siang": {
+        "name": "Lower Siang",
+        "localName": "लोअर सियांग",
+        "available": false
+      },
+      "lower_subansiri": {
+        "name": "Lower Subansiri",
+        "localName": "लोअर सुबनसिरी",
+        "available": false
+      },
+      "namsai": {
+        "name": "Namsai",
+        "localName": "नामसाई",
+        "available": false
+      },
+      "pakke_kessang": {
+        "name": "Pakke-Kessang",
+        "localName": "पक्के-केसांग",
+        "available": false
+      },
+      "papum_pare": {
+        "name": "Papum Pare",
+        "localName": "पापुम पारे",
+        "available": false
+      },
+      "shi_yomi": {
+        "name": "Shi Yomi",
+        "localName": "शी योमी",
+        "available": false
+      },
+      "siang": {
+        "name": "Siang",
+        "localName": "सियांग",
+        "available": false
+      },
+      "tawang": {
+        "name": "Tawang",
+        "localName": "तवांग",
+        "available": false
+      },
+      "tirap": {
+        "name": "Tirap",
+        "localName": "तिराप",
+        "available": false
+      },
+      "upper_siang": {
+        "name": "Upper Siang",
+        "localName": "अपर सियांग",
+        "available": false
+      },
+      "upper_subansiri": {
+        "name": "Upper Subansiri",
+        "localName": "अपर सुबनसिरी",
+        "available": false
+      },
+      "west_kameng": {
+        "name": "West Kameng",
+        "localName": "पश्चिम कामेंग",
+        "available": false
+      },
+      "west_siang": {
+        "name": "West Siang",
+        "localName": "पश्चिम सियांग",
+        "available": false
+      }
+    }
+  },
+  "assam": {
+    "name": "Assam",
+    "localName": "অসম",
+    "available": false,
+    "districts": {
+      "bajali": {
+        "name": "Bajali",
+        "localName": "বাজালী",
+        "available": false
+      },
+      "baksa": {
+        "name": "Baksa",
+        "localName": "বাক্সা",
+        "available": false
+      },
+      "barpeta": {
+        "name": "Barpeta",
+        "localName": "বৰপেটা",
+        "available": false
+      },
+      "biswanath": {
+        "name": "Biswanath",
+        "localName": "বিশ্বনাথ",
+        "available": false
+      },
+      "bongaigaon": {
+        "name": "Bongaigaon",
+        "localName": "বঙাইগাঁও",
+        "available": false
+      },
+      "cachar": {
+        "name": "Cachar",
+        "localName": "কাছাৰ",
+        "available": false
+      },
+      "charaideo": {
+        "name": "Charaideo",
+        "localName": "চৰাইদেউ",
+        "available": false
+      },
+      "chirang": {
+        "name": "Chirang",
+        "localName": "চিৰাং",
+        "available": false
+      },
+      "darrang": {
+        "name": "Darrang",
+        "localName": "দৰং",
+        "available": false
+      },
+      "dhemaji": {
+        "name": "Dhemaji",
+        "localName": "ধেমাজি",
+        "available": false
+      },
+      "dhubri": {
+        "name": "Dhubri",
+        "localName": "ধুবুৰী",
+        "available": false
+      },
+      "dibrugarh": {
+        "name": "Dibrugarh",
+        "localName": "ডিব্ৰুগড়",
+        "available": false
+      },
+      "dima_hasao": {
+        "name": "Dima Hasao",
+        "localName": "ডিমা হাছাও",
+        "available": false
+      },
+      "goalpara": {
+        "name": "Goalpara",
+        "localName": "গোৱালপাৰা",
+        "available": false
+      },
+      "golaghat": {
+        "name": "Golaghat",
+        "localName": "গোলাঘাট",
+        "available": false
+      },
+      "hailakandi": {
+        "name": "Hailakandi",
+        "localName": "হাইলাকান্দি",
+        "available": false
+      },
+      "hojai": {
+        "name": "Hojai",
+        "localName": "হোজাই",
+        "available": false
+      },
+      "jorhat": {
+        "name": "Jorhat",
+        "localName": "যোৰহাট",
+        "available": false
+      },
+      "kamrup": {
+        "name": "Kamrup",
+        "localName": "কামৰূপ",
+        "available": false
+      },
+      "kamrup_metropolitan": {
+        "name": "Kamrup Metropolitan",
+        "localName": "কামৰূপ মহানগৰ",
+        "available": false
+      },
+      "karbi_anglong": {
+        "name": "Karbi Anglong",
+        "localName": "কাৰ্বি আংলং",
+        "available": false
+      },
+      "karimganj": {
+        "name": "Karimganj",
+        "localName": "কৰিমগঞ্জ",
+        "available": false
+      },
+      "kokrajhar": {
+        "name": "Kokrajhar",
+        "localName": "কোকৰাঝাৰ",
+        "available": false
+      },
+      "lakhimpur": {
+        "name": "Lakhimpur",
+        "localName": "লখিমপুৰ",
+        "available": false
+      },
+      "majuli": {
+        "name": "Majuli",
+        "localName": "মাজুলী",
+        "available": false
+      },
+      "morigaon": {
+        "name": "Morigaon",
+        "localName": "মৰিগাঁও",
+        "available": false
+      },
+      "nagaon": {
+        "name": "Nagaon",
+        "localName": "নগাঁও",
+        "available": false
+      },
+      "nalbari": {
+        "name": "Nalbari",
+        "localName": "নলবাৰী",
+        "available": false
+      },
+      "sivasagar": {
+        "name": "Sivasagar",
+        "localName": "শিৱসাগৰ",
+        "available": false
+      },
+      "sonitpur": {
+        "name": "Sonitpur",
+        "localName": "শোণিতপুৰ",
+        "available": false
+      },
+      "south_salmara_mankachar": {
+        "name": "South Salmara Mankachar",
+        "localName": "দক্ষিণ শালমাৰা মানকাচৰ",
+        "available": false
+      },
+      "tamulpur": {
+        "name": "Tamulpur",
+        "localName": "তামুলপুৰ",
+        "available": false
+      },
+      "tinsukia": {
+        "name": "Tinsukia",
+        "localName": "তিনিচুকীয়া",
+        "available": false
+      },
+      "udalguri": {
+        "name": "Udalguri",
+        "localName": "ওদালগুৰি",
+        "available": false
+      },
+      "west_karbi_anglong": {
+        "name": "West Karbi Anglong",
+        "localName": "পশ্চিম কাৰ্বি আংলং",
+        "available": false
+      }
+    }
+  },
+  "bihar": {
+    "name": "Bihar",
+    "localName": "बिहार",
+    "available": false,
+    "districts": {
+      "araria": {
+        "name": "Araria",
+        "localName": "अररिया",
+        "available": false
+      },
+      "arwal": {
+        "name": "Arwal",
+        "localName": "अरवल",
+        "available": false
+      },
+      "aurangabad": {
+        "name": "Aurangabad",
+        "localName": "औरंगाबाद",
+        "available": false
+      },
+      "banka": {
+        "name": "Banka",
+        "localName": "बांका",
+        "available": false
+      },
+      "begusarai": {
+        "name": "Begusarai",
+        "localName": "बेगूसराय",
+        "available": false
+      },
+      "bhagalpur": {
+        "name": "Bhagalpur",
+        "localName": "भागलपुर",
+        "available": false
+      },
+      "bhojpur": {
+        "name": "Bhojpur",
+        "localName": "भोजपुर",
+        "available": false
+      },
+      "buxar": {
+        "name": "Buxar",
+        "localName": "बक्सर",
+        "available": false
+      },
+      "darbhanga": {
+        "name": "Darbhanga",
+        "localName": "दरभंगा",
+        "available": false
+      },
+      "east_champaran": {
+        "name": "East Champaran",
+        "localName": "पूर्वी चंपारण",
+        "available": false
+      },
+      "gaya": {
+        "name": "Gaya",
+        "localName": "गया",
+        "available": false
+      },
+      "gopalganj": {
+        "name": "Gopalganj",
+        "localName": "गोपालगंज",
+        "available": false
+      },
+      "jamui": {
+        "name": "Jamui",
+        "localName": "जमुई",
+        "available": false
+      },
+      "jehanabad": {
+        "name": "Jehanabad",
+        "localName": "जहानाबाद",
+        "available": false
+      },
+      "kaimur": {
+        "name": "Kaimur (Bhabua)",
+        "localName": "कैमूर (भभुआ)",
+        "available": false
+      },
+      "katihar": {
+        "name": "Katihar",
+        "localName": "कटिहार",
+        "available": false
+      },
+      "khagaria": {
+        "name": "Khagaria",
+        "localName": "खगड़िया",
+        "available": false
+      },
+      "kishanganj": {
+        "name": "Kishanganj",
+        "localName": "किशनगंज",
+        "available": false
+      },
+      "lakhisarai": {
+        "name": "Lakhisarai",
+        "localName": "लखीसराय",
+        "available": false
+      },
+      "madhepura": {
+        "name": "Madhepura",
+        "localName": "मधेपुरा",
+        "available": false
+      },
+      "madhubani": {
+        "name": "Madhubani",
+        "localName": "मधुबनी",
+        "available": false
+      },
+      "munger": {
+        "name": "Munger",
+        "localName": "मुंगेर",
+        "available": false
+      },
+      "muzaffarpur": {
+        "name": "Muzaffarpur",
+        "localName": "मुजफ्फरपुर",
+        "available": false
+      },
+      "nalanda": {
+        "name": "Nalanda",
+        "localName": "नालंदा",
+        "available": false
+      },
+      "nawada": {
+        "name": "Nawada",
+        "localName": "नवादा",
+        "available": false
+      },
+      "patna": {
+        "name": "Patna",
+        "localName": "पटना",
+        "available": false
+      },
+      "purnia": {
+        "name": "Purnia",
+        "localName": "पूर्णिया",
+        "available": false
+      },
+      "rohtas": {
+        "name": "Rohtas",
+        "localName": "रोहतास",
+        "available": false
+      },
+      "saharsa": {
+        "name": "Saharsa",
+        "localName": "सहरसा",
+        "available": false
+      },
+      "samastipur": {
+        "name": "Samastipur",
+        "localName": "समस्तीपुर",
+        "available": false
+      },
+      "saran": {
+        "name": "Saran",
+        "localName": "सारण",
+        "available": false
+      },
+      "sheikhpura": {
+        "name": "Sheikhpura",
+        "localName": "शेखपुरा",
+        "available": false
+      },
+      "sheohar": {
+        "name": "Sheohar",
+        "localName": "शिवहर",
+        "available": false
+      },
+      "sitamarhi": {
+        "name": "Sitamarhi",
+        "localName": "सीतामढ़ी",
+        "available": false
+      },
+      "siwan": {
+        "name": "Siwan",
+        "localName": "सिवान",
+        "available": false
+      },
+      "supaul": {
+        "name": "Supaul",
+        "localName": "सुपौल",
+        "available": false
+      },
+      "vaishali": {
+        "name": "Vaishali",
+        "localName": "वैशाली",
+        "available": false
+      },
+      "west_champaran": {
+        "name": "West Champaran",
+        "localName": "पश्चिमी चंपारण",
+        "available": false
+      }
+    }
+  },
+  "chhattisgarh": {
+    "name": "Chhattisgarh",
+    "localName": "छत्तीसगढ़",
+    "available": false,
+    "districts": {
+      "balod": {
+        "name": "Balod",
+        "localName": "बालोद",
+        "available": false
+      },
+      "baloda_bazar": {
+        "name": "Baloda Bazar",
+        "localName": "बलौदा बाजार",
+        "available": false
+      },
+      "balrampur": {
+        "name": "Balrampur",
+        "localName": "बलरामपुर",
+        "available": false
+      },
+      "bastar": {
+        "name": "Bastar",
+        "localName": "बस्तर",
+        "available": false
+      },
+      "bemetara": {
+        "name": "Bemetara",
+        "localName": "बेमेतरा",
+        "available": false
+      },
+      "bijapur": {
+        "name": "Bijapur",
+        "localName": "बीजापुर",
+        "available": false
+      },
+      "bilaspur": {
+        "name": "Bilaspur",
+        "localName": "बिलासपुर",
+        "available": false
+      },
+      "dantewada": {
+        "name": "Dantewada",
+        "localName": "दंतेवाड़ा",
+        "available": false
+      },
+      "dhamtari": {
+        "name": "Dhamtari",
+        "localName": "धमतरी",
+        "available": false
+      },
+      "durg": {
+        "name": "Durg",
+        "localName": "दुर्ग",
+        "available": false
+      },
+      "gariaband": {
+        "name": "Gariaband",
+        "localName": "गरियाबंद",
+        "available": false
+      },
+      "gaurella_pendra_marwahi": {
+        "name": "Gaurella-Pendra-Marwahi",
+        "localName": "गौरेला-पेंड्रा-मरवाही",
+        "available": false
+      },
+      "janjgir_champa": {
+        "name": "Janjgir-Champa",
+        "localName": "जांजगीर-चंपा",
+        "available": false
+      },
+      "jashpur": {
+        "name": "Jashpur",
+        "localName": "जशपुर",
+        "available": false
+      },
+      "kabirdham": {
+        "name": "Kabirdham",
+        "localName": "कबीरधाम",
+        "available": false
+      },
+      "kanker": {
+        "name": "Kanker",
+        "localName": "कांकेर",
+        "available": false
+      },
+      "kondagaon": {
+        "name": "Kondagaon",
+        "localName": "कोंडागांव",
+        "available": false
+      },
+      "korba": {
+        "name": "Korba",
+        "localName": "कोरबा",
+        "available": false
+      },
+      "koriya": {
+        "name": "Koriya",
+        "localName": "कोरिया",
+        "available": false
+      },
+      "mahasamund": {
+        "name": "Mahasamund",
+        "localName": "महासमुंद",
+        "available": false
+      },
+      "mungeli": {
+        "name": "Mungeli",
+        "localName": "मुंगेली",
+        "available": false
+      },
+      "narayanpur": {
+        "name": "Narayanpur",
+        "localName": "नारायणपुर",
+        "available": false
+      },
+      "raigarh": {
+        "name": "Raigarh",
+        "localName": "रायगढ़",
+        "available": false
+      },
+      "raipur": {
+        "name": "Raipur",
+        "localName": "रायपुर",
+        "available": false
+      },
+      "rajnandgaon": {
+        "name": "Rajnandgaon",
+        "localName": "राजनांदगांव",
+        "available": false
+      },
+      "sukma": {
+        "name": "Sukma",
+        "localName": "सुकमा",
+        "available": false
+      },
+      "surajpur": {
+        "name": "Surajpur",
+        "localName": "सूरजपुर",
+        "available": false
+      },
+      "surguja": {
+        "name": "Surguja",
+        "localName": "सरगुजा",
+        "available": false
+      }
+    }
+  },
+  "goa": {
+    "name": "Goa",
+    "localName": "गोवा",
+    "available": false,
+    "districts": {
+      "north_goa": {
+        "name": "North Goa",
+        "localName": "उत्तर गोवा",
+        "available": false
+      },
+      "south_goa": {
+        "name": "South Goa",
+        "localName": "दक्षिण गोवा",
+        "available": false
+      }
+    }
+  },
+  "gujarat": {
+    "name": "Gujarat",
+    "localName": "ગુજરાત",
+    "available": false,
+    "districts": {
+      "ahmedabad": {
+        "name": "Ahmedabad",
+        "localName": "અમદાવાદ",
+        "available": false
+      },
+      "amreli": {
+        "name": "Amreli",
+        "localName": "અમરેલી",
+        "available": false
+      },
+      "anand": {
+        "name": "Anand",
+        "localName": "આણંદ",
+        "available": false
+      },
+      "aravalli": {
+        "name": "Aravalli",
+        "localName": "અરવલ્લી",
+        "available": false
+      },
+      "banaskantha": {
+        "name": "Banaskantha",
+        "localName": "બનાસકાંઠા",
+        "available": false
+      },
+      "bharuch": {
+        "name": "Bharuch",
+        "localName": "ભરૂચ",
+        "available": false
+      },
+      "bhavnagar": {
+        "name": "Bhavnagar",
+        "localName": "ભાવનગર",
+        "available": false
+      },
+      "botad": {
+        "name": "Botad",
+        "localName": "બોટાદ",
+        "available": false
+      },
+      "chhota_udaipur": {
+        "name": "Chhota Udaipur",
+        "localName": "છોટા ઉદેપુર",
+        "available": false
+      },
+      "dahod": {
+        "name": "Dahod",
+        "localName": "દાહોદ",
+        "available": false
+      },
+      "dang": {
+        "name": "Dang",
+        "localName": "ડાંગ",
+        "available": false
+      },
+      "devbhoomi_dwarka": {
+        "name": "Devbhoomi Dwarka",
+        "localName": "દેવભૂમિ દ્વારકા",
+        "available": false
+      },
+      "gandhinagar": {
+        "name": "Gandhinagar",
+        "localName": "ગાંધીનગર",
+        "available": false
+      },
+      "gir_somnath": {
+        "name": "Gir Somnath",
+        "localName": "ગીર સોમનાથ",
+        "available": false
+      },
+      "jamnagar": {
+        "name": "Jamnagar",
+        "localName": "જામનગર",
+        "available": false
+      },
+      "junagadh": {
+        "name": "Junagadh",
+        "localName": "જૂનાગઢ",
+        "available": false
+      },
+      "kheda": {
+        "name": "Kheda",
+        "localName": "ખેડા",
+        "available": false
+      },
+      "kutch": {
+        "name": "Kutch",
+        "localName": "કચ્છ",
+        "available": false
+      },
+      "mahisagar": {
+        "name": "Mahisagar",
+        "localName": "મહિસાગર",
+        "available": false
+      },
+      "mehsana": {
+        "name": "Mehsana",
+        "localName": "મહેસાણા",
+        "available": false
+      },
+      "morbi": {
+        "name": "Morbi",
+        "localName": "મોરબી",
+        "available": false
+      },
+      "narmada": {
+        "name": "Narmada",
+        "localName": "નર્મદા",
+        "available": false
+      },
+      "navsari": {
+        "name": "Navsari",
+        "localName": "નવસારી",
+        "available": false
+      },
+      "panchmahal": {
+        "name": "Panchmahal",
+        "localName": "પંચમહાલ",
+        "available": false
+      },
+      "patan": {
+        "name": "Patan",
+        "localName": "પાટણ",
+        "available": false
+      },
+      "porbandar": {
+        "name": "Porbandar",
+        "localName": "પોરબંદર",
+        "available": false
+      },
+      "rajkot": {
+        "name": "Rajkot",
+        "localName": "રાજકોટ",
+        "available": false
+      },
+      "sabarkantha": {
+        "name": "Sabarkantha",
+        "localName": "સાબરકાંઠા",
+        "available": false
+      },
+      "surat": {
+        "name": "Surat",
+        "localName": "સુરત",
+        "available": false
+      },
+      "surendranagar": {
+        "name": "Surendranagar",
+        "localName": "સુરેન્દ્રનગર",
+        "available": false
+      },
+      "tapi": {
+        "name": "Tapi",
+        "localName": "તાપી",
+        "available": false
+      },
+      "vadodara": {
+        "name": "Vadodara",
+        "localName": "વડોદરા",
+        "available": false
+      },
+      "valsad": {
+        "name": "Valsad",
+        "localName": "વલસાડ",
+        "available": false
+      }
+    }
+  },
+  "haryana": {
+    "name": "Haryana",
+    "localName": "हरियाणा",
+    "available": false,
+    "districts": {
+      "ambala": {
+        "name": "Ambala",
+        "localName": "अम्बाला",
+        "available": false
+      },
+      "bhiwani": {
+        "name": "Bhiwani",
+        "localName": "भिवानी",
+        "available": false
+      },
+      "charkhi_dadri": {
+        "name": "Charkhi Dadri",
+        "localName": "चरखी दादरी",
+        "available": false
+      },
+      "faridabad": {
+        "name": "Faridabad",
+        "localName": "फरीदाबाद",
+        "available": false
+      },
+      "fatehabad": {
+        "name": "Fatehabad",
+        "localName": "फतेहाबाद",
+        "available": false
+      },
+      "gurugram": {
+        "name": "Gurugram",
+        "localName": "गुरुग्राम",
+        "available": false
+      },
+      "hisar": {
+        "name": "Hisar",
+        "localName": "हिसार",
+        "available": false
+      },
+      "jhajjar": {
+        "name": "Jhajjar",
+        "localName": "झज्जर",
+        "available": false
+      },
+      "jind": {
+        "name": "Jind",
+        "localName": "जींद",
+        "available": false
+      },
+      "kaithal": {
+        "name": "Kaithal",
+        "localName": "कैथल",
+        "available": false
+      },
+      "karnal": {
+        "name": "Karnal",
+        "localName": "करनाल",
+        "available": false
+      },
+      "kurukshetra": {
+        "name": "Kurukshetra",
+        "localName": "कुरुक्षेत्र",
+        "available": false
+      },
+      "mahendragarh": {
+        "name": "Mahendragarh",
+        "localName": "महेंद्रगढ़",
+        "available": false
+      },
+      "nuh": {
+        "name": "Nuh",
+        "localName": "नूंह",
+        "available": false
+      },
+      "palwal": {
+        "name": "Palwal",
+        "localName": "पलवल",
+        "available": false
+      },
+      "panchkula": {
+        "name": "Panchkula",
+        "localName": "पंचकूला",
+        "available": false
+      },
+      "panipat": {
+        "name": "Panipat",
+        "localName": "पानीपत",
+        "available": false
+      },
+      "rewari": {
+        "name": "Rewari",
+        "localName": "रेवाड़ी",
+        "available": false
+      },
+      "rohtak": {
+        "name": "Rohtak",
+        "localName": "रोहतक",
+        "available": false
+      },
+      "sirsa": {
+        "name": "Sirsa",
+        "localName": "सिरसा",
+        "available": false
+      },
+      "sonipat": {
+        "name": "Sonipat",
+        "localName": "सोनीपत",
+        "available": false
+      },
+      "yamunanagar": {
+        "name": "Yamunanagar",
+        "localName": "यमुनानगर",
+        "available": false
+      }
+    }
+  },
+  "himachal_pradesh": {
+    "name": "Himachal Pradesh",
+    "localName": "हिमाचल प्रदेश",
+    "available": false,
+    "districts": {
+      "bilaspur": {
+        "name": "Bilaspur",
+        "localName": "बिलासपुर",
+        "available": false
+      },
+      "chamba": {
+        "name": "Chamba",
+        "localName": "चंबा",
+        "available": false
+      },
+      "hamirpur": {
+        "name": "Hamirpur",
+        "localName": "हमीरपुर",
+        "available": false
+      },
+      "kangra": {
+        "name": "Kangra",
+        "localName": "कांगड़ा",
+        "available": false
+      },
+      "kinnaur": {
+        "name": "Kinnaur",
+        "localName": "किन्नौर",
+        "available": false
+      },
+      "kullu": {
+        "name": "Kullu",
+        "localName": "कुल्लू",
+        "available": false
+      },
+      "lahaul_and_spiti": {
+        "name": "Lahaul and Spiti",
+        "localName": "लाहौल और स्पीति",
+        "available": false
+      },
+      "mandi": {
+        "name": "Mandi",
+        "localName": "मंडी",
+        "available": false
+      },
+      "shimla": {
+        "name": "Shimla",
+        "localName": "शिमला",
+        "available": false
+      },
+      "sirmaur": {
+        "name": "Sirmaur",
+        "localName": "सिरमौर",
+        "available": false
+      },
+      "solan": {
+        "name": "Solan",
+        "localName": "सोलन",
+        "available": false
+      },
+      "una": {
+        "name": "Una",
+        "localName": "ऊना",
+        "available": false
+      }
+    }
+  },
+  "jharkhand": {
+    "name": "Jharkhand",
+    "localName": "झारखंड",
+    "available": false,
+    "districts": {
+      "bokaro": {
+        "name": "Bokaro",
+        "localName": "बोकारो",
+        "available": false
+      },
+      "chatra": {
+        "name": "Chatra",
+        "localName": "चतरा",
+        "available": false
+      },
+      "deoghar": {
+        "name": "Deoghar",
+        "localName": "देवघर",
+        "available": false
+      },
+      "dhanbad": {
+        "name": "Dhanbad",
+        "localName": "धनबाद",
+        "available": false
+      },
+      "dumka": {
+        "name": "Dumka",
+        "localName": "दुमका",
+        "available": false
+      },
+      "east_singhbhum": {
+        "name": "East Singhbhum",
+        "localName": "पूर्वी सिंहभूम",
+        "available": false
+      },
+      "garhwa": {
+        "name": "Garhwa",
+        "localName": "गढ़वा",
+        "available": false
+      },
+      "giridih": {
+        "name": "Giridih",
+        "localName": "गिरिडीह",
+        "available": false
+      },
+      "godda": {
+        "name": "Godda",
+        "localName": "गोड्डा",
+        "available": false
+      },
+      "gumla": {
+        "name": "Gumla",
+        "localName": "गुमला",
+        "available": false
+      },
+      "hazaribagh": {
+        "name": "Hazaribagh",
+        "localName": "हजारीबाग",
+        "available": false
+      },
+      "jamtara": {
+        "name": "Jamtara",
+        "localName": "जामताड़ा",
+        "available": false
+      },
+      "khunti": {
+        "name": "Khunti",
+        "localName": "खूंटी",
+        "available": false
+      },
+      "koderma": {
+        "name": "Koderma",
+        "localName": "कोडरमा",
+        "available": false
+      },
+      "latehar": {
+        "name": "Latehar",
+        "localName": "लातेहार",
+        "available": false
+      },
+      "lohardaga": {
+        "name": "Lohardaga",
+        "localName": "लोहरदगा",
+        "available": false
+      },
+      "pakur": {
+        "name": "Pakur",
+        "localName": "पाकुड़",
+        "available": false
+      },
+      "palamu": {
+        "name": "Palamu",
+        "localName": "पलामू",
+        "available": false
+      },
+      "ramgarh": {
+        "name": "Ramgarh",
+        "localName": "रामगढ़",
+        "available": false
+      },
+      "ranchi": {
+        "name": "Ranchi",
+        "localName": "रांची",
+        "available": false
+      },
+      "sahibganj": {
+        "name": "Sahibganj",
+        "localName": "साहिबगंज",
+        "available": false
+      },
+      "seraikela_kharsawan": {
+        "name": "Seraikela Kharsawan",
+        "localName": "सरायकेला खरसावां",
+        "available": false
+      },
+      "simdega": {
+        "name": "Simdega",
+        "localName": "सिमडेगा",
+        "available": false
+      },
+      "west_singhbhum": {
+        "name": "West Singhbhum",
+        "localName": "पश्चिमी सिंहभूम",
+        "available": false
+      }
+    }
+  },
+  "karnataka": {
+    "name": "Karnataka",
+    "localName": "ಕರ್ನಾಟಕ",
+    "available": false,
+    "districts": {
+      "bagalkot": {
+        "name": "Bagalkot",
+        "localName": "ಬಾಗಲಕೋಟೆ",
+        "available": false
+      },
+      "ballari": {
+        "name": "Ballari (Bellary)",
+        "localName": "ಬಳ್ಳಾರಿ",
+        "available": false
+      },
+      "belagavi": {
+        "name": "Belagavi (Belgaum)",
+        "localName": "ಬೆಳಗಾವಿ",
+        "available": false
+      },
+      "bengaluru_rural": {
+        "name": "Bengaluru Rural",
+        "localName": "ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ",
+        "available": false
+      },
+      "bengaluru_urban": {
+        "name": "Bengaluru Urban",
+        "localName": "ಬೆಂಗಳೂರು ನಗರ",
+        "available": false
+      },
+      "bidar": {
+        "name": "Bidar",
+        "localName": "ಬೀದರ್",
+        "available": false
+      },
+      "chamarajanagar": {
+        "name": "Chamarajanagar",
+        "localName": "ಚಾಮರಾಜನಗರ",
+        "available": false
+      },
+      "chikkaballapur": {
+        "name": "Chikkaballapur",
+        "localName": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ",
+        "available": false
+      },
+      "chikkamagaluru": {
+        "name": "Chikkamagaluru",
+        "localName": "ಚಿಕ್ಕಮಗಳೂರು",
+        "available": false
+      },
+      "chitradurga": {
+        "name": "Chitradurga",
+        "localName": "ಚಿತ್ರದುರ್ಗ",
+        "available": false
+      },
+      "dakshina_kannada": {
+        "name": "Dakshina Kannada",
+        "localName": "ದಕ್ಷಿಣ ಕನ್ನಡ",
+        "available": false
+      },
+      "davanagere": {
+        "name": "Davanagere",
+        "localName": "ದಾವಣಗೆರೆ",
+        "available": false
+      },
+      "dharwad": {
+        "name": "Dharwad",
+        "localName": "ಧಾರವಾಡ",
+        "available": false
+      },
+      "gadag": {
+        "name": "Gadag",
+        "localName": "ಗದಗ",
+        "available": false
+      },
+      "kalaburagi": {
+        "name": "Kalaburagi (Gulbarga)",
+        "localName": "ಕಲಬುರಗಿ",
+        "available": false
+      },
+      "hassan": {
+        "name": "Hassan",
+        "localName": "ಹಾಸನ",
+        "available": false
+      },
+      "haveri": {
+        "name": "Haveri",
+        "localName": "ಹಾವೇರಿ",
+        "available": false
+      },
+      "kodagu": {
+        "name": "Kodagu",
+        "localName": "ಕೊಡಗು",
+        "available": false
+      },
+      "kolar": {
+        "name": "Kolar",
+        "localName": "ಕೋಲಾರ",
+        "available": false
+      },
+      "koppal": {
+        "name": "Koppal",
+        "localName": "ಕೊಪ್ಪಳ",
+        "available": false
+      },
+      "mandya": {
+        "name": "Mandya",
+        "localName": "ಮಂಡ್ಯ",
+        "available": false
+      },
+      "mysuru": {
+        "name": "Mysuru (Mysore)",
+        "localName": "ಮೈಸೂರು",
+        "available": false
+      },
+      "raichur": {
+        "name": "Raichur",
+        "localName": "ರಾಯಚೂರು",
+        "available": false
+      },
+      "ramanagara": {
+        "name": "Ramanagara",
+        "localName": "ರಾಮನಗರ",
+        "available": false
+      },
+      "shivamogga": {
+        "name": "Shivamogga (Shimoga)",
+        "localName": "ಶಿವಮೊಗ್ಗ",
+        "available": false
+      },
+      "tumakuru": {
+        "name": "Tumakuru (Tumkur)",
+        "localName": "ತುಮಕೂರು",
+        "available": false
+      },
+      "udupi": {
+        "name": "Udupi",
+        "localName": "ಉಡುಪಿ",
+        "available": false
+      },
+      "uttara_kannada": {
+        "name": "Uttara Kannada",
+        "localName": "ಉತ್ತರ ಕನ್ನಡ",
+        "available": false
+      },
+      "vijayapura": {
+        "name": "Vijayapura (Bijapur)",
+        "localName": "ವಿಜಯಪುರ",
+        "available": false
+      },
+      "yadgir": {
+        "name": "Yadgir",
+        "localName": "ಯಾದಗಿರಿ",
+        "available": false
+      }
+    }
+  },
+  "kerala": {
+    "name": "Kerala",
+    "localName": "കേരളം",
+    "available": false,
+    "districts": {
+      "alappuzha": {
+        "name": "Alappuzha",
+        "localName": "ആലപ്പുഴ",
+        "available": false
+      },
+      "ernakulam": {
+        "name": "Ernakulam",
+        "localName": "എറണാകുളം",
+        "available": false
+      },
+      "idukki": {
+        "name": "Idukki",
+        "localName": "ഇടുക്കി",
+        "available": false
+      },
+      "kannur": {
+        "name": "Kannur",
+        "localName": "കണ്ണൂർ",
+        "available": false
+      },
+      "kasaragod": {
+        "name": "Kasaragod",
+        "localName": "കാസർഗോഡ്",
+        "available": false
+      },
+      "kollam": {
+        "name": "Kollam",
+        "localName": "കൊല്ലം",
+        "available": false
+      },
+      "kottayam": {
+        "name": "Kottayam",
+        "localName": "കോട്ടയം",
+        "available": false
+      },
+      "kozhikode": {
+        "name": "Kozhikode",
+        "localName": "കോഴിക്കോട്",
+        "available": false
+      },
+      "malappuram": {
+        "name": "Malappuram",
+        "localName": "മലപ്പുറം",
+        "available": false
+      },
+      "palakkad": {
+        "name": "Palakkad",
+        "localName": "പാലക്കാട്",
+        "available": false
+      },
+      "pathanamthitta": {
+        "name": "Pathanamthitta",
+        "localName": "പത്തനംതിട്ട",
+        "available": false
+      },
+      "thiruvananthapuram": {
+        "name": "Thiruvananthapuram",
+        "localName": "തിരുവനന്തപുരം",
+        "available": false
+      },
+      "thrissur": {
+        "name": "Thrissur",
+        "localName": "തൃശ്ശൂർ",
+        "available": false
+      },
+      "wayanad": {
+        "name": "Wayanad",
+        "localName": "വയനാട്",
+        "available": false
+      }
+    }
+  },
+  "madhya_pradesh": {
+    "name": "Madhya Pradesh",
+    "localName": "मध्य प्रदेश",
+    "available": false,
+    "districts": {
+      "agar_malwa": {
+        "name": "Agar Malwa",
+        "localName": "आगर मालवा",
+        "available": false
+      },
+      "alirajpur": {
+        "name": "Alirajpur",
+        "localName": "अलीराजपुर",
+        "available": false
+      },
+      "anuppur": {
+        "name": "Anuppur",
+        "localName": "अनूपपुर",
+        "available": false
+      },
+      "ashoknagar": {
+        "name": "Ashoknagar",
+        "localName": "अशोकनगर",
+        "available": false
+      },
+      "balaghat": {
+        "name": "Balaghat",
+        "localName": "बालाघाट",
+        "available": false
+      },
+      "barwani": {
+        "name": "Barwani",
+        "localName": "बड़वानी",
+        "available": false
+      },
+      "betul": {
+        "name": "Betul",
+        "localName": "बैतूल",
+        "available": false
+      },
+      "bhind": {
+        "name": "Bhind",
+        "localName": "भिंड",
+        "available": false
+      },
+      "bhopal": {
+        "name": "Bhopal",
+        "localName": "भोपाल",
+        "available": false
+      },
+      "burhanpur": {
+        "name": "Burhanpur",
+        "localName": "बुरहानपुर",
+        "available": false
+      },
+      "chhatarpur": {
+        "name": "Chhatarpur",
+        "localName": "छतरपुर",
+        "available": false
+      },
+      "chhindwara": {
+        "name": "Chhindwara",
+        "localName": "छिंदवाड़ा",
+        "available": false
+      },
+      "damoh": {
+        "name": "Damoh",
+        "localName": "दमोह",
+        "available": false
+      },
+      "datia": {
+        "name": "Datia",
+        "localName": "दतिया",
+        "available": false
+      },
+      "dewas": {
+        "name": "Dewas",
+        "localName": "देवास",
+        "available": false
+      },
+      "dhar": {
+        "name": "Dhar",
+        "localName": "धार",
+        "available": false
+      },
+      "dindori": {
+        "name": "Dindori",
+        "localName": "डिंडोरी",
+        "available": false
+      },
+      "guna": {
+        "name": "Guna",
+        "localName": "गुना",
+        "available": false
+      },
+      "gwalior": {
+        "name": "Gwalior",
+        "localName": "ग्वालियर",
+        "available": false
+      },
+      "harda": {
+        "name": "Harda",
+        "localName": "हरदा",
+        "available": false
+      },
+      "hoshangabad": {
+        "name": "Hoshangabad",
+        "localName": "होशंगाबाद",
+        "available": false
+      },
+      "indore": {
+        "name": "Indore",
+        "localName": "इंदौर",
+        "available": false
+      },
+      "jabalpur": {
+        "name": "Jabalpur",
+        "localName": "जबलपुर",
+        "available": false
+      },
+      "jhabua": {
+        "name": "Jhabua",
+        "localName": "झाबुआ",
+        "available": false
+      },
+      "katni": {
+        "name": "Katni",
+        "localName": "कटनी",
+        "available": false
+      },
+      "khandwa": {
+        "name": "Khandwa",
+        "localName": "खंडवा",
+        "available": false
+      },
+      "khargone": {
+        "name": "Khargone",
+        "localName": "खरगोन",
+        "available": false
+      },
+      "mandla": {
+        "name": "Mandla",
+        "localName": "मंडला",
+        "available": false
+      },
+      "mandsaur": {
+        "name": "Mandsaur",
+        "localName": "मंदसौर",
+        "available": false
+      },
+      "morena": {
+        "name": "Morena",
+        "localName": "मुरैना",
+        "available": false
+      },
+      "narsinghpur": {
+        "name": "Narsinghpur",
+        "localName": "नरसिंहपुर",
+        "available": false
+      },
+      "neemuch": {
+        "name": "Neemuch",
+        "localName": "नीमच",
+        "available": false
+      },
+      "panna": {
+        "name": "Panna",
+        "localName": "पन्ना",
+        "available": false
+      },
+      "raisen": {
+        "name": "Raisen",
+        "localName": "रायसेन",
+        "available": false
+      },
+      "rajgarh": {
+        "name": "Rajgarh",
+        "localName": "राजगढ़",
+        "available": false
+      },
+      "ratlam": {
+        "name": "Ratlam",
+        "localName": "रतलाम",
+        "available": false
+      },
+      "rewa": {
+        "name": "Rewa",
+        "localName": "रीवा",
+        "available": false
+      },
+      "sagar": {
+        "name": "Sagar",
+        "localName": "सागर",
+        "available": false
+      },
+      "satna": {
+        "name": "Satna",
+        "localName": "सतना",
+        "available": false
+      },
+      "sehore": {
+        "name": "Sehore",
+        "localName": "सीहोर",
+        "available": false
+      },
+      "seoni": {
+        "name": "Seoni",
+        "localName": "सिवनी",
+        "available": false
+      },
+      "shahdol": {
+        "name": "Shahdol",
+        "localName": "शहडोल",
+        "available": false
+      },
+      "shajapur": {
+        "name": "Shajapur",
+        "localName": "शाजापुर",
+        "available": false
+      },
+      "sheopur": {
+        "name": "Sheopur",
+        "localName": "श्योपुर",
+        "available": false
+      },
+      "shivpuri": {
+        "name": "Shivpuri",
+        "localName": "शिवपुरी",
+        "available": false
+      },
+      "sidhi": {
+        "name": "Sidhi",
+        "localName": "सीधी",
+        "available": false
+      },
+      "singrauli": {
+        "name": "Singrauli",
+        "localName": "सिंगरौली",
+        "available": false
+      },
+      "tikamgarh": {
+        "name": "Tikamgarh",
+        "localName": "टीकमगढ़",
+        "available": false
+      },
+      "ujjain": {
+        "name": "Ujjain",
+        "localName": "उज्जैन",
+        "available": false
+      },
+      "umaria": {
+        "name": "Umaria",
+        "localName": "उमरिया",
+        "available": false
+      },
+      "vidisha": {
+        "name": "Vidisha",
+        "localName": "विदिशा",
+        "available": false
+      }
+    }
+  },
+  "maharashtra": {
+    "name": "Maharashtra",
+    "localName": "महाराष्ट्र",
+    "available": false,
+    "districts": {
+      "ahmednagar": {
+        "name": "Ahmednagar",
+        "localName": "अहमदनगर",
+        "available": false
+      },
+      "akola": {
+        "name": "Akola",
+        "localName": "अकोला",
+        "available": false
+      },
+      "amravati": {
+        "name": "Amravati",
+        "localName": "अमरावती",
+        "available": false
+      },
+      "aurangabad": {
+        "name": "Aurangabad",
+        "localName": "औरंगाबाद",
+        "available": false
+      },
+      "beed": {
+        "name": "Beed",
+        "localName": "बीड",
+        "available": false
+      },
+      "bhandara": {
+        "name": "Bhandara",
+        "localName": "भंडारा",
+        "available": false
+      },
+      "buldhana": {
+        "name": "Buldhana",
+        "localName": "बुलढाणा",
+        "available": false
+      },
+      "chandrapur": {
+        "name": "Chandrapur",
+        "localName": "चंद्रपूर",
+        "available": false
+      },
+      "dhule": {
+        "name": "Dhule",
+        "localName": "धुळे",
+        "available": false
+      },
+      "gadchiroli": {
+        "name": "Gadchiroli",
+        "localName": "गडचिरोली",
+        "available": false
+      },
+      "gondia": {
+        "name": "Gondia",
+        "localName": "गोंदिया",
+        "available": false
+      },
+      "hingoli": {
+        "name": "Hingoli",
+        "localName": "हिंगोली",
+        "available": false
+      },
+      "jalgaon": {
+        "name": "Jalgaon",
+        "localName": "जळगाव",
+        "available": false
+      },
+      "jalna": {
+        "name": "Jalna",
+        "localName": "जालना",
+        "available": false
+      },
+      "kolhapur": {
+        "name": "Kolhapur",
+        "localName": "कोल्हापूर",
+        "available": false
+      },
+      "latur": {
+        "name": "Latur",
+        "localName": "लातूर",
+        "available": false
+      },
+      "mumbai_city": {
+        "name": "Mumbai City",
+        "localName": "मुंबई शहर",
+        "available": false
+      },
+      "mumbai_suburban": {
+        "name": "Mumbai Suburban",
+        "localName": "मुंबई उपनगर",
+        "available": false
+      },
+      "nagpur": {
+        "name": "Nagpur",
+        "localName": "नागपूर",
+        "available": false
+      },
+      "nanded": {
+        "name": "Nanded",
+        "localName": "नांदेड",
+        "available": false
+      },
+      "nandurbar": {
+        "name": "Nandurbar",
+        "localName": "नंदुरबार",
+        "available": false
+      },
+      "nashik": {
+        "name": "Nashik",
+        "localName": "नाशिक",
+        "available": false
+      },
+      "osmanabad": {
+        "name": "Osmanabad",
+        "localName": "उस्मानाबाद",
+        "available": false
+      },
+      "palghar": {
+        "name": "Palghar",
+        "localName": "पालघर",
+        "available": false
+      },
+      "parbhani": {
+        "name": "Parbhani",
+        "localName": "परभणी",
+        "available": false
+      },
+      "pune": {
+        "name": "Pune",
+        "localName": "पुणे",
+        "available": false
+      },
+      "raigad": {
+        "name": "Raigad",
+        "localName": "रायगड",
+        "available": false
+      },
+      "ratnagiri": {
+        "name": "Ratnagiri",
+        "localName": "रत्नागिरी",
+        "available": false
+      },
+      "sangli": {
+        "name": "Sangli",
+        "localName": "सांगली",
+        "available": false
+      },
+      "satara": {
+        "name": "Satara",
+        "localName": "सातारा",
+        "available": false
+      },
+      "sindhudurg": {
+        "name": "Sindhudurg",
+        "localName": "सिंधुदुर्ग",
+        "available": false
+      },
+      "solapur": {
+        "name": "Solapur",
+        "localName": "सोलापूर",
+        "available": false
+      },
+      "thane": {
+        "name": "Thane",
+        "localName": "ठाणे",
+        "available": false
+      },
+      "wardha": {
+        "name": "Wardha",
+        "localName": "वर्धा",
+        "available": false
+      },
+      "washim": {
+        "name": "Washim",
+        "localName": "वाशिम",
+        "available": false
+      },
+      "yavatmal": {
+        "name": "Yavatmal",
+        "localName": "यवतमाळ",
+        "available": false
+      }
+    }
+  },
+  "manipur": {
+    "name": "Manipur",
+    "localName": "মণিপুর",
+    "available": false,
+    "districts": {
+      "bishnupur": {
+        "name": "Bishnupur",
+        "localName": "বিষ্ণুপুর",
+        "available": false
+      },
+      "chandel": {
+        "name": "Chandel",
+        "localName": "চান্দেল",
+        "available": false
+      },
+      "churachandpur": {
+        "name": "Churachandpur",
+        "localName": "চুড়াচাঁদপুর",
+        "available": false
+      },
+      "imphal_east": {
+        "name": "Imphal East",
+        "localName": "ইম্ফল পূব",
+        "available": false
+      },
+      "imphal_west": {
+        "name": "Imphal West",
+        "localName": "ইম্ফল পশ্চিম",
+        "available": false
+      },
+      "jiribam": {
+        "name": "Jiribam",
+        "localName": "জারিবা",
+        "available": false
+      },
+      "kakching": {
+        "name": "Kakching",
+        "localName": "কাকচিং",
+        "available": false
+      },
+      "kamjong": {
+        "name": "Kamjong",
+        "localName": "কামজং",
+        "available": false
+      },
+      "kangpokpi": {
+        "name": "Kangpokpi",
+        "localName": "কাংপোকপি",
+        "available": false
+      },
+      "noney": {
+        "name": "Noney",
+        "localName": "ননে",
+        "available": false
+      },
+      "pherzawl": {
+        "name": "Pherzawl",
+        "localName": "ফেড়জাওল",
+        "available": false
+      },
+      "senapati": {
+        "name": "Senapati",
+        "localName": "সেনাপতি",
+        "available": false
+      },
+      "tamenglong": {
+        "name": "Tamenglong",
+        "localName": "তামেংলং",
+        "available": false
+      },
+      "tengnoupal": {
+        "name": "Tengnoupal",
+        "localName": "তেংনুপাল",
+        "available": false
+      },
+      "thoubal": {
+        "name": "Thoubal",
+        "localName": "থৌবাল",
+        "available": false
+      },
+      "ukhrul": {
+        "name": "Ukhrul",
+        "localName": "উখরুল",
+        "available": false
+      }
+    }
+  },
+  "meghalaya": {
+    "name": "Meghalaya",
+    "localName": "মেঘালয়",
+    "available": false,
+    "districts": {
+      "east_garo_hills": {
+        "name": "East Garo Hills",
+        "localName": "পূর্ব গারো পাহাড়",
+        "available": false
+      },
+      "east_jaintia_hills": {
+        "name": "East Jaintia Hills",
+        "localName": "পূর্ব জয়ন্তীয়া পাহাড়",
+        "available": false
+      },
+      "east_khasi_hills": {
+        "name": "East Khasi Hills",
+        "localName": "পূর্ব খাসি পাহাড়",
+        "available": false
+      },
+      "eastern_west_khasi_hills": {
+        "name": "Eastern West Khasi Hills",
+        "localName": "পূর্ব পশ্চিম খাসি পাহাড়",
+        "available": false
+      },
+      "north_garo_hills": {
+        "name": "North Garo Hills",
+        "localName": "উত্তর গারো পাহাড়",
+        "available": false
+      },
+      "ri_bhoi": {
+        "name": "Ri Bhoi",
+        "localName": "রি ভোই",
+        "available": false
+      },
+      "south_garo_hills": {
+        "name": "South Garo Hills",
+        "localName": "দক্ষিণ গারো পাহাড়",
+        "available": false
+      },
+      "south_west_garo_hills": {
+        "name": "South West Garo Hills",
+        "localName": "দক্ষিণ পশ্চিম গারো পাহাড়",
+        "available": false
+      },
+      "south_west_khasi_hills": {
+        "name": "South West Khasi Hills",
+        "localName": "দক্ষিণ পশ্চিম খাসি পাহাড়",
+        "available": false
+      },
+      "west_garo_hills": {
+        "name": "West Garo Hills",
+        "localName": "পশ্চিম গারো পাহাড়",
+        "available": false
+      },
+      "west_jaintia_hills": {
+        "name": "West Jaintia Hills",
+        "localName": "পশ্চিম জয়ন্তীয়া পাহাড়",
+        "available": false
+      },
+      "west_khasi_hills": {
+        "name": "West Khasi Hills",
+        "localName": "পশ্চিম খাসি পাহাড়",
+        "available": false
+      }
+    }
+  },
+  "mizoram": {
+    "name": "Mizoram",
+    "localName": "মিজোরাম",
+    "available": false,
+    "districts": {
+      "aizawl": {
+        "name": "Aizawl",
+        "localName": "আইজল",
+        "available": false
+      },
+      "champhai": {
+        "name": "Champhai",
+        "localName": "চম্পাই",
+        "available": false
+      },
+      "hnahthial": {
+        "name": "Hnahthial",
+        "localName": "হনাহথিয়াল",
+        "available": false
+      },
+      "khawzawl": {
+        "name": "Khawzawl",
+        "localName": "খাওজল",
+        "available": false
+      },
+      "kolasib": {
+        "name": "Kolasib",
+        "localName": "কোলাসিব",
+        "available": false
+      },
+      "lawngtlai": {
+        "name": "Lawngtlai",
+        "localName": "লংতলাই",
+        "available": false
+      },
+      "lunglei": {
+        "name": "Lunglei",
+        "localName": "লুংলেই",
+        "available": false
+      },
+      "mamit": {
+        "name": "Mamit",
+        "localName": "মামিত",
+        "available": false
+      },
+      "saiha": {
+        "name": "Saiha",
+        "localName": "সাইহা",
+        "available": false
+      },
+      "saitual": {
+        "name": "Saitual",
+        "localName": "সাইতৈয়াল",
+        "available": false
+      },
+      "serchhip": {
+        "name": "Serchhip",
+        "localName": "সেরছিপ",
+        "available": false
+      },
+      "thenzawl": {
+        "name": "Thenzawl",
+        "localName": "থেনজাওয়াল",
+        "available": false
+      }
+    }
+  },
+  "nagaland": {
+    "name": "Nagaland",
+    "localName": "नागालैंड",
+    "available": false,
+    "districts": {
+      "chumoukedima": {
+        "name": "Chümoukedima",
+        "localName": "चुमुकेदिमा",
+        "available": false
+      },
+      "dimapur": {
+        "name": "Dimapur",
+        "localName": "दीमापुर",
+        "available": false
+      },
+      "kiphire": {
+        "name": "Kiphire",
+        "localName": "किफिरे",
+        "available": false
+      },
+      "kohima": {
+        "name": "Kohima",
+        "localName": "कोहिमा",
+        "available": false
+      },
+      "longleng": {
+        "name": "Longleng",
+        "localName": "लोंगलेंग",
+        "available": false
+      },
+      "mokokchung": {
+        "name": "Mokokchung",
+        "localName": "मोकोकचुंग",
+        "available": false
+      },
+      "mon": {
+        "name": "Mon",
+        "localName": "मोन",
+        "available": false
+      },
+      "niuland": {
+        "name": "Niuland",
+        "localName": "नीउलैंड",
+        "available": false
+      },
+      "peren": {
+        "name": "Peren",
+        "localName": "पेरेन",
+        "available": false
+      },
+      "phek": {
+        "name": "Phek",
+        "localName": "फेक",
+        "available": false
+      },
+      "shamator": {
+        "name": "Shamator",
+        "localName": "शामटोर",
+        "available": false
+      },
+      "tuensang": {
+        "name": "Tuensang",
+        "localName": "तुएनसांग",
+        "available": false
+      },
+      "tseminyu": {
+        "name": "Tseminyü",
+        "localName": "त्सेमिन्यू",
+        "available": false
+      },
+      "wokha": {
+        "name": "Wokha",
+        "localName": "वोखा",
+        "available": false
+      },
+      "zunheboto": {
+        "name": "Zunheboto",
+        "localName": "ज़ुनहेबोटो",
+        "available": false
+      }
+    }
+  },
+  "odisha": {
+    "name": "Odisha",
+    "localName": "ଓଡ଼ିଶା",
+    "available": false,
+    "districts": {
+      "angul": {
+        "name": "Angul",
+        "localName": "ଅନୁଗୁଳ",
+        "available": false
+      },
+      "balangir": {
+        "name": "Balangir",
+        "localName": "ବଲାଙ୍ଗୀର",
+        "available": false
+      },
+      "balasore": {
+        "name": "Balasore",
+        "localName": "ବାଲେଶ୍ୱର",
+        "available": false
+      },
+      "bargarh": {
+        "name": "Bargarh",
+        "localName": "ବରଗଡ଼",
+        "available": false
+      },
+      "bhadrak": {
+        "name": "Bhadrak",
+        "localName": "ଭଦ୍ରକ",
+        "available": false
+      },
+      "boudh": {
+        "name": "Boudh",
+        "localName": "ବୌଦ୍ଧ",
+        "available": false
+      },
+      "cuttack": {
+        "name": "Cuttack",
+        "localName": "କଟକ",
+        "available": false
+      },
+      "debgarh_deogarh": {
+        "name": "Debagarh (Deogarh)",
+        "localName": "ଦେବଗଡ଼",
+        "available": false
+      },
+      "dhenkanal": {
+        "name": "Dhenkanal",
+        "localName": "ଢେଙ୍କାନାଳ",
+        "available": false
+      },
+      "gajapati": {
+        "name": "Gajapati",
+        "localName": "ଗଜପତି",
+        "available": false
+      },
+      "ganjam": {
+        "name": "Ganjam",
+        "localName": "ଗଞ୍ଜାମ",
+        "available": false
+      },
+      "jagatsinghpur": {
+        "name": "Jagatsinghpur",
+        "localName": "ଜଗତସିଂହପୁର",
+        "available": false
+      },
+      "jajpur": {
+        "name": "Jajpur",
+        "localName": "ଯାଜପୁର",
+        "available": false
+      },
+      "jharsuguda": {
+        "name": "Jharsuguda",
+        "localName": "ଝାରସୁଗୁଡ଼ା",
+        "available": false
+      },
+      "kalahandi": {
+        "name": "Kalahandi",
+        "localName": "କଳାହାଣ୍ଡି",
+        "available": false
+      },
+      "kandhamal": {
+        "name": "Kandhamal",
+        "localName": "କନ୍ଧମାଳ",
+        "available": false
+      },
+      "kendrapara": {
+        "name": "Kendrapara",
+        "localName": "କେନ୍ଦ୍ରାପଡ଼ା",
+        "available": false
+      },
+      "keonjhar": {
+        "name": "Keonjhar",
+        "localName": "କେନ୍ଦୁଝର",
+        "available": false
+      },
+      "khordha": {
+        "name": "Khordha",
+        "localName": "ଖୋର୍ଦ୍ଧା",
+        "available": false
+      },
+      "koraput": {
+        "name": "Koraput",
+        "localName": "କୋରାପୁଟ",
+        "available": false
+      },
+      "malkangiri": {
+        "name": "Malkangiri",
+        "localName": "ମାଲକାନଗିରି",
+        "available": false
+      },
+      "mayurbhanj": {
+        "name": "Mayurbhanj",
+        "localName": "ମୟୂରଭଞ୍ଜ",
+        "available": false
+      },
+      "nabarangpur": {
+        "name": "Nabarangpur",
+        "localName": "ନବରଙ୍ଗପୁର",
+        "available": false
+      },
+      "nayagarh": {
+        "name": "Nayagarh",
+        "localName": "ନୟାଗଡ଼",
+        "available": false
+      },
+      "nuapada": {
+        "name": "Nuapada",
+        "localName": "ନୂଆପଡ଼ା",
+        "available": false
+      },
+      "puri": {
+        "name": "Puri",
+        "localName": "ପୁରୀ",
+        "available": false
+      },
+      "rayagada": {
+        "name": "Rayagada",
+        "localName": "ରାୟଗଡ଼ା",
+        "available": false
+      },
+      "sambalpur": {
+        "name": "Sambalpur",
+        "localName": "ସମ୍ବଲପୁର",
+        "available": false
+      },
+      "subarnapur_sonepur": {
+        "name": "Subarnapur (Sonepur)",
+        "localName": "ସୁବର୍ଣ୍ଣପୁର",
+        "available": false
+      },
+      "sundargarh": {
+        "name": "Sundargarh",
+        "localName": "ସୁନ୍ଦରଗଡ଼",
+        "available": false
+      }
+    }
+  },
+  "punjab": {
+    "name": "Punjab",
+    "localName": "ਪੰਜਾਬ",
+    "available": false,
+    "districts": {
+      "amritsar": {
+        "name": "Amritsar",
+        "localName": "ਅੰਮ੍ਰਿਤਸਰ",
+        "available": false
+      },
+      "barnala": {
+        "name": "Barnala",
+        "localName": "ਬਰਨਾਲਾ",
+        "available": false
+      },
+      "bathinda": {
+        "name": "Bathinda",
+        "localName": "ਬਠਿੰਡਾ",
+        "available": false
+      },
+      "faridkot": {
+        "name": "Faridkot",
+        "localName": "ਫ਼ਰੀਦਕੋਟ",
+        "available": false
+      },
+      "fatehgarh_sahib": {
+        "name": "Fatehgarh Sahib",
+        "localName": "ਫ਼ਤਹਿਗੜ੍ਹ ਸਾਹਿਬ",
+        "available": false
+      },
+      "fazilka": {
+        "name": "Fazilka",
+        "localName": "ਫ਼ਾਜ਼ਿਲਕਾ",
+        "available": false
+      },
+      "ferozepur": {
+        "name": "Ferozepur",
+        "localName": "ਫ਼ਿਰੋਜ਼ਪੁਰ",
+        "available": false
+      },
+      "gurdaspur": {
+        "name": "Gurdaspur",
+        "localName": "ਗੁਰਦਾਸਪੁਰ",
+        "available": false
+      },
+      "hoshiarpur": {
+        "name": "Hoshiarpur",
+        "localName": "ਹੁਸ਼ਿਆਰਪੁਰ",
+        "available": false
+      },
+      "jalandhar": {
+        "name": "Jalandhar",
+        "localName": "ਜਲੰਧਰ",
+        "available": false
+      },
+      "kapurthala": {
+        "name": "Kapurthala",
+        "localName": "ਕਪੂਰਥਲਾ",
+        "available": false
+      },
+      "ludhiana": {
+        "name": "Ludhiana",
+        "localName": "ਲੁਧਿਆਣਾ",
+        "available": false
+      },
+      "malerkotla": {
+        "name": "Malerkotla",
+        "localName": "ਮਲੇਰਕੋਟਲਾ",
+        "available": false
+      },
+      "mansa": {
+        "name": "Mansa",
+        "localName": "ਮਾਨਸਾ",
+        "available": false
+      },
+      "moga": {
+        "name": "Moga",
+        "localName": "ਮੋਗਾ",
+        "available": false
+      },
+      "muktsar": {
+        "name": "Muktsar",
+        "localName": "ਮੁਕਤਸਰ",
+        "available": false
+      },
+      "pathankot": {
+        "name": "Pathankot",
+        "localName": "ਪਠਾਨਕੋਟ",
+        "available": false
+      },
+      "patiala": {
+        "name": "Patiala",
+        "localName": "ਪਟਿਆਲਾ",
+        "available": false
+      },
+      "rupnagar": {
+        "name": "Rupnagar",
+        "localName": "ਰੂਪਨਗਰ",
+        "available": false
+      },
+      "sangrur": {
+        "name": "Sangrur",
+        "localName": "ਸੰਗਰੂਰ",
+        "available": false
+      },
+      "sas_nagar_mohali": {
+        "name": "SAS Nagar (Mohali)",
+        "localName": "ਐਸ.ਏ.ਐਸ. ਨਗਰ (ਮੋਹਾਲੀ)",
+        "available": false
+      },
+      "sbs_nagar_nawanshahr": {
+        "name": "SBS Nagar (Nawanshahr)",
+        "localName": "ਐਸ.ਬੀ.ਐਸ. ਨਗਰ (ਨਵਾਂਸ਼ਹਿਰ)",
+        "available": false
+      },
+      "tarn_taran": {
+        "name": "Tarn Taran",
+        "localName": "ਤਰਨ ਤਾਰਨ",
+        "available": false
+      }
+    }
+  },
+  "rajasthan": {
+    "name": "Rajasthan",
+    "localName": "राजस्थान",
+    "available": false,
+    "districts": {
+      "ajmer": {
+        "name": "Ajmer",
+        "localName": "अजमेर",
+        "available": false
+      },
+      "alwar": {
+        "name": "Alwar",
+        "localName": "अलवर",
+        "available": false
+      },
+      "banswara": {
+        "name": "Banswara",
+        "localName": "बांसवाड़ा",
+        "available": false
+      },
+      "baran": {
+        "name": "Baran",
+        "localName": "बारां",
+        "available": false
+      },
+      "barmer": {
+        "name": "Barmer",
+        "localName": "बाड़मेर",
+        "available": false
+      },
+      "bharatpur": {
+        "name": "Bharatpur",
+        "localName": "भरतपुर",
+        "available": false
+      },
+      "bhilwara": {
+        "name": "Bhilwara",
+        "localName": "भीलवाड़ा",
+        "available": false
+      },
+      "bikaner": {
+        "name": "Bikaner",
+        "localName": "बीकानेर",
+        "available": false
+      },
+      "bundi": {
+        "name": "Bundi",
+        "localName": "बूंदी",
+        "available": false
+      },
+      "chittorgarh": {
+        "name": "Chittorgarh",
+        "localName": "चित्तौड़गढ़",
+        "available": false
+      },
+      "churu": {
+        "name": "Churu",
+        "localName": "चुरू",
+        "available": false
+      },
+      "dausa": {
+        "name": "Dausa",
+        "localName": "दौसा",
+        "available": false
+      },
+      "dholpur": {
+        "name": "Dholpur",
+        "localName": "धौलपुर",
+        "available": false
+      },
+      "dungarpur": {
+        "name": "Dungarpur",
+        "localName": "डूंगरपुर",
+        "available": false
+      },
+      "hanumangarh": {
+        "name": "Hanumangarh",
+        "localName": "हनुमानगढ़",
+        "available": false
+      },
+      "jaipur": {
+        "name": "Jaipur",
+        "localName": "जयपुर",
+        "available": false
+      },
+      "jaisalmer": {
+        "name": "Jaisalmer",
+        "localName": "जैसलमेर",
+        "available": false
+      },
+      "jalore": {
+        "name": "Jalore",
+        "localName": "जालौर",
+        "available": false
+      },
+      "jhalawar": {
+        "name": "Jhalawar",
+        "localName": "झालावाड़",
+        "available": false
+      },
+      "jhunjhunu": {
+        "name": "Jhunjhunu",
+        "localName": "झुंझुनू",
+        "available": false
+      },
+      "jodhpur": {
+        "name": "Jodhpur",
+        "localName": "जोधपुर",
+        "available": false
+      },
+      "karauli": {
+        "name": "Karauli",
+        "localName": "करौली",
+        "available": false
+      },
+      "kota": {
+        "name": "Kota",
+        "localName": "कोटा",
+        "available": false
+      },
+      "nagaur": {
+        "name": "Nagaur",
+        "localName": "नागौर",
+        "available": false
+      },
+      "pali": {
+        "name": "Pali",
+        "localName": "पाली",
+        "available": false
+      },
+      "pratapgarh": {
+        "name": "Pratapgarh",
+        "localName": "प्रतापगढ़",
+        "available": false
+      },
+      "rajsamand": {
+        "name": "Rajsamand",
+        "localName": "राजसमंद",
+        "available": false
+      },
+      "sawai_madhopur": {
+        "name": "Sawai Madhopur",
+        "localName": "सवाई माधोपुर",
+        "available": false
+      },
+      "sikar": {
+        "name": "Sikar",
+        "localName": "सीकर",
+        "available": false
+      },
+      "sirohi": {
+        "name": "Sirohi",
+        "localName": "सिरोही",
+        "available": false
+      },
+      "sri_ganganagar": {
+        "name": "Sri Ganganagar",
+        "localName": "श्री गंगानगर",
+        "available": false
+      },
+      "tonk": {
+        "name": "Tonk",
+        "localName": "टोंक",
+        "available": false
+      },
+      "udaipur": {
+        "name": "Udaipur",
+        "localName": "उदयपुर",
+        "available": false
+      }
+    }
+  },
+  "sikkim": {
+    "name": "Sikkim",
+    "localName": "सिक्किम",
+    "available": false,
+    "districts": {
+      "gangtok": {
+        "name": "Gangtok",
+        "localName": "गंगटोक",
+        "available": false
+      },
+      "gyalshing": {
+        "name": "Gyalshing",
+        "localName": "ग्याल्शिंग",
+        "available": false
+      },
+      "mangan": {
+        "name": "Mangan",
+        "localName": "मंगन",
+        "available": false
+      },
+      "namchi": {
+        "name": "Namchi",
+        "localName": "नामची",
+        "available": false
+      }
+    }
+  },
+  "tamil_nadu": {
+    "name": "Tamil Nadu",
+    "localName": "தமிழ்நாடு",
+    "available": false,
+    "districts": {
+      "ariyalur": {
+        "name": "Ariyalur",
+        "localName": "அரியலூர்",
+        "available": false
+      },
+      "chengalpattu": {
+        "name": "Chengalpattu",
+        "localName": "செங்கல்பட்டு",
+        "available": false
+      },
+      "chennai": {
+        "name": "Chennai",
+        "localName": "சென்னை",
+        "available": false
+      },
+      "coimbatore": {
+        "name": "Coimbatore",
+        "localName": "கோயம்புத்தூர்",
+        "available": false
+      },
+      "cuddalore": {
+        "name": "Cuddalore",
+        "localName": "கடலூர்",
+        "available": false
+      },
+      "dharmapuri": {
+        "name": "Dharmapuri",
+        "localName": "தருமபுரி",
+        "available": false
+      },
+      "dindigul": {
+        "name": "Dindigul",
+        "localName": "திண்டுக்கல்",
+        "available": false
+      },
+      "erode": {
+        "name": "Erode",
+        "localName": "ஈரோடு",
+        "available": false
+      },
+      "kallakurichi": {
+        "name": "Kallakurichi",
+        "localName": "கள்ளக்குறிச்சி",
+        "available": false
+      },
+      "kanchipuram": {
+        "name": "Kanchipuram",
+        "localName": "காஞ்சிபுரம்",
+        "available": false
+      },
+      "kanyakumari": {
+        "name": "Kanyakumari",
+        "localName": "கன்னியாகுமரி",
+        "available": false
+      },
+      "karur": {
+        "name": "Karur",
+        "localName": "கரூர்",
+        "available": false
+      },
+      "krishnagiri": {
+        "name": "Krishnagiri",
+        "localName": "கிருஷ்ணகிரி",
+        "available": false
+      },
+      "madurai": {
+        "name": "Madurai",
+        "localName": "மதுரை",
+        "available": false
+      },
+      "mayiladuthurai": {
+        "name": "Mayiladuthurai",
+        "localName": "மயிலாடுதுறை",
+        "available": false
+      },
+      "nagapattinam": {
+        "name": "Nagapattinam",
+        "localName": "நாகப்பட்டினம்",
+        "available": false
+      },
+      "namakkal": {
+        "name": "Namakkal",
+        "localName": "நாமக்கல்",
+        "available": false
+      },
+      "nilgiris": {
+        "name": "Nilgiris",
+        "localName": "நீலகிரி",
+        "available": false
+      },
+      "perambalur": {
+        "name": "Perambalur",
+        "localName": "பெரம்பலூர்",
+        "available": false
+      },
+      "pudukkottai": {
+        "name": "Pudukkottai",
+        "localName": "புதுக்கோட்டை",
+        "available": false
+      },
+      "ramanathapuram": {
+        "name": "Ramanathapuram",
+        "localName": "ராமநாதபுரம்",
+        "available": false
+      },
+      "ranipet": {
+        "name": "Ranipet",
+        "localName": "இராணிப்பேட்டை",
+        "available": false
+      },
+      "salem": {
+        "name": "Salem",
+        "localName": "சேலம்",
+        "available": false
+      },
+      "sivaganga": {
+        "name": "Sivaganga",
+        "localName": "சிவகங்கை",
+        "available": false
+      },
+      "tenkasi": {
+        "name": "Tenkasi",
+        "localName": "தென்காசி",
+        "available": false
+      },
+      "thanjavur": {
+        "name": "Thanjavur",
+        "localName": "தஞ்சாவூர்",
+        "available": false
+      },
+      "theni": {
+        "name": "Theni",
+        "localName": "தேனி",
+        "available": false
+      },
+      "thoothukudi": {
+        "name": "Thoothukudi (Tuticorin)",
+        "localName": "தூத்துக்குடி",
+        "available": false
+      },
+      "tiruchirappalli": {
+        "name": "Tiruchirappalli",
+        "localName": "திருச்சிராப்பள்ளி",
+        "available": false
+      },
+      "tirunelveli": {
+        "name": "Tirunelveli",
+        "localName": "திருநெல்வேலி",
+        "available": false
+      },
+      "tirupattur": {
+        "name": "Tirupattur",
+        "localName": "திருப்பத்தூர்",
+        "available": false
+      },
+      "tiruppur": {
+        "name": "Tiruppur",
+        "localName": "திருப்பூர்",
+        "available": false
+      },
+      "tiruvallur": {
+        "name": "Tiruvallur",
+        "localName": "திருவள்ளூர்",
+        "available": false
+      },
+      "tiruvannamalai": {
+        "name": "Tiruvannamalai",
+        "localName": "திருவண்ணாமலை",
+        "available": false
+      },
+      "tiruvarur": {
+        "name": "Tiruvarur",
+        "localName": "திருவாரூர்",
+        "available": false
+      },
+      "vellore": {
+        "name": "Vellore",
+        "localName": "வேலூர்",
+        "available": false
+      },
+      "viluppuram": {
+        "name": "Viluppuram",
+        "localName": "விழுப்புரம்",
+        "available": false
+      },
+      "virudhunagar": {
+        "name": "Virudhunagar",
+        "localName": "விருதுநகர்",
+        "available": false
+      }
+    }
+  },
+  "telangana": {
+    "name": "Telangana",
+    "localName": "తెలంగాణ",
+    "available": false,
+    "districts": {
+      "adilabad": {
+        "name": "Adilabad",
+        "localName": "ఆదిలాబాద్",
+        "available": false
+      },
+      "bhadradri_kothagudem": {
+        "name": "Bhadradri Kothagudem",
+        "localName": "భద్రాద్రి కొత్తగూడెం",
+        "available": false
+      },
+      "hyderabad": {
+        "name": "Hyderabad",
+        "localName": "హైదరాబాద్",
+        "available": false
+      },
+      "jagtial": {
+        "name": "Jagtial",
+        "localName": "జగిత్యాల",
+        "available": false
+      },
+      "jangaon": {
+        "name": "Jangaon",
+        "localName": "జనగామ",
+        "available": false
+      },
+      "jayashankar_bhupalpally": {
+        "name": "Jayashankar Bhupalpally",
+        "localName": "జయశంకర్ భూపాలపల్లి",
+        "available": false
+      },
+      "jogulamba_gadwal": {
+        "name": "Jogulamba Gadwal",
+        "localName": "జోగులాంబ గద్వాల్",
+        "available": false
+      },
+      "kamareddy": {
+        "name": "Kamareddy",
+        "localName": "కామారెడ్డి",
+        "available": false
+      },
+      "karimnagar": {
+        "name": "Karimnagar",
+        "localName": "కరీంనగర్",
+        "available": false
+      },
+      "khammam": {
+        "name": "Khammam",
+        "localName": "ఖమ్మం",
+        "available": false
+      },
+      "komaram_bheem": {
+        "name": "Komaram Bheem",
+        "localName": "కొమరం భీమ్",
+        "available": false
+      },
+      "mahabubabad": {
+        "name": "Mahabubabad",
+        "localName": "మహబూబాబాద్",
+        "available": false
+      },
+      "mahabubnagar": {
+        "name": "Mahabubnagar",
+        "localName": "మహబూబ్‌నగర్",
+        "available": false
+      },
+      "mancherial": {
+        "name": "Mancherial",
+        "localName": "మంచిర్యాల",
+        "available": false
+      },
+      "medak": {
+        "name": "Medak",
+        "localName": "మెదక్",
+        "available": false
+      },
+      "medchal_malkajgiri": {
+        "name": "Medchal–Malkajgiri",
+        "localName": "మేడ్చల్–మల్కాజ్‌గిరి",
+        "available": false
+      },
+      "mulugu": {
+        "name": "Mulugu",
+        "localName": "ములుగు",
+        "available": false
+      },
+      "nagarkurnool": {
+        "name": "Nagarkurnool",
+        "localName": "నాగర్‌కర్నూల్",
+        "available": false
+      },
+      "nalgonda": {
+        "name": "Nalgonda",
+        "localName": "నల్గొండ",
+        "available": false
+      },
+      "narayanpet": {
+        "name": "Narayanpet",
+        "localName": "నారాయణపేట",
+        "available": false
+      },
+      "nirmal": {
+        "name": "Nirmal",
+        "localName": "నిర్మల్",
+        "available": false
+      },
+      "nizamabad": {
+        "name": "Nizamabad",
+        "localName": "నిజామాబాద్",
+        "available": false
+      },
+      "peddapalli": {
+        "name": "Peddapalli",
+        "localName": "పెద్దపల్లి",
+        "available": false
+      },
+      "rajanna_sircilla": {
+        "name": "Rajanna Sircilla",
+        "localName": "రాజన్న సిరిసిల్ల",
+        "available": false
+      },
+      "rangareddy": {
+        "name": "Rangareddy",
+        "localName": "రంగారెడ్డి",
+        "available": false
+      },
+      "sangareddy": {
+        "name": "Sangareddy",
+        "localName": "సంగారెడ్డి",
+        "available": false
+      },
+      "siddipet": {
+        "name": "Siddipet",
+        "localName": "సిద్దిపేట",
+        "available": false
+      },
+      "wanaparthy": {
+        "name": "Wanaparthy",
+        "localName": "వనపర్తి",
+        "available": false
+      },
+      "warangal": {
+        "name": "Warangal",
+        "localName": "వరంగల్",
+        "available": false
+      },
+      "yadadri_bhuvanagiri": {
+        "name": "Yadadri Bhuvanagiri",
+        "localName": "యాదాద్రి భువనగిరి",
+        "available": false
+      }
+    }
+  },
+  "tripura": {
+    "name": "Tripura",
+    "localName": "ত্রিপুরা",
+    "available": false,
+    "districts": {
+      "dhalai": {
+        "name": "Dhalai",
+        "localName": "ধলাই",
+        "available": false
+      },
+      "gomati": {
+        "name": "Gomati",
+        "localName": "গোমতী",
+        "available": false
+      },
+      "khowai": {
+        "name": "Khowai",
+        "localName": "খোয়াই",
+        "available": false
+      },
+      "north_tripura": {
+        "name": "North Tripura",
+        "localName": "উত্তর ত্রিপুরা",
+        "available": false
+      },
+      "sepahijala": {
+        "name": "Sepahijala",
+        "localName": "সিপাহিজলা",
+        "available": false
+      },
+      "south_tripura": {
+        "name": "South Tripura",
+        "localName": "দক্ষিণ ত্রিপুরা",
+        "available": false
+      },
+      "unakoti": {
+        "name": "Unakoti",
+        "localName": "ঊনকোটি",
+        "available": false
+      },
+      "west_tripura": {
+        "name": "West Tripura",
+        "localName": "পশ্চিম ত্রিপুরা",
+        "available": false
+      }
+    }
+  },
+  "uttar_pradesh": {
+    "name": "Uttar Pradesh",
+    "localName": "उत्तर प्रदेश",
+    "available": false,
+    "districts": {
+      "agra": {
+        "name": "Agra",
+        "localName": "आगरा",
+        "available": false
+      },
+      "aligarh": {
+        "name": "Aligarh",
+        "localName": "अलीगढ़",
+        "available": false
+      },
+      "ambedkar_nagar": {
+        "name": "Ambedkar Nagar",
+        "localName": "अंबेडकर नगर",
+        "available": false
+      },
+      "amethi": {
+        "name": "Amethi",
+        "localName": "अमेठी",
+        "available": false
+      },
+      "amroha": {
+        "name": "Amroha",
+        "localName": "अमरोहा",
+        "available": false
+      },
+      "auraiya": {
+        "name": "Auraiya",
+        "localName": "औरैया",
+        "available": false
+      },
+      "ayodhya": {
+        "name": "Ayodhya",
+        "localName": "अयोध्या",
+        "available": false
+      },
+      "azamgarh": {
+        "name": "Azamgarh",
+        "localName": "आजमगढ़",
+        "available": false
+      },
+      "badaun": {
+        "name": "Badaun",
+        "localName": "बदायूं",
+        "available": false
+      },
+      "baghpat": {
+        "name": "Baghpat",
+        "localName": "बागपत",
+        "available": false
+      },
+      "bahraich": {
+        "name": "Bahraich",
+        "localName": "बहराइच",
+        "available": false
+      },
+      "ballia": {
+        "name": "Ballia",
+        "localName": "बलिया",
+        "available": false
+      },
+      "balrampur": {
+        "name": "Balrampur",
+        "localName": "बलरामपुर",
+        "available": false
+      },
+      "banda": {
+        "name": "Banda",
+        "localName": "बांदा",
+        "available": false
+      },
+      "barabanki": {
+        "name": "Barabanki",
+        "localName": "बाराबंकी",
+        "available": false
+      },
+      "bareilly": {
+        "name": "Bareilly",
+        "localName": "बरेली",
+        "available": false
+      },
+      "basti": {
+        "name": "Basti",
+        "localName": "बस्ती",
+        "available": false
+      },
+      "bhadohi": {
+        "name": "Bhadohi",
+        "localName": "भदोही",
+        "available": false
+      },
+      "bijnor": {
+        "name": "Bijnor",
+        "localName": "बिजनौर",
+        "available": false
+      },
+      "bulandshahr": {
+        "name": "Bulandshahr",
+        "localName": "बुलंदशहर",
+        "available": false
+      },
+      "chandauli": {
+        "name": "Chandauli",
+        "localName": "चंदौली",
+        "available": false
+      },
+      "chitrakoot": {
+        "name": "Chitrakoot",
+        "localName": "चित्रकूट",
+        "available": false
+      },
+      "deoria": {
+        "name": "Deoria",
+        "localName": "देवरिया",
+        "available": false
+      },
+      "etah": {
+        "name": "Etah",
+        "localName": "एटा",
+        "available": false
+      },
+      "etawah": {
+        "name": "Etawah",
+        "localName": "इटावा",
+        "available": false
+      },
+      "farrukhabad": {
+        "name": "Farrukhabad",
+        "localName": "फर्रुखाबाद",
+        "available": false
+      },
+      "fatehpur": {
+        "name": "Fatehpur",
+        "localName": "फतेहपुर",
+        "available": false
+      },
+      "firozabad": {
+        "name": "Firozabad",
+        "localName": "फिरोजाबाद",
+        "available": false
+      },
+      "gautam_buddh_nagar": {
+        "name": "Gautam Buddh Nagar",
+        "localName": "गौतम बुद्ध नगर",
+        "available": false
+      },
+      "ghaziabad": {
+        "name": "Ghaziabad",
+        "localName": "गाज़ियाबाद",
+        "available": false
+      },
+      "ghazipur": {
+        "name": "Ghazipur",
+        "localName": "गाजीपुर",
+        "available": false
+      },
+      "gonda": {
+        "name": "Gonda",
+        "localName": "गोंडा",
+        "available": false
+      },
+      "gorakhpur": {
+        "name": "Gorakhpur",
+        "localName": "गोरखपुर",
+        "available": false
+      },
+      "hamirpur": {
+        "name": "Hamirpur",
+        "localName": "हमीरपुर",
+        "available": false
+      },
+      "hapur": {
+        "name": "Hapur",
+        "localName": "हापुड़",
+        "available": false
+      },
+      "hardoi": {
+        "name": "Hardoi",
+        "localName": "हरदोई",
+        "available": false
+      },
+      "hathras": {
+        "name": "Hathras",
+        "localName": "हाथरस",
+        "available": false
+      },
+      "jalaun": {
+        "name": "Jalaun",
+        "localName": "जालौन",
+        "available": false
+      },
+      "jaunpur": {
+        "name": "Jaunpur",
+        "localName": "जौनपुर",
+        "available": false
+      },
+      "jhansi": {
+        "name": "Jhansi",
+        "localName": "झाँसी",
+        "available": false
+      },
+      "kannauj": {
+        "name": "Kannauj",
+        "localName": "कन्नौज",
+        "available": false
+      },
+      "kanpur_dehat": {
+        "name": "Kanpur Dehat",
+        "localName": "कानपुर देहात",
+        "available": false
+      },
+      "kanpur_nagar": {
+        "name": "Kanpur Nagar",
+        "localName": "कानपुर नगर",
+        "available": false
+      },
+      "kasganj": {
+        "name": "Kasganj",
+        "localName": "कासगंज",
+        "available": false
+      },
+      "kaushambi": {
+        "name": "Kaushambi",
+        "localName": "कौशाम्बी",
+        "available": false
+      },
+      "kheri": {
+        "name": "Kheri",
+        "localName": "खीरी",
+        "available": false
+      },
+      "kushinagar": {
+        "name": "Kushinagar",
+        "localName": "कुशीनगर",
+        "available": false
+      },
+      "lalitpur": {
+        "name": "Lalitpur",
+        "localName": "ललितपुर",
+        "available": false
+      },
+      "lucknow": {
+        "name": "Lucknow",
+        "localName": "लखनऊ",
+        "available": false
+      },
+      "maharajganj": {
+        "name": "Maharajganj",
+        "localName": "महाराजगंज",
+        "available": false
+      },
+      "mahoba": {
+        "name": "Mahoba",
+        "localName": "महोबा",
+        "available": false
+      },
+      "mainpuri": {
+        "name": "Mainpuri",
+        "localName": "मैनपुरी",
+        "available": false
+      },
+      "mathura": {
+        "name": "Mathura",
+        "localName": "मथुरा",
+        "available": false
+      },
+      "mau": {
+        "name": "Mau",
+        "localName": "मऊ",
+        "available": false
+      },
+      "meerut": {
+        "name": "Meerut",
+        "localName": "मेरठ",
+        "available": false
+      },
+      "mirzapur": {
+        "name": "Mirzapur",
+        "localName": "मिर्जापुर",
+        "available": false
+      },
+      "moradabad": {
+        "name": "Moradabad",
+        "localName": "मुरादाबाद",
+        "available": false
+      },
+      "muzaffarnagar": {
+        "name": "Muzaffarnagar",
+        "localName": "मुजफ्फरनगर",
+        "available": false
+      },
+      "pilibhit": {
+        "name": "Pilibhit",
+        "localName": "पीलीभीत",
+        "available": false
+      },
+      "pratapgarh": {
+        "name": "Pratapgarh",
+        "localName": "प्रतापगढ़",
+        "available": false
+      },
+      "prayagraj": {
+        "name": "Prayagraj",
+        "localName": "प्रयागराज",
+        "available": false
+      },
+      "rae_bareli": {
+        "name": "Rae Bareli",
+        "localName": "रायबरेली",
+        "available": false
+      },
+      "rampur": {
+        "name": "Rampur",
+        "localName": "रामपुर",
+        "available": false
+      },
+      "saharanpur": {
+        "name": "Saharanpur",
+        "localName": "सहारनपुर",
+        "available": false
+      },
+      "sambhal": {
+        "name": "Sambhal",
+        "localName": "संभल",
+        "available": false
+      },
+      "sant_kabir_nagar": {
+        "name": "Sant Kabir Nagar",
+        "localName": "संत कबीर नगर",
+        "available": false
+      },
+      "shahjahanpur": {
+        "name": "Shahjahanpur",
+        "localName": "शाहजहांपुर",
+        "available": false
+      },
+      "shamli": {
+        "name": "Shamli",
+        "localName": "शामली",
+        "available": false
+      },
+      "shrawasti": {
+        "name": "Shrawasti",
+        "localName": "श्रावस्ती",
+        "available": false
+      },
+      "siddharthnagar": {
+        "name": "Siddharthnagar",
+        "localName": "सिद्धार्थनगर",
+        "available": false
+      },
+      "sitapur": {
+        "name": "Sitapur",
+        "localName": "सीतापुर",
+        "available": false
+      },
+      "sonbhadra": {
+        "name": "Sonbhadra",
+        "localName": "सोनभद्र",
+        "available": false
+      },
+      "sultanpur": {
+        "name": "Sultanpur",
+        "localName": "सुल्तानपुर",
+        "available": false
+      },
+      "unnao": {
+        "name": "Unnao",
+        "localName": "उन्नाव",
+        "available": false
+      },
+      "varanasi": {
+        "name": "Varanasi",
+        "localName": "वाराणसी",
+        "available": false
+      }
+    }
+  },
+  "uttarakhand": {
+    "name": "Uttarakhand",
+    "localName": "उत्तराखंड",
+    "available": false,
+    "districts": {
+      "almora": {
+        "name": "Almora",
+        "localName": "अल्मोड़ा",
+        "available": false
+      },
+      "bageshwar": {
+        "name": "Bageshwar",
+        "localName": "बागेश्वर",
+        "available": false
+      },
+      "chamoli": {
+        "name": "Chamoli",
+        "localName": "चमोली",
+        "available": false
+      },
+      "champawat": {
+        "name": "Champawat",
+        "localName": "चंपावत",
+        "available": false
+      },
+      "dehradun": {
+        "name": "Dehradun",
+        "localName": "देहरादून",
+        "available": false
+      },
+      "haridwar": {
+        "name": "Haridwar",
+        "localName": "हरिद्वार",
+        "available": false
+      },
+      "nainital": {
+        "name": "Nainital",
+        "localName": "नैनीताल",
+        "available": false
+      },
+      "pauri_garhwal": {
+        "name": "Pauri Garhwal",
+        "localName": "पौड़ी गढ़वाल",
+        "available": false
+      },
+      "pithoragarh": {
+        "name": "Pithoragarh",
+        "localName": "पिथौरागढ़",
+        "available": false
+      },
+      "rudraprayag": {
+        "name": "Rudraprayag",
+        "localName": "रुद्रप्रयाग",
+        "available": false
+      },
+      "tehri_garhwal": {
+        "name": "Tehri Garhwal",
+        "localName": "टिहरी गढ़वाल",
+        "available": false
+      },
+      "udham_singh_nagar": {
+        "name": "Udham Singh Nagar",
+        "localName": "ऊधम सिंह नगर",
+        "available": false
+      },
+      "uttarkashi": {
+        "name": "Uttarkashi",
+        "localName": "उत्तरकाशी",
+        "available": false
+      }
+    }
+  },
+  "west_bengal": {
+    "name": "West Bengal",
+    "localName": "পশ্চিমবঙ্গ",
+    "available": false,
+    "districts": {
+      "alipurduar": {
+        "name": "Alipurduar",
+        "localName": "আলিপুরদুয়ার",
+        "available": false
+      },
+      "bankura": {
+        "name": "Bankura",
+        "localName": "বাঁকুড়া",
+        "available": false
+      },
+      "paschim_bardhaman": {
+        "name": "Paschim Bardhaman (West Bardhaman)",
+        "localName": "পশ্চিম বর্ধমান",
+        "available": false
+      },
+      "purba_bardhaman": {
+        "name": "Purba Bardhaman (East Bardhaman)",
+        "localName": "পূর্ব বর্ধমান",
+        "available": false
+      },
+      "birbhum": {
+        "name": "Birbhum",
+        "localName": "বীরভূম",
+        "available": false
+      },
+      "cooch_behar": {
+        "name": "Cooch Behar",
+        "localName": "কোচবিহার",
+        "available": false
+      },
+      "dakshin_dinajpur": {
+        "name": "Dakshin Dinajpur (South Dinajpur)",
+        "localName": "দক্ষিণ দিনাজপুর",
+        "available": false
+      },
+      "darjeeling": {
+        "name": "Darjeeling",
+        "localName": "দার্জিলিং",
+        "available": false
+      },
+      "hooghly": {
+        "name": "Hooghly",
+        "localName": "হুগলি",
+        "available": false
+      },
+      "howrah": {
+        "name": "Howrah",
+        "localName": "হাওড়া",
+        "available": false
+      },
+      "jalpaiguri": {
+        "name": "Jalpaiguri",
+        "localName": "জলপাইগুড়ি",
+        "available": false
+      },
+      "jhargram": {
+        "name": "Jhargram",
+        "localName": "ঝাড়গ্রাম",
+        "available": false
+      },
+      "kalimpong": {
+        "name": "Kalimpong",
+        "localName": "কালিম্পং",
+        "available": false
+      },
+      "kolkata": {
+        "name": "Kolkata",
+        "localName": "কলকাতা",
+        "available": false
+      },
+      "malda": {
+        "name": "Malda",
+        "localName": "মালদহ",
+        "available": false
+      },
+      "murshidabad": {
+        "name": "Murshidabad",
+        "localName": "মুর্শিদাবাদ",
+        "available": false
+      },
+      "nadia": {
+        "name": "Nadia",
+        "localName": "নদিয়া",
+        "available": false
+      },
+      "north_24_parganas": {
+        "name": "North 24 Parganas",
+        "localName": "উত্তর ২৪ পরগণা",
+        "available": false
+      },
+      "paschim_medinipur": {
+        "name": "Paschim Medinipur (West Medinipur)",
+        "localName": "পশ্চিম মেদিনীপুর",
+        "available": false
+      },
+      "purba_medinipur": {
+        "name": "Purba Medinipur (East Medinipur)",
+        "localName": "পূর্ব মেদিনীপুর",
+        "available": false
+      },
+      "purulia": {
+        "name": "Purulia",
+        "localName": "পুরুলিয়া",
+        "available": false
+      },
+      "south_24_parganas": {
+        "name": "South 24 Parganas",
+        "localName": "দক্ষিণ ২৪ পরগণা",
+        "available": false
+      },
+      "uttar_dinajpur": {
+        "name": "Uttar Dinajpur (North Dinajpur)",
+        "localName": "উত্তর দিনাজপুর",
+        "available": false
+      }
+    }
+  }
+}
