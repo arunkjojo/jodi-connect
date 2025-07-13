@@ -30,6 +30,8 @@ const Home: React.FC = () => {
       } else {
         navigate('/dashboard');
       }
+    } else {
+      navigate('/login');
     }
   }, [navigate, user]);
 
