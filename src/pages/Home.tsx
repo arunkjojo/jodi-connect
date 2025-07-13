@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { ConfirmationResult } from 'firebase/auth';
@@ -17,6 +17,12 @@ const Home: React.FC = () => {
   const [otp, setOtp] = useState('');
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const { user } = useAuth();
+
+  useEffect(() => { 
+    if (!user) navigate('/login'); 
+  }, [navigate, user]);
 
   const handleSendOTP = async () => {
     if (phoneNumber.length < 14) {
