@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { useAuth } from './AuthContext';
+import { useEnhancedAuth } from './EnhancedAuthContext';
 import { db } from '../services/firebase/config';
 import { doc, getDoc, setDoc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { enableNetwork, disableNetwork } from 'firebase/firestore';
@@ -11,7 +11,7 @@ interface ProfileProviderProps {
 }
 
 export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) => {
-  const { user } = useAuth();
+  const { user } = useEnhancedAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [isOffline, setIsOffline] = useState(false);
