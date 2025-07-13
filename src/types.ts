@@ -1,3 +1,9 @@
+import {
+    RecaptchaVerifier,
+    ConfirmationResult,
+    User as FirebaseUser
+} from 'firebase/auth';
+
 export interface Language {
     code: string;
     name: string;
