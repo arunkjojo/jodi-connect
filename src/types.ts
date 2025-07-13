@@ -139,3 +139,14 @@ export interface SystemInfo {
     cookieEnabled: boolean;
     onlineStatus: boolean;
   }
+
+export interface EnhancedAuthContextType {
+  firebaseUser: FirebaseUser | null;
+  user: User | null;
+  loading: boolean;
+  signInWithPhone: (phoneNumber: string) => Promise<ConfirmationResult | null>;
+  verifyOTP: (confirmationResult: ConfirmationResult, otp: string) => Promise<boolean>;
+  logout: () => Promise<void>;
+  refreshUser: () => Promise<void>;
+  recaptchaVerifier: RecaptchaVerifier | null;
+}
