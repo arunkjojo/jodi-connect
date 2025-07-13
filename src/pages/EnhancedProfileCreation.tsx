@@ -17,16 +17,20 @@ import LanguageSelector from '../components/LanguageSelector';
 import { db } from '../services/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
 
-type District = {
-  name: string;
-  localName?: string;
-};
-
-type State = {
-  id: number;
+interface District {
   name: string;
   localName: string;
-};
+  available: boolean;
+  link?: string;
+}
+
+interface State {
+  id: string;
+  name: string;
+  localName: string;
+  available: boolean;
+  districts?: Record<string, District>;
+}
 
 const EnhancedProfileCreation: React.FC = () => {
   const navigate = useNavigate();
@@ -57,50 +61,68 @@ const EnhancedProfileCreation: React.FC = () => {
 
   const selectedState = watch('state');
 
-  const [state, setState] = useState<State[]>([]);
+  const [states, setStates] = useState<State[]>([]);
   const [districts, setDistricts] = useState<District[]>([]);
 
+  // Fetch States
   useEffect(() => {
     const fetchStates = async () => {
-      const snapshot = await getDocs(collection(db, 'states'));
-      const data = snapshot.docs.map(doc => {
-        const d = doc.data();
-        return {
-          id: d.id,
-          name: d.name,
-          localName: d.localName,
-        } as State;
-      });
-      setState(data);
+      try {
+        const snapshot = await getDocs(collection(db, 'locations'));
+        const statesData: State[] = snapshot.docs
+          .map(doc => {
+            const data = doc.data();
+            return {
+              id: doc.id,
+              name: data.name,
+              localName: data.localName,
+              available: data.available,
+            };
+          })
+          .filter(state => state.available); // ✅ only available states
+
+        setStates(statesData);
+      } catch (error) {
+        console.error('Error fetching states:', error);
+      }
     };
+
     fetchStates();
   }, []);
 
+  // Fetch Districts for selected state
   useEffect(() => {
     const fetchDistricts = async () => {
       if (!selectedState) return;
 
+      const selected = states.find(s => s.id === selectedState); // using ID
+      if (!selected) return;
+
       try {
-        const stateObj = state.find(loc => loc.name === selectedState);
-        if (!stateObj) return;
+        const snapshot = await getDocs(
+          collection(db, 'locations', selected.id, 'districts')
+        );
 
-        const querySnapshot = await getDocs(collection(db, 'districts'));
-        const districtList = querySnapshot.docs
-          .map((doc) => doc.data())
-          .filter((dist) => dist.stateId === stateObj.id)
-          .map((dist) => ({
-            name: dist.name,
-            localName: dist.localName,
-          } as District));
+        const districtsData: District[] = snapshot.docs
+          .map(doc => {
+            const data = doc.data();
+            return {
+              name: data.name,
+              localName: data.localName,
+              available: data.available,
+              link: data.link,
+            };
+          })
+          .filter(dist => dist.available); // ✅ only available districts
 
-        setDistricts(districtList);
-      } catch (err) {
-        console.error('Error fetching districts:', err);
+        setDistricts(districtsData);
+      } catch (error) {
+        console.error('Error fetching districts:', error);
       }
     };
 
     fetchDistricts();
-  }, [selectedState, state]);
+  }, [selectedState, states]);
 
   // Auto-save form data
   useEffect(() => {
@@ -279,7 +301,7 @@ const EnhancedProfileCreation: React.FC = () => {
                           className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none text-sm sm:text-base"
                         >
                           <option value="">Select State</option>
-                          {state.map((stat) => (
+                          {states.map((stat) => (
                             <option key={stat.id} value={stat.id}>
                               {stat.name} - {stat.localName}
                             </option>
@@ -300,11 +322,13 @@ const EnhancedProfileCreation: React.FC = () => {
                           className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none text-sm sm:text-base"
                         >
                           <option value="">Select District</option>
-                          {districts.map((dist) => (
-                            <option key={dist.name} value={dist.name}>
-                              {dist.name} - {dist.localName}
-                            </option>
-                          ))}
+                          {districts
+                            .filter((d) => d.available)
+                            .map((district, idx) => (
+                              <option key={idx} value={district.name}>
+                                {district.name} - {district.localName}
+                              </option>
+                            ))}
                         </select>
                         <ChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" size={20} />
                       </div>
