@@ -1,17 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { 
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
-  ConfirmationResult,
-  User as FirebaseUser,
-  onAuthStateChanged,
-  signOut
-} from 'firebase/auth';
-import { auth } from '../services/firebase/config';
-import { UserService } from '../services/firebase/userService';
-import { User, UserStatus } from '../types/user';
-import toast from 'react-hot-toast';
-
+import { createContext, useContext } from 'react';
+import type { AuthContextType } from '../types';
 
 const EnhancedAuthContext = createContext<EnhancedAuthContextType | undefined>(undefined);
 
