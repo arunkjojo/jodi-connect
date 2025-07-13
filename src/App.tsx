@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import NetworkStatus from './components/NetworkStatus';
-import { EnhancedAuthProvider } from './contexts/EnhancedAuthContext';
+import { EnhancedAuthProvider } from './contexts/EnhancedAuthProvider';
 import { ProfileProvider } from './contexts/ProfileContextProvider';
 import { FavoritesProvider } from './contexts/FavoritesContextProvider';
 import Layout from './components/Layout';
