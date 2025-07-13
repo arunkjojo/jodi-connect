@@ -11,6 +11,7 @@ const EnhancedLogin: React.FC = () => {
   const { signInWithPhone, verifyOTP, user } = useEnhancedAuth();
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('+91 ');
+  const [referralCode, setReferralCode] = useState('');
   const [showOTP, setShowOTP] = useState(false);
   const [otp, setOtp] = useState('');
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
@@ -90,14 +91,17 @@ const EnhancedLogin: React.FC = () => {
             />
           </div>
 
-          <div className="bg-gradient-to-r from-cyan-50 to-pink-50 p-4 rounded-lg border border-cyan-200">
-            <h4 className="font-semibold text-cyan-800 mb-2">Why Choose JodiConnect?</h4>
-            <ul className="text-sm text-cyan-700 space-y-1">
-              <li>• Verified profiles with ID authentication</li>
-              <li>• Advanced matching algorithm</li>
-              <li>• Secure and private communication</li>
-              <li>• Referral-based trust system</li>
-            </ul>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              {t('auth.referralCode')}
+            </label>
+            <input
+              type="text"
+              value={referralCode}
+              onChange={(e) => setReferralCode(e.target.value)}
+              className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm sm:text-base"
+              placeholder={t('auth.referralPlaceholder')}
+            />
           </div>
 
           <button

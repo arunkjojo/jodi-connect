@@ -1,23 +1,6 @@
 import { doc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../services/firebase/config';
-
-interface SystemInfo {
-    userAgent: string;
-    platform: string;
-    language: string;
-    screenResolution: string;
-    timezone: string;
-    ipAddress?: string;
-    networkInfo?: {
-        effectiveType?: string;
-        downlink?: number;
-        rtt?: number;
-    };
-    deviceMemory?: number;
-    hardwareConcurrency?: number;
-    cookieEnabled: boolean;
-    onlineStatus: boolean;
-}
+import { SystemInfo } from '../types';
 
 export class SystemTracker {
     /**

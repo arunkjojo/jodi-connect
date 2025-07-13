@@ -9,7 +9,7 @@ const Dashboard: React.FC = () => {
   const { profile } = useProfile();
 
   const phoneNumber = user?.phoneNumber || '+91 9876543210';
-  const userName = profile?.fullName || 'Arun';
+  const userName = profile?.fullName || 'User';
 
   return (
     <div className="pb-20 w-full">

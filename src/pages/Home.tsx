@@ -9,7 +9,7 @@ import NavigationBar from '../components/NavigationBar';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const { signInWithPhone, verifyOTP } = useEnhancedAuth();
+  const { user, signInWithPhone, verifyOTP } = useEnhancedAuth();
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('+91 ');
   const [referralCode, setReferralCode] = useState('');
@@ -17,8 +17,6 @@ const Home: React.FC = () => {
   const [otp, setOtp] = useState('');
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
   const [loading, setLoading] = useState(false);
-
-  const { user } = useEnhancedAuth();
 
   useEffect(() => { 
     if (user) {

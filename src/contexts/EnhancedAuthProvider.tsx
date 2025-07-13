@@ -10,7 +10,7 @@ import {
 import { auth } from '../services/firebase/config';
 import { UserService } from '../services/firebase/userService';
 import { EnhancedAuthContext } from './EnhancedAuthContext';
-import { EnhancedAuthContextType, User, UserStatus } from '../types';
+import { EnhancedAuthContextType, User } from '../types';
 import toast from 'react-hot-toast';
 
 interface EnhancedAuthProviderProps {

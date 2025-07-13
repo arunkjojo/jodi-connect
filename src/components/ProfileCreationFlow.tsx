@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useEnhancedAuth } from '../contexts/EnhancedAuthContext';
 import { UserService } from '../services/firebase/userService';
-import { ProfileFormData, UserStatus } from '../types/user';
+import { ProfileFormData, UserStatus } from '../types';
 import LoadingState from './LoadingState';
 
 interface ProfileCreationFlowProps {
@@ -22,7 +22,7 @@ const ProfileCreationFlow: React.FC<ProfileCreationFlowProps> = ({ initialStep =
   const [verificationDoc, setVerificationDoc] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<ProfileFormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm<ProfileFormData>();
 
   const steps = [
     { number: 1, title: 'Basic Details', status: 'basic' as UserStatus },

@@ -14,12 +14,12 @@ import {
 } from 'lucide-react';
 import { useEnhancedAuth } from '../contexts/EnhancedAuthContext';
 import { UserService } from '../services/firebase/userService';
-import { UserStatusResponse, UserStatus } from '../types/user';
+import { UserStatusResponse, UserStatus } from '../types';
 import LoadingState from '../components/LoadingState';
 import Header from '../components/Header';
 
 const EnhancedDashboard: React.FC = () => {
-  const { user, refreshUser } = useEnhancedAuth();
+  const { user } = useEnhancedAuth();
   const navigate = useNavigate();
   const [statusData, setStatusData] = useState<UserStatusResponse | null>(null);
   const [loading, setLoading] = useState(true);
