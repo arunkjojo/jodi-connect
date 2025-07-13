@@ -104,10 +104,6 @@ const EnhancedLogin: React.FC = () => {
             />
           </div>
 
-          <div className="bg-yellow-50 p-3 rounded-lg">
-            <p className="text-sm text-yellow-800 font-medium">JODI2025</p>
-          </div>
-
           <button
             onClick={handleSendOTP}
             disabled={loading}

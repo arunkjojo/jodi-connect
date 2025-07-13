@@ -1,14 +1,24 @@
-// src/user/checkUserStatus.ts
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 import { getFirestore } from "firebase-admin/firestore";
 import * as logger from "firebase-functions/logger";
 
-interface UserStatusData {
+interface CheckUserStatusData {
     userId: string;
 }
 
+interface UserStatusResponse {
+    status: string;
+    user: any;
+    canAccessFeatures: {
+        viewProfiles: boolean;
+        favoriteUsers: boolean;
+        messaging: boolean;
+        fullDashboard: boolean;
+    };
+}
+
 export const checkUserStatus = onCall(async (request) => {
-    const { userId } = request.data as UserStatusData;
+    const { userId } = request.data as CheckUserStatusData;
 
     if (!userId) {
         throw new HttpsError("invalid-argument", "User ID is required.");
@@ -17,49 +27,35 @@ export const checkUserStatus = onCall(async (request) => {
     const db = getFirestore();
 
     try {
-        // Fetch profile info
-        const profileDoc = await db.collection("profiles").doc(userId).get();
-        const profile = profileDoc.data();
-
-        const profileComplete = !!(
-            profile?.fullName &&
-            profile?.dateOfBirth &&
-            profile?.gender &&
-            profile?.state &&
-            profile?.district
-        );
-
-        // Fetch current plan
+        // Get user document
         const userDoc = await db.collection("users").doc(userId).get();
-        const user = userDoc.data();
+        
+        if (!userDoc.exists) {
+            throw new HttpsError("not-found", "User not found.");
+        }
 
-        const currentPlan = user?.currentPlan || {
-            type: "free",
-            features: ["basic_search", "limited_profiles"],
+        const userData = userDoc.data();
+        const currentStatus = userData?.status || 'pending';
+
+        // Determine feature access based on status
+        const canAccessFeatures = {
+            viewProfiles: currentStatus === 'complete',
+            favoriteUsers: currentStatus === 'complete',
+            messaging: currentStatus === 'complete',
+            fullDashboard: currentStatus === 'complete'
         };
 
-        // Fetch plan history
-        const planHistorySnap = await db
-            .collection("users")
-            .doc(userId)
-            .collection("planHistory")
-            .orderBy("startDate", "desc")
-            .get();
-
-        const planHistory = planHistorySnap.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-        }));
-
-        logger.info(`User status fetched. UID=${userId}, ProfileComplete=${profileComplete}`);
-
-        return {
-            profileComplete,
-            currentPlan,
-            planHistory,
+        const response: UserStatusResponse = {
+            status: currentStatus,
+            user: { id: userDoc.id, ...userData },
+            canAccessFeatures
         };
+
+        logger.info(`User status checked. UID=${userId}, Status=${currentStatus}`);
+
+        return response;
     } catch (error) {
-        logger.error("Error while checking user status", error);
-        throw new HttpsError("internal", "Failed to fetch user status.");
+        logger.error("Error checking user status", error);
+        throw new HttpsError("internal", "Failed to check user status.");
     }
 });
