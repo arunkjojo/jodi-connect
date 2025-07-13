@@ -6,6 +6,7 @@ import { getFirestore } from "firebase-admin/firestore";
 
 import { phoneLogin } from "./src/auth/phoneLogin";
 import { checkUserStatus } from "./src/user/checkUserStatus";
+import { checkUserProfile } from "./src/user/checkUserProfile";
 import { sendNotification } from "./src/notifications/sendNotification";
 import { uploadLocations } from "./src/locations/uploadLocations";
 
@@ -19,4 +20,4 @@ export const helloWorld = onRequest((request, response) => {
     response.send("Hello from Firebase!");
 });
 
-export { phoneLogin, checkUserStatus, sendNotification, uploadLocations };
+export { phoneLogin, checkUserStatus, checkUserProfile, sendNotification, uploadLocations };

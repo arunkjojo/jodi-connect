@@ -2,20 +2,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import NetworkStatus from './components/NetworkStatus';
-import { AuthProvider } from './contexts/AuthContextProvider';
+import { EnhancedAuthProvider } from './contexts/EnhancedAuthContext';
 import { ProfileProvider } from './contexts/ProfileContextProvider';
 import { FavoritesProvider } from './contexts/FavoritesContextProvider';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import EnhancedLogin from './pages/EnhancedLogin';
+import EnhancedDashboard from './pages/EnhancedDashboard';
+import ProfileCreationFlow from './components/ProfileCreationFlow';
 import Search from './pages/Search';
 import SearchResults from './pages/SearchResults';
 import Profile from './pages/Profile';
 import Testimonials from './pages/Testimonials';
 import HowItWorks from './pages/HowItWorks';
 import Favorites from './pages/Favorites';
-import EnhancedProfileCreation from './pages/EnhancedProfileCreation';
 import Settings from './pages/Settings';
 import ProtectedRoute from './components/ProtectedRoute';
 import StickyFooter from './components/layout/StickyFooter';
@@ -24,7 +24,7 @@ import './i18n';
 function App() {
   return (
     <ErrorBoundary>
-      <AuthProvider>
+      <EnhancedAuthProvider>
         <ProfileProvider>
           <FavoritesProvider>
             <Router>
@@ -42,18 +42,18 @@ function App() {
                 />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
+                  <Route path="/login" element={<EnhancedLogin />} />
                   <Route path="/testimonials" element={<Testimonials />} />
                   <Route path="/how-it-works" element={<HowItWorks />} />
                   <Route path="/profile-creation" element={
                     <ProtectedRoute>
-                      <EnhancedProfileCreation />
+                      <ProfileCreationFlow />
                     </ProtectedRoute>
                   } />
                   <Route path="/" element={<Layout />}>
                     <Route path="dashboard" element={
                       <ProtectedRoute>
-                        <Dashboard />
+                        <EnhancedDashboard />
                       </ProtectedRoute>
                     } />
                     <Route path="search" element={
@@ -88,7 +88,7 @@ function App() {
             </Router>
           </FavoritesProvider>
         </ProfileProvider>
-      </AuthProvider>
+      </EnhancedAuthProvider>
     </ErrorBoundary>
   );
 }

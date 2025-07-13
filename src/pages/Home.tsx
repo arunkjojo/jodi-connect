@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useEnhancedAuth } from '../contexts/EnhancedAuthContext';
 import { ConfirmationResult } from 'firebase/auth';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
@@ -9,7 +9,7 @@ import NavigationBar from '../components/NavigationBar';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const { signInWithPhone, verifyOTP } = useAuth();
+  const { signInWithPhone, verifyOTP } = useEnhancedAuth();
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('+91 ');
   const [referralCode, setReferralCode] = useState('');
@@ -18,10 +18,19 @@ const Home: React.FC = () => {
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const { user } = useAuth();
+  const { user } = useEnhancedAuth();
 
   useEffect(() => { 
-    if (!user) navigate('/login'); 
+    if (user) {
+      // Redirect based on user status
+      if (user.status === 'pending' || user.status === 'basic' || 
+          user.status === 'moreDetails' || user.status === 'user-photo' || 
+          user.status === 'user-verification') {
+        navigate('/profile-creation');
+      } else {
+        navigate('/dashboard');
+      }
+    }
   }, [navigate, user]);
 
   const handleSendOTP = async () => {
@@ -55,7 +64,7 @@ const Home: React.FC = () => {
     try {
       const success = await verifyOTP(confirmationResult, otp);
       if (success) {
-        navigate('/profile-creation');
+        // Navigation will be handled by the useEffect above
       }
     } catch (error) {
       console.error('Error verifying OTP:', error);
