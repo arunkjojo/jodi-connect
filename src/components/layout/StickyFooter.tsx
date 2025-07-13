@@ -5,7 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useTranslation } from 'react-i18next';
 
 const StickyFooter: React.FC = () => {
-    const { user } = useAuth();
+    const { user } = useEnhancedAuth();
     const { t } = useTranslation();
     const location = useLocation();
 
